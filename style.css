@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+.home-cover {
+    display: flex;
+    background-image: url(IMG_0431.JPG);
+    height: 50vh;
+    background-size: cover;
+    position: relative;
+    background-position: right center;
+    /* 右寄せ＋縦は中央 */
+}
+
+.title {
+    position: absolute;
+    bottom: 10%;
+    font-size: 2em;
+    left: 5%;
+}
+
+@media screen and (min-width: 1100px) {
+    .title {
+        bottom: 22%;
+        font-size: 4em;
+        left: 20%;
+    }
+}
