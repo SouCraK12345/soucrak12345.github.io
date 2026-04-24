@@ -1,11 +1,64 @@
+<!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>なんざんホームページ</title>
+    <title>なんざんホーム</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_left,chevron_right,play_arrow" />
 </head>
+
 <body>
-    <div class="home-cover"><span class="title">なんざんホームページ</span></div>
+    <div class="header">
+        <span>なんざんホーム</span>
+    </div>
+    <!-- <div class="top"></div> -->
+    <div class="carousel-container">
+        <div class="arrow" style="left: 10px;"><span class="material-symbols-outlined">
+                chevron_left
+            </span></div>
+        <div class="arrow" style="right: 10px;"><span class="material-symbols-outlined">
+                chevron_right
+            </span></div>
+        <div class="carousel">
+            <div class="carousel-item exam-docs">
+                <img src="Assets/exam-docs.png" alt="テスト資料">
+                <div class="description">
+                    <h1>テスト対策プリント</h1>
+                    <p>作者が中学・高校のテスト対策で作成していたプリントを掲載しています。</p>
+                    <a href="exam-docs/" class="navigate"><span
+                            class="material-symbols-outlined play-icon">
+                            play_arrow
+                        </span>サイトを見る</a>
+                </div>
+            </div>
+            <div class="carousel-item tango1800">
+                <img src="Assets/tango1800.png" alt="英単語1800">
+                <div class="description">
+                    <h1>英単語1800</h1>
+                    <p>東進衛星予備校の英単語学習教材「英単語センター1800」の単語を中心に、単語の勉強ができるWebアプリです。複数人での対戦も可能で、知らない単語を集中的に学習できます。</p>
+                    <a href="https://soucrak12345.github.io/tango1800/" class="navigate"><span
+                            class="material-symbols-outlined play-icon">
+                            play_arrow
+                        </span>サイトを見る</a>
+                </div>
+            </div>
+            <div class="carousel-item tetris">
+                <img src="Assets/tetris.png" alt="Tetris">
+                <div class="description">
+                    <h1>Tetris</h1>
+                    <p>ハイスピード・高火力で遊べるテトリス。テトリスの攻撃力は最大8段。</p>
+                    <a href="https://soucrak12345.github.io/Tetris/" class="navigate"><span
+                            class="material-symbols-outlined play-icon">
+                            play_arrow
+                        </span>サイトを見る</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>

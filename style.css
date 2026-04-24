@@ -1,28 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
 body {
     margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    /* overflow-y: auto; */
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
-.home-cover {
+.header {
+    position: fixed;
+    /* display: none; */
+    /* display: flex; */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* .header.show {
     display: flex;
+} */
+
+.header>span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+div.top {
+    width: 100vw;
+    height: calc(100vw / 1920 * 1080);
     background-image: url(IMG_0431.JPG);
-    height: 50vh;
     background-size: cover;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: hidden;
+    height: 40vw;
+    min-height: 600px;
+    transition: 0.3s;
+}
+
+.carousel-item {
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exam-docs {
+    background-color: rgb(16 162 63);
+    color: white;
+}
+
+.tango1800 {
+    background-color: rgb(16, 96, 162);
+    color: white;
+}
+
+.tetris {
+    background-color: #fbf1de;
+    color: black;
+}
+
+.carousel-item>img {
+    height: 50%;
+    margin-right: 50px;
+    max-width: 35%;
+    object-fit: contain;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow-x: hidden;
+    margin-top: 4rem;
     position: relative;
-    background-position: right center;
-    /* 右寄せ＋縦は中央 */
 }
 
-.title {
+.description {
+    max-width: 50%;
+}
+
+.navigate {
+    padding: 15px 35px;
+    background: #ff5700;
+    border-radius: 9999px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+}
+
+.arrow {
+    background-color: #00000050;
+    width: 50px;
+    height: 50px;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    color: white;
     position: absolute;
-    bottom: 10%;
-    font-size: 2em;
-    left: 5%;
+    top: calc(50% - 25px);
+    z-index: 1;
+    cursor: pointer;
 }
 
-@media screen and (min-width: 1100px) {
-    .title {
-        bottom: 22%;
-        font-size: 4em;
-        left: 20%;
+@media (max-width: 600px) {
+    .carousel-item {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .carousel-item>img {
+        margin-right: 0;
+        max-width: 80%;
+    }
+
+    .description {
+        max-width: 80%;
     }
 }
