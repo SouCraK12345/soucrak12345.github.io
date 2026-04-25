@@ -1,0 +1,90 @@
+<style>
+    :root {
+        /* これだけで auto への transition が有効になる */
+        interpolate-size: allow-keywords;
+    }
+
+    .header {
+        position: fixed;
+        /* display: none; */
+        display: flex;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #f0f0f0;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header>a {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+    }
+
+
+    .header>img {
+        height: 3rem;
+        border-radius: 9999px;
+    }
+
+    .links {
+        display: flex;
+        margin-left: 20px;
+        gap: 20px;
+    }
+
+    .links>a {
+        color: #333;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .menu-container {
+        /* display: none; */
+        position: absolute;
+        right: 20px;
+    }
+
+    @media (max-width: 600px) {
+        .menu {
+            display: block;
+        }
+
+        .links {
+            display: flex;
+            position: absolute;
+            top: 5rem;
+            background: white;
+            left: -1.3rem;
+            padding: 0 1rem;
+            width: 100dvw;
+            flex-direction: column;
+            z-index: -1;
+            transition: 0.3s ;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .links.open {
+            height: auto;
+            padding: 1rem;
+        }
+    }
+</style>
+
+<img src="../Assets/nanzan_icon.jpg" alt="なんざんアイコン">
+<a href="/">なんざんホーム</a>
+<a class="menu-container" onclick="open_menu()">
+    <span class="material-symbols-outlined menu">
+        menu
+    </span></a>
+<div class="links">
+    <a href="/exam-docs/">テスト資料</a>
+    <a href="https://soucrak12345.github.io/tango1800/" target="_blank">英単語1800</a>
+    <a href="https://soucrak12345.github.io/Tetris/" target="_blank">Tetris</a>
+</div>

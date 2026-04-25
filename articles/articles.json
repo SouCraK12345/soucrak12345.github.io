@@ -1,0 +1,15 @@
+[
+    {
+        "title": "Vision Quest English Grammer 47 例文テスト対策プリントを追加しました。",
+        "description": "Vision Quest English Grammer 47の、左側のページにある基本例文を日本語訳から書くテストの練習プリントを掲載しました。",
+        "imgSrc": "Assets/vision_quest_test.png",
+        "linkHref": "exam-docs/"
+    },
+    {
+        "title": "大阪府公立入試 C問題 予想テスト(数学) を追加しました。",
+        "description": "大阪府公立入試 C問題の形式で作った数学のテストです。難易度は本番のテストより少し簡単ですが、公立入試でよく出る考え方が多く入っているので、勉強にお役立てください。<br>※一部、解答が間違っているところがあります。また、使いまわしの問題などもあることを留意してください。",
+        "imgSrc": "Assets/kouritu-zukei.png",
+        "linkHref": "exam-docs/osaka-math.pdf",
+        "linkText": "PDFをダウンロード"
+    }
+]
