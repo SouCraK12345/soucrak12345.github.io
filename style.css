@@ -2,6 +2,7 @@
 
 body {
     margin: 0;
+    background: #f5f7fb;
     height: 100vh;
     overflow-x: hidden;
     /* overflow-y: auto; */
@@ -83,7 +84,7 @@ div.top {
 }
 
 .description {
-    max-width: 50%;
+    max-width: 45%;
 }
 
 .navigate {

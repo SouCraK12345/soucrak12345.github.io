@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>テスト対策プリント - なんざん</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=download,play_arrow" />
 </head>
+
 <body>
+    <div class="header">
+        <a href="../">なんざんホーム</a>
+    </div>
     <h1>テスト対策プリント</h1>
+    <h2>教科別にみる</h2>
+    <ul>
+        <li><a href="english/">英語</a></li>
+        <li><a href="math/">数学</a></li>
+        <li><a href="japanese/">国語</a></li>
+        <li><a href="science/">理科</a></li>
+        <li><a href="social-studies/">社会</a></li>
+    </ul>
+    <h2>英語</h2>
+    <h3>
+        <span class="nowrap">Vision Quest English Grammar 47</span>
+        <span class="nowrap">例文テスト対策プリント</span>
+    </h3>
+    <div class="description">
+        <div class="select-container"><select name="en-sample-test">
+            </select></div>
+        <a onclick="create('en-sample-test')" class="navigate"><span class="material-symbols-outlined play-icon">
+                download
+            </span>作成</a>
+    </div>
+    <p class="download-note">正しく表示されない場合、 <a
+            href="https://drive.google.com/drive/folders/1jvbNmX4rCXqgbe-VRV4KDBaodljANjMK?usp=sharing" target="_blank">Google ドライブ</a>
+        からダウンロードしてください。</p>
+    <h2>数学</h2>
+    <h2>国語</h2>
+    <h2>理科</h2>
+    <h2>社会</h2>
+    <div class="workspace"></div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.12.1/html2pdf.bundle.min.js"
+        integrity="sha512-D25Z8/1q2z65ZpJ3NzY6XiPZfwjhbv34OTQHDIZd+KPK+uWCovGt+fMkSzW8ArzCMFUgZt6Cdu7qoXNuy6a2GA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
 </html>
