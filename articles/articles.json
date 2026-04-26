@@ -3,7 +3,8 @@
         "title": "Vision Quest English Grammer 47 例文テスト対策プリントを追加しました。",
         "description": "Vision Quest English Grammer 47の、左側のページにある基本例文を日本語訳から書くテストの練習プリントを掲載しました。",
         "imgSrc": "Assets/vision_quest_test.png",
-        "linkHref": "exam-docs/"
+        "linkHref": "exam-docs/",
+        "linkText": ""
     },
     {
         "title": "大阪府公立入試 C問題 予想テスト(数学) を追加しました。",
@@ -11,5 +12,12 @@
         "imgSrc": "Assets/kouritu-zukei.png",
         "linkHref": "exam-docs/osaka-math.pdf",
         "linkText": "PDFをダウンロード"
+    },
+    {
+        "title": "「新版 意味から学ぶ 頻出漢字3000」漢字テスト対策プリント を追加しました。",
+        "description": "「新版 意味から学ぶ 頻出漢字3000」漢字テスト対策プリントの、熟語の漢字を平仮名から書くテストを掲載しました。",
+        "imgSrc": "Assets/ja-kanji-test.png",
+        "linkHref": "exam-docs/",
+        "linkText": ""
     }
 ]
