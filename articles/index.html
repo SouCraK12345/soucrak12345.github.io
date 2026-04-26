@@ -17,17 +17,12 @@
 
     <main class="page">
         <section class="hero">
-            <p class="eyebrow">Notes</p>
-            <h1>ノート</h1>
-            <p class="hero-copy">
-                A small archive of worksheets, math notes, and project-related write-ups.
-                Use search to narrow the list quickly.
-            </p>
+            <h1>ログ</h1>
 
             <div class="hero-tools">
                 <label class="search-box" for="article-search">
                     <span class="material-symbols-outlined">search</span>
-                    <input id="article-search" type="search" placeholder="Search articles">
+                    <input id="article-search" type="search" placeholder="検索">
                 </label>
                 <div class="hero-stats">
                     <div class="stat">
@@ -44,8 +39,7 @@
 
         <section class="article-section" aria-labelledby="article-list-heading">
             <div class="section-head">
-                <h2 id="article-list-heading">All articles</h2>
-                <p id="result-text">Loading articles...</p>
+                <p id="result-text">ログを読み込み中...</p>
             </div>
 
             <div id="article-list" class="article-grid" aria-live="polite"></div>
@@ -64,7 +58,7 @@
                             <h3></h3>
                             <p class="article-description"></p>
                             <span class="article-cta">
-                                Open article
+                                サイトを見る
                                 <span class="material-symbols-outlined">arrow_forward</span>
                             </span>
                         </div>
@@ -73,7 +67,7 @@
             </template>
 
             <div id="empty-state" class="empty-state" hidden>
-                No articles match this search.
+                検索条件に一致するノートが見つかりません。
             </div>
         </section>
     </main>

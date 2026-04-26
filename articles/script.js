@@ -40,7 +40,7 @@ function createArticleCard(article, index) {
     description.textContent = article.description || "";
     image.src = resolveAssetPath(article.imgSrc || "Assets/exam-docs.png");
     image.alt = article.title || "Article thumbnail";
-    cta.firstChild.textContent = `${article.linkText || "Open article"} `;
+    cta.firstChild.textContent = `${article.linkText || "サイトを見る"} `;
     card.style.animationDelay = `${index * 80}ms`;
 
     return fragment;
@@ -50,8 +50,8 @@ function updateSummary(visible) {
     articleCount.textContent = String(articles.length);
     visibleCount.textContent = String(visible.length);
     resultText.textContent = visible.length === articles.length
-        ? `Showing ${articles.length} article(s).`
-        : `Showing ${visible.length} filtered article(s).`;
+        ? ``
+        : `検索結果: ${visible.length} 件`;
     emptyState.hidden = visible.length !== 0;
 }
 

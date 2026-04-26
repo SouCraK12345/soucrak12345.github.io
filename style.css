@@ -5,7 +5,7 @@ body {
     background: #f5f7fb;
     height: 100vh;
     overflow-x: hidden;
-    /* overflow-y: auto; */
+    overflow-y: auto;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -15,6 +15,10 @@ h2 {
     color: #34495e;
     border-left: 5px solid #4a90e2;
     padding-left: 10px;
+}
+
+h2.link {
+    cursor: pointer;
 }
 
 h3 {
@@ -120,6 +124,18 @@ div.top {
 .article>img {
     width: 40%;
     object-fit: contain;
+}
+
+button.show-more {
+    border: 1px solid black;
+    background: #00000000;
+    color: black;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 20px;
+    width: stretch;
+    width: -moz-available;
+    width: -webkit-fill-available;
 }
 
 @media (max-width: 600px) {
