@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | soucrak12345.github.io</title>
+    <meta name="description" content="Article list for study notes and project write-ups.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward,article,menu,search" />
+    <link rel="icon" href="../favicon.ico">
+</head>
+
+<body>
+    <div class="header"></div>
+
+    <main class="page">
+        <section class="hero">
+            <p class="eyebrow">Notes</p>
+            <h1>ノート</h1>
+            <p class="hero-copy">
+                A small archive of worksheets, math notes, and project-related write-ups.
+                Use search to narrow the list quickly.
+            </p>
+
+            <div class="hero-tools">
+                <label class="search-box" for="article-search">
+                    <span class="material-symbols-outlined">search</span>
+                    <input id="article-search" type="search" placeholder="Search articles">
+                </label>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-label">Total</span>
+                        <strong id="article-count">0</strong>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Visible</span>
+                        <strong id="visible-count">0</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="article-section" aria-labelledby="article-list-heading">
+            <div class="section-head">
+                <h2 id="article-list-heading">All articles</h2>
+                <p id="result-text">Loading articles...</p>
+            </div>
+
+            <div id="article-list" class="article-grid" aria-live="polite"></div>
+
+            <template id="article-card-template">
+                <article class="article-card">
+                    <a class="article-link" href="#">
+                        <div class="article-media">
+                            <img src="" alt="">
+                        </div>
+                        <div class="article-body">
+                            <p class="article-kicker">
+                                <span class="material-symbols-outlined">article</span>
+                                Article
+                            </p>
+                            <h3></h3>
+                            <p class="article-description"></p>
+                            <span class="article-cta">
+                                Open article
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </span>
+                        </div>
+                    </a>
+                </article>
+            </template>
+
+            <div id="empty-state" class="empty-state" hidden>
+                No articles match this search.
+            </div>
+        </section>
+    </main>
+
+    <script src="../header.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
