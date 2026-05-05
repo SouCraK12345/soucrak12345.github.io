@@ -72,7 +72,73 @@ ja_kanji_test_select.addEventListener("click", async () => {
         .catch(error => console.log('error', error));
 });
 
-function create(name) {
+function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, function (char) {
+        return ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        })[char];
+    });
+}
+
+function formatFormula(formula) {
+    const safeFormula = escapeHtml(formula);
+    const polyatomicBodies = ['CH3COO', 'HCO3', 'NH4', 'H3O', 'NO3', 'CO3', 'SO4', 'PO4'];
+    const polyatomicBody = polyatomicBodies.find(body => safeFormula.startsWith(body));
+    let body, charge;
+
+    if (polyatomicBody) {
+        body = polyatomicBody;
+        charge = safeFormula.slice(polyatomicBody.length);
+    } else {
+        const chargeMatch = safeFormula.match(/(\d*[+-])$/);
+        charge = chargeMatch ? chargeMatch[1] : '';
+        body = charge ? safeFormula.slice(0, -charge.length) : safeFormula;
+    }
+
+    return body.replace(/(\d+)/g, '<sub>$1</sub>') + (charge ? `<sup>${charge}</sup>` : '');
+}
+
+function buildChemicalFormulaPrint(data) {
+    const title = '化学式テスト対策プリント';
+    const buildQuestion = (item, index, mode) => {
+        const prompt = mode === 'ja-to-formula' ? escapeHtml(item[1]) : formatFormula(item[0]);
+        const answerClass = mode === 'ja-to-formula' ? 'formula-answer' : 'name-answer';
+        return `
+            <div class="chemical-question">
+                <span class="chemical-num">${index + 1}</span>
+                <span class="chemical-prompt">${prompt}</span>
+                <span class="chemical-answer ${answerClass}"></span>
+            </div>`;
+    };
+
+    return `
+        <section class="chemical-print-sheet">
+            <div class="chemical-print-header">
+                <h1>${title}</h1>
+                <div class="chemical-name">名前：</div>
+            </div>
+            <div class="chemical-print-columns">
+                <section class="chemical-print-column">
+                    <h2>日本語から化学式を書く問題</h2>
+                    <div class="chemical-questions">
+                        ${data.map((item, index) => buildQuestion(item, index, 'ja-to-formula')).join('')}
+                    </div>
+                </section>
+                <section class="chemical-print-column">
+                    <h2>化学式から日本語を書く問題</h2>
+                    <div class="chemical-questions">
+                        ${data.map((item, index) => buildQuestion(item, index, 'formula-to-ja')).join('')}
+                    </div>
+                </section>
+            </div>
+        </section>`;
+}
+
+async function create(name) {
     let print_title, html;
     if (name === "en-sample-test") {
         print_title = `${en_sample_test_data.lessonTitles[en_sample_test_select.value]} 例文テスト対策プリント`;
@@ -91,7 +157,13 @@ function create(name) {
 `
         });
         html += ``;
+    } else if (name === "chemical-formula") {
+        print_title = '化学式テスト対策プリント';
+        const response = await fetch('chemical-formula.json');
+        const data = await response.json();
+        html = buildChemicalFormulaPrint(data);
     }
+    if (!html) return;
     workspace.innerHTML = html;
     // pcならprint()、スマホならhtml2pdf()でPDF化
 
@@ -100,8 +172,8 @@ function create(name) {
     } else {
         workspace.style.display = "block"; // workspaceを表示
         html2pdf().set({
-            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
-            margin: 10, // mm単位（上下左右すべて）
+            pagebreak: { mode: name === "chemical-formula" ? ['css', 'legacy'] : ['avoid-all', 'css', 'legacy'] },
+            margin: name === "chemical-formula" ? 5 : 10, // mm単位（上下左右すべて）
             filename: `${print_title}.pdf`,
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2 },

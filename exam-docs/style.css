@@ -181,8 +181,8 @@ th {
 
 /* 印刷時 */
 @media print {
-    body * {
-        visibility: hidden;
+    body > :not(.workspace) {
+        display: none !important;
     }
 
     .workspace,
@@ -192,13 +192,120 @@ th {
 
     .workspace {
         display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: static;
+        top: auto;
+        left: auto;
     }
 }
 
 @page {
     size: A4;
-    margin: 10mm;
+    margin: 5mm;
+}
+/* 化学式テスト印刷 */
+.chemical-print-sheet {
+    box-sizing: border-box;
+    padding: 0;
+    font-size: 12.5px;
+    line-height: 1.1;
+}
+
+.chemical-print-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 6mm;
+    border-bottom: 1px solid #222;
+    margin-bottom: 2mm;
+    padding-bottom: 1mm;
+}
+
+.chemical-print-header h1 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.15;
+}
+
+.chemical-name {
+    flex: 0 0 42mm;
+    border-bottom: 1px solid #222;
+    padding-bottom: 1mm;
+    font-size: 12px;
+}
+
+.chemical-print-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm;
+}
+
+.chemical-print-column:first-child {
+    padding-right: 4mm;
+    border-right: 1px solid #888;
+}
+
+.chemical-print-column h2 {
+    margin: 0 0 1.5mm;
+    border-left: 3px solid #222;
+    padding-left: 2mm;
+    color: #111;
+    font-size: 12.5px;
+    line-height: 1.15;
+}
+
+.chemical-questions {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0.25mm;
+}
+
+.chemical-question {
+    display: grid;
+    grid-template-columns: 5mm minmax(31mm, 1fr) minmax(23mm, 32mm);
+    align-items: center;
+    gap: 1.5mm;
+    min-height: 8.75mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.chemical-num {
+    text-align: right;
+    font-size: 10px;
+}
+
+.chemical-prompt {
+    overflow-wrap: anywhere;
+}
+
+.chemical-prompt sub,
+.chemical-prompt sup {
+    font-size: 70%;
+    line-height: 0;
+}
+
+.chemical-answer {
+    display: block;
+    height: 7.25mm;
+    border-bottom: 1px solid #222;
+}
+
+.name-answer {
+    min-width: 28mm;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        line-height: 1.1;
+    }
+
+    .workspace {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0;
+        background: #fff;
+    }
 }
