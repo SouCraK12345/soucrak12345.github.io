@@ -78,7 +78,7 @@ async function loadArticles() {
             throw new Error(`HTTP ${response.status}`);
         }
         const data = await response.json();
-        articles = Array.isArray(data) ? data : [];
+        articles = Array.isArray(data) ? [...data].reverse() : [];
         renderArticles();
     } catch (error) {
         articleList.innerHTML = "";
