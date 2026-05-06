@@ -1,7 +1,7 @@
 // --- スムーズスクロール機能 ---
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href.length > 1 && document.querySelector(href)) {
                 e.preventDefault();
@@ -56,6 +56,7 @@ en_sample_test_select.addEventListener("change", () => {
 let kanji_test_file_names;
 const ja_kanji_test_select = document.querySelector('select[name="ja-kanji-test"]');
 ja_kanji_test_select.addEventListener("click", async () => {
+    if (kanji_test_file_names) { return; }
     fetch("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=getAllFiles&reqFolder=ja_kanji_test", requestOptions)
         .then(response => response.json())
         .then(result => {

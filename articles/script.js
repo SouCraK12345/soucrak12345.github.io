@@ -28,6 +28,7 @@ function resolveLinkPath(path) {
 
 function createArticleCard(article, index) {
     const fragment = articleTemplate.content.cloneNode(true);
+    const article_media = fragment.querySelector(".article-media");
     const card = fragment.querySelector(".article-card");
     const link = fragment.querySelector(".article-link");
     const image = fragment.querySelector("img");
@@ -39,6 +40,9 @@ function createArticleCard(article, index) {
     title.textContent = article.title || "Untitled";
     description.textContent = article.description || "";
     image.src = resolveAssetPath(article.imgSrc || "Assets/exam-docs.png");
+    if(!article.imgSrc){
+        article_media.style.display = "none";
+    }
     image.alt = article.title || "Article thumbnail";
     cta.firstChild.textContent = `${article.linkText || "サイトを見る"} `;
     card.style.animationDelay = `${index * 80}ms`;
