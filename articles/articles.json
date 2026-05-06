@@ -19,5 +19,12 @@
         "imgSrc": "Assets/ja-kanji-test.png",
         "linkHref": "exam-docs/",
         "linkText": ""
+    },
+    {
+        "title": "「化学基礎」イオン式テスト対策プリント を追加しました。",
+        "description": "日本語から化学式を書く問題と、化学式から日本語に戻す問題の二種類を用意しました。",
+        "imgSrc": "Assets/kagaku-shiki.png",
+        "linkHref": "exam-docs/",
+        "linkText": ""
     }
 ]
