@@ -52,6 +52,28 @@ en_sample_test_select.addEventListener("change", () => {
     document.querySelector("div.description > a").style.pointerEvents = "auto";
 });
 
+// 単語テストのデータ読み込み
+let crown_tango_test_data;
+const crown_tango_test_select = document.querySelector('select[name="crown-tango-test"]');
+crown_tango_test_select.addEventListener("click", async () => {
+    if (crown_tango_test_data) return;
+    const response = await fetch("crown-tango.json");
+    const data = await response.json();
+    crown_tango_test_data = data;
+    let count = 0;
+    for (var i in data) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        crown_tango_test_select.appendChild(option);
+        count++;
+    }
+});
+
+en_sample_test_select.addEventListener("change", () => {
+    document.querySelector("div.description > a").style.pointerEvents = "auto";
+});
+
 // 漢字テストのデータ読み込み
 let kanji_test_file_names;
 const ja_kanji_test_select = document.querySelector('select[name="ja-kanji-test"]');
@@ -158,6 +180,45 @@ async function create(name) {
 `
         });
         html += ``;
+    } else if (name === "crown-tango-test") {
+        print_title = `Crown ${crown_tango_test_select.value} 単語テスト`;
+        console.log(print_title);
+        workspace.innerHTML = `<h1>${print_title}</h1>`;
+        let data = crown_tango_test_data[crown_tango_test_select.value];
+        let container = document.createElement("div");
+        const ul = document.createElement("ol");
+        ul.style.columnCount = 2;
+        data.forEach((item, index) => {
+            const container = document.createElement("div");
+            container.style.breakInside = "avoid";
+            const li = document.createElement("li");
+            li.textContent = item[1];
+            const underline_container = document.createElement("div");
+            underline_container.style.width = "40vw";
+            underline_container.style.height = "50px";
+            underline_container.style.marginBottom = "10px"
+            underline_container.style.borderBottom = "2px solid black";
+            container.appendChild(li);
+            container.appendChild(underline_container);
+            ul.appendChild(container);
+        });
+        workspace.appendChild(ul);
+        let answer_container = document.createElement("div");
+        answer_container.style.breakInside = "avoid";
+        let break_after_div = document.createElement("h2");
+        break_after_div.textContent = "解答";
+        answer_container.appendChild(break_after_div);
+        let answer_div = document.createElement("ol");
+        answer_div.style.columnCount = 4;
+        data.forEach((item, index) => {
+            const li = document.createElement("li");
+            li.textContent = item[0];
+            li.style.marginBottom = "10px";
+            answer_div.appendChild(li);
+        });
+        answer_container.appendChild(answer_div);
+        workspace.appendChild(answer_container);
+        html = workspace.innerHTML;
     } else if (name === "chemical-formula") {
         print_title = '化学式テスト対策プリント';
         const response = await fetch('chemical-formula.json');

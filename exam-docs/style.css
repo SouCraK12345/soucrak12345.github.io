@@ -47,7 +47,7 @@ h3 {
 }
 
 /* リスト */
-ul {
+ul.subject-container {
     list-style: none;
     padding: 0;
     display: grid;
@@ -181,7 +181,7 @@ th {
 
 /* 印刷時 */
 @media print {
-    body > :not(.workspace) {
+    body> :not(.workspace) {
         display: none !important;
     }
 
@@ -202,6 +202,7 @@ th {
     size: A4;
     margin: 5mm;
 }
+
 /* 化学式テスト印刷 */
 .chemical-print-sheet {
     box-sizing: border-box;

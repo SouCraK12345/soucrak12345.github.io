@@ -33,5 +33,12 @@
         "imgSrc": "",
         "linkHref": "exam-docs/",
         "linkText": ""
+    },
+    {
+        "title": "「Crown Notebook」 単語 書き取り問題対策プリントを追加しました。",
+        "description": "Crown Notebookの単語の書き取り問題を作成しました。",
+        "imgSrc": "Assets/crown-tango-test.png",
+        "linkHref": "exam-docs/",
+        "linkText": ""
     }
 ]
