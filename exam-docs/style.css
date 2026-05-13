@@ -295,6 +295,27 @@ th {
     min-width: 28mm;
 }
 
+.number-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.number-container label {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.number-container input {
+    box-sizing: border-box;
+    width: 88px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+}
+
 @media print {
     body {
         margin: 0;

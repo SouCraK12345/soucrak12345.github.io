@@ -40,5 +40,12 @@
         "imgSrc": "Assets/crown-tango-test.png",
         "linkHref": "exam-docs/",
         "linkText": ""
+    },
+    {
+        "title": "「速読英単語」単語テスト を追加しました。",
+        "description": "「速読英単語」単語テスト を追加しました。\n例文の空欄補充制です。",
+        "imgSrc": "Assets/sokutan.png",
+        "linkHref": "exam-docs/",
+        "linkText": ""
     }
 ]

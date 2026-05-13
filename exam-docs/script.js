@@ -74,6 +74,10 @@ en_sample_test_select.addEventListener("change", () => {
     document.querySelector("div.description > a").style.pointerEvents = "auto";
 });
 
+// 速読英単語テストの入力
+const sokutan_start_input = document.querySelector('input[name="sokutan-start"]');
+const sokutan_end_input = document.querySelector('input[name="sokutan-end"]');
+
 // 漢字テストのデータ読み込み
 let kanji_test_file_names;
 const ja_kanji_test_select = document.querySelector('select[name="ja-kanji-test"]');
@@ -94,6 +98,32 @@ ja_kanji_test_select.addEventListener("click", async () => {
         })
         .catch(error => console.log('error', error));
 });
+
+// 速読英単語 データ
+async function generateSokutanData(start, end) {
+    const response = await fetch("sokutan.json");
+    const data = await response.json();
+    if (
+        start < 1 ||
+        end > data.AllQuestList.length ||
+        start > end
+    ) {
+        return alert(
+            `start/end が範囲外です: start=${start}, end=${end}, length=${data.AllQuestList.length}`
+        );
+    }
+    const picked_data = data.AllQuestList.slice(start - 1, end).map(i => [i.qt08[0].Quest_sentence.replace("\n", "<br>"), i.qt08[0].AnsStr]);
+    let return_data = `<h1>速読英単語 ${start} ~ ${end} 単語テスト</h1><ol>`;
+    picked_data.forEach((item, index) => {
+        return_data += `<li style="padding: 10px;">${item[0]}</li>`;
+    });
+    return_data += "</ol><h2>答え</h2><ol style='column-count: 5'>";
+    picked_data.forEach((item, index) => {
+        return_data += `<li style="padding: 5px;">${item[1]}</li>`;
+    });
+    return_data += "</ol>";
+    return return_data
+}
 
 function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, function (char) {
@@ -224,6 +254,11 @@ async function create(name) {
         const response = await fetch('chemical-formula.json');
         const data = await response.json();
         html = buildChemicalFormulaPrint(data);
+    } else if (name == "sokutan") {
+        const start = Number(sokutan_start_input.value);
+        const end = Number(sokutan_end_input.value);
+        print_title = `Sokutan ${start} - ${end}`;
+        html = await generateSokutanData(start, end);
     }
     if (!html) return;
     workspace.innerHTML = html;
