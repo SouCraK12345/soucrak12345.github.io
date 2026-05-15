@@ -37,6 +37,8 @@ function showLoadingMessage() {
     if (!indicator) {
         indicator = document.createElement('div');
         indicator.className = 'loading-indicator';
+        indicator.setAttribute('role', 'status');
+        indicator.setAttribute('aria-live', 'polite');
         indicator.textContent = 'データを読み込んでいます…';
         document.body.appendChild(indicator);
     }
@@ -300,8 +302,7 @@ async function create(name) {
         html = workspace.innerHTML;
     } else if (name === "chemical-formula") {
         print_title = '化学式テスト対策プリント';
-        const response = await fetch('chemical-formula.json');
-        const data = await response.json();
+        const data = await fetchJsonWithLoading('chemical-formula.json');
         html = buildChemicalFormulaPrint(data);
     } else if (name == "sokutan") {
         const start = Number(sokutan_start_input.value);
@@ -341,7 +342,7 @@ function __download(name) {
         if (!math_sub_text.value) return;
         file_name = sub_text_file_names[math_sub_text.value];
     }
-    fetch("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=downloadURL&reqFolder=" + name + "&filename=" + encodeURIComponent(file_name), requestOptions)
+    fetchJsonWithLoading("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=downloadURL&reqFolder=" + name + "&filename=" + encodeURIComponent(file_name), requestOptions)
         .then(response => response.text())
         .then(result => location.href = result)
         .catch(error => console.log('error', error));
