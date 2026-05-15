@@ -331,3 +331,23 @@ th {
         background: #fff;
     }
 }
+
+.loading-indicator {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 62, 80, 0.96);
+    color: #fff;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+}
+
+.loading-indicator.is-visible {
+    opacity: 1;
+}

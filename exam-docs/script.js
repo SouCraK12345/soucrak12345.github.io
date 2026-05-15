@@ -30,13 +30,47 @@ function device() {
 
 const workspace = document.querySelector(".workspace");
 
+let loadingCount = 0;
+
+function showLoadingMessage() {
+    let indicator = document.querySelector('.loading-indicator');
+    if (!indicator) {
+        indicator = document.createElement('div');
+        indicator.className = 'loading-indicator';
+        indicator.setAttribute('role', 'status');
+        indicator.setAttribute('aria-live', 'polite');
+        indicator.textContent = 'データを読み込んでいます…';
+        document.body.appendChild(indicator);
+    }
+    loadingCount += 1;
+    indicator.classList.add('is-visible');
+}
+
+function hideLoadingMessage() {
+    const indicator = document.querySelector('.loading-indicator');
+    if (!indicator) return;
+    loadingCount = Math.max(0, loadingCount - 1);
+    if (loadingCount === 0) {
+        indicator.classList.remove('is-visible');
+    }
+}
+
+async function fetchJsonWithLoading(url, options) {
+    showLoadingMessage();
+    try {
+        const response = await fetch(url, options);
+        return await response.json();
+    } finally {
+        hideLoadingMessage();
+    }
+}
+
 // 例文テストのデータ読み込み
 let en_sample_test_data;
 const en_sample_test_select = document.querySelector('select[name="en-sample-test"]');
 en_sample_test_select.addEventListener("click", async () => {
     if (en_sample_test_data) return;
-    const response = await fetch("en_sample_test.json");
-    const data = await response.json();
+    const data = await fetchJsonWithLoading("en_sample_test.json");
     en_sample_test_data = data;
     let count = 0;
     for (var i of data.lessonTitles) {
@@ -57,8 +91,7 @@ let crown_tango_test_data;
 const crown_tango_test_select = document.querySelector('select[name="crown-tango-test"]');
 crown_tango_test_select.addEventListener("click", async () => {
     if (crown_tango_test_data) return;
-    const response = await fetch("crown-tango.json");
-    const data = await response.json();
+    const data = await fetchJsonWithLoading("crown-tango.json");
     crown_tango_test_data = data;
     let count = 0;
     for (var i in data) {
@@ -79,8 +112,7 @@ let kanji_test_file_names;
 const ja_kanji_test_select = document.querySelector('select[name="ja-kanji-test"]');
 ja_kanji_test_select.addEventListener("click", async () => {
     if (kanji_test_file_names) { return; }
-    fetch("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=getAllFiles&reqFolder=ja_kanji_test", requestOptions)
-        .then(response => response.json())
+    fetchJsonWithLoading("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=getAllFiles&reqFolder=ja_kanji_test", requestOptions)
         .then(result => {
             kanji_test_file_names = result;
             let count = 0;
@@ -100,8 +132,7 @@ let sub_text_file_names;
 const math_sub_text = document.querySelector('select[name="math-sub-text"]');
 math_sub_text.addEventListener("click", async () => {
     if (sub_text_file_names) { return; }
-    fetch("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=getAllFiles&reqFolder=math-sub-text", requestOptions)
-        .then(response => response.json())
+    fetchJsonWithLoading("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=getAllFiles&reqFolder=math-sub-text", requestOptions)
         .then(result => {
             sub_text_file_names = result;
             let count = 0;
@@ -122,8 +153,7 @@ const sokutan_end_input = document.querySelector('input[name="sokutan-end"]');
 
 // 速読英単語 データ
 async function generateSokutanData(start, end) {
-    const response = await fetch("sokutan.json");
-    const data = await response.json();
+    const data = await fetchJsonWithLoading("sokutan.json");
     if (
         start < 1 ||
         end > data.AllQuestList.length ||
@@ -272,8 +302,7 @@ async function create(name) {
         html = workspace.innerHTML;
     } else if (name === "chemical-formula") {
         print_title = '化学式テスト対策プリント';
-        const response = await fetch('chemical-formula.json');
-        const data = await response.json();
+        const data = await fetchJsonWithLoading('chemical-formula.json');
         html = buildChemicalFormulaPrint(data);
     } else if (name == "sokutan") {
         const start = Number(sokutan_start_input.value);
@@ -313,7 +342,7 @@ function __download(name) {
         if (!math_sub_text.value) return;
         file_name = sub_text_file_names[math_sub_text.value];
     }
-    fetch("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=downloadURL&reqFolder=" + name + "&filename=" + encodeURIComponent(file_name), requestOptions)
+    fetchJsonWithLoading("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=downloadURL&reqFolder=" + name + "&filename=" + encodeURIComponent(file_name), requestOptions)
         .then(response => response.text())
         .then(result => location.href = result)
         .catch(error => console.log('error', error));
