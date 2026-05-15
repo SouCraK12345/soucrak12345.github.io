@@ -74,10 +74,6 @@ en_sample_test_select.addEventListener("change", () => {
     document.querySelector("div.description > a").style.pointerEvents = "auto";
 });
 
-// 速読英単語テストの入力
-const sokutan_start_input = document.querySelector('input[name="sokutan-start"]');
-const sokutan_end_input = document.querySelector('input[name="sokutan-end"]');
-
 // 漢字テストのデータ読み込み
 let kanji_test_file_names;
 const ja_kanji_test_select = document.querySelector('select[name="ja-kanji-test"]');
@@ -98,6 +94,31 @@ ja_kanji_test_select.addEventListener("click", async () => {
         })
         .catch(error => console.log('error', error));
 });
+
+// 数学補助テキストのデータ読み込み
+let sub_text_file_names;
+const math_sub_text = document.querySelector('select[name="math-sub-text"]');
+math_sub_text.addEventListener("click", async () => {
+    if (sub_text_file_names) { return; }
+    fetch("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=getAllFiles&reqFolder=math-sub-text", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            sub_text_file_names = result;
+            let count = 0;
+            for (var i of sub_text_file_names) {
+                const option = document.createElement("option");
+                option.value = count;
+                option.textContent = i;
+                math_sub_text.appendChild(option);
+                count++;
+            }
+        })
+        .catch(error => console.log('error', error));
+});
+
+// 速読英単語テストの入力
+const sokutan_start_input = document.querySelector('input[name="sokutan-start"]');
+const sokutan_end_input = document.querySelector('input[name="sokutan-end"]');
 
 // 速読英単語 データ
 async function generateSokutanData(start, end) {
@@ -283,12 +304,17 @@ async function create(name) {
 }
 
 function __download(name) {
+    let file_name;
     if (name == "ja-kanji-test") {
         if (!ja_kanji_test_select.value) return;
-        const file_name = kanji_test_file_names[ja_kanji_test_select.value];
-        fetch("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=downloadURL&reqFolder=ja_kanji_test&filename=" + encodeURIComponent(file_name), requestOptions)
-            .then(response => response.text())
-            .then(result => location.href = result)
-            .catch(error => console.log('error', error));
+        file_name = kanji_test_file_names[ja_kanji_test_select.value];
     }
+    if (name == "math-sub-text") {
+        if (!math_sub_text.value) return;
+        file_name = sub_text_file_names[math_sub_text.value];
+    }
+    fetch("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=downloadURL&reqFolder=" + name + "&filename=" + encodeURIComponent(file_name), requestOptions)
+        .then(response => response.text())
+        .then(result => location.href = result)
+        .catch(error => console.log('error', error));
 }
