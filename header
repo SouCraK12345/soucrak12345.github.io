@@ -45,12 +45,16 @@
     }
 
     .menu-container {
-        /* display: none; */
+        display: none;
         position: absolute;
         right: 20px;
     }
 
     @media (max-width: 600px) {
+				.menu-container {
+						display: block;
+				}
+
         .menu {
             display: block;
         }
