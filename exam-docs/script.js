@@ -261,6 +261,22 @@ async function create(name) {
 `
         });
         html += ``;
+    } else if (name === "en-sample-test-answer") {
+        print_title = `${en_sample_test_data.lessonTitles[en_sample_test_select.value]} 例文テスト解答プリント`;
+        let data = en_sample_test_data.englishSentencesData[en_sample_test_select.value];
+        html = `<h1>${print_title}</h1>`;
+        data.forEach((item, index) => {
+            html += `
+            <table border="1">
+  <tr>
+    <td class="s_num">${index + 1}</td>
+    <td class="s_main">
+      <div class="sample_container">${item[1]}<br><strong>解答:</strong> ${item[0]}</div>
+    </td>
+  </tr>
+  </table>
+`
+        });
     } else if (name === "crown-tango-test") {
         print_title = `Crown ${crown_tango_test_select.value} 単語テスト`;
         console.log(print_title);
