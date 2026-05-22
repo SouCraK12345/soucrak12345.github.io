@@ -7,7 +7,15 @@
         "Lesson 5: 時制 2",
         "Lesson 6: 完了形 1",
         "Lesson 7: 完了形 2",
-        "Lesson 8: 助動詞 1"
+        "Lesson 8: 助動詞 1",
+          "Lesson 9 助動詞 2",
+  "Lesson 10 助動詞 3",
+  "Lesson 11 受動態 1",
+  "Lesson 12 受動態 2",
+  "Lesson 13 不定詞 1",
+  "Lesson 14 不定詞 2",
+  "Lesson 15 不定詞 3",
+  "Lesson 16 不定詞 4"
     ],
     "englishSentencesData": [
         [
@@ -357,6 +365,159 @@
                 "He must be tired.",
                 "彼は疲れているに違いありません。"
             ]
-        ]
+        ],
+        // Lesson 9: 助動詞 2
+  [
+    ["You should [ought to] be more careful.", "あなた（方）はもっと注意すべきだ。"],
+    ["They should [ought to] arrive here soon.", "彼らはもうすぐここに着くはずだ。"],
+    ["You had better see a doctor.", "医者に診てもらいなさい。"],
+    ["You had better not go to school today.", "今日は学校に行ってはいけません。"],
+    ["It will rain this afternoon.", "午後には雨が降るだろう。"],
+    ["I'll do my homework after dinner.", "夕食後に宿題をするつもりだ。"],
+    ["The door wouldn't open.", "ドアがどうしても開かなかった。"],
+    ["My little sister won't eat vegetables.", "妹は野菜をどうしても食べようとしない。"],
+    ["\"Will [Would] you open the door?\" \"Sure.\"", "「ドアを開けてくれますか［いただけますか］」「いいですよ」"],
+    ["Won't you stay with us for a night?", "一晩うちに泊まっていきませんか。"],
+    ["They will be on the island by now.", "彼らは今ごろ島にいるだろう。"],
+    ["She would be in bed by now.", "彼女は今ごろベッドにいる（寝ている）だろう。"],
+    ["Babies will cry.", "赤ん坊は泣くものだ。"],
+    ["We would often go to the movies.", "私たちはよく映画に見に行ったものだ。"],
+    ["I used to walk to school with my friends.", "私は（以前はよく）友達と一緒に歩いて登校したものだ。"],
+    ["There used to be a theater in the town.", "（以前は）町に映画館があった。"],
+    ["\"Shall I open the window?\" \"Yes, please.\" / \"No, thanks.\"", "「窓を開けましょうか」「ええ、お願いします」「いいえ、結構です」"],
+    ["\"Shall we go to a movie tomorrow?\" \"Yes, let's.\" / \"No, let's not.\"", "「明日映画に行きませんか」「ええ、そうしましょう」「いいえ、よしておきましょう」"]
+  ],
+
+  // Lesson 10: 助動詞 3
+  [
+    ["He must have had a good rest.", "彼は十分に休んだに違いない。"],
+    ["I may [might] have left the key at home.", "私は家に鍵を置き忘れたかもしれない。"],
+    ["She can't [couldn't] have made such a mistake.", "彼女がそんな間違いをしたはずがない。"],
+    ["The accident could have been much worse.", "事故はもっとひどいことになった可能性がある。"],
+    ["Can [Could] my sister have done it?", "私の姉［妹］がそれをしたということがあるだろうか。"],
+    ["He should [ought to] have arrived home by now.", "彼は今ごろ家に着いているはずだ。"],
+    ["He could have received treatment.", "彼は治療を受けることができたのに（しなかった）。"],
+    ["I should [ought to] have taken his advice.", "彼の助言を聞くべきだったのに（しなかった）。"],
+    ["We needn't have hurried.", "私たちは急ぐ必要はなかったのに（急いでしまった）。"],
+    ["I would like to make a reservation.", "予約をしたいのですが。"],
+    ["\"Would you like to join us?\" \"Yes, I'd like that.\" / \"Sorry, I can't.\"", "「私たちに加わりませんか」「ええ、喜んで」「すみません、行けません」"],
+    ["I would rather stay home than go out.", "外出するよりはむしろ家にいたい。"],
+    ["I would rather not go out today.", "今日はどちらかと言えば外出たくない。"],
+    ["He may [might] well win.", "彼はおそらく勝つだろう。／彼が勝つのももっともだ。"],
+    ["You may well be angry.", "君が怒るのももっともだ。"],
+    ["We may [might] as well go in the rain. It will never stop.", "雨の中を行くほうがましだ。どうせやまないのだから。"],
+    ["You might as well throw your money away as spend it on such a thing.", "そんなことにお金を使うくらいなら、捨ててしまうほうがましだ。"],
+    ["You only have to sit quietly.", "ただ静かに座っていさえすればよい。"],
+    ["You cannot be too careful when you drive.", "運転するときは、いくら注意してもしすぎることはない。"],
+    ["I cannot help feeling sorry for her.", "彼女を気の毒に思わずにはいられない。／思わざるを得ない。"],
+    ["I cannot help but feel sorry for her.", "彼女を気の毒に思わずにはいられない。"]
+  ],
+
+  // Lesson 11: 受動態 1
+  [
+    ["This hall was designed by a famous artist.", "このホールは有名な芸術家によって設計された。"],
+    ["German is spoken in Austria.", "オーストリアではドイツ語が話されている。"],
+    ["Mail is delivered every day.", "郵便物は毎日配達される。"],
+    ["This bridge was built in 1988.", "この橋は1988年に建てられた。"],
+    ["We were not invited to the party.", "私たちはそのパーティーに招待されなかった。"],
+    ["Were you invited to the party?", "あなたはそのパーティーに招待されましたか。"],
+    ["Where was the party held?", "パーティーはどこで開かれましたか。"],
+    ["Who was invited to the party?", "誰がそのパーティーに招待されましたか。"],
+    ["Who was Norwegian Wood written by?", "『ノルウェイの森』は誰によって書かれましたか。"],
+    ["By whom was Norwegian Wood written?", "『ノルウェイの森』は誰によって書かれましたか。"],
+    ["This essay must be finished by tomorrow.", "このエッセイは明日までに終わらせなければならない。"],
+    ["Japan and the Asian Continent used to be connected by land.", "日本とアジア大陸はかつて陸続きでつながっていた。"],
+    ["His new movie will be released in May.", "彼の新しい映画は5月に公開されるだろう。"],
+    ["A new building is being built on the corner.", "新しい建物が角のところで建設中である。"],
+    ["The robot was being made at that time.", "そのロボットはその当時、作られているところだった。"],
+    ["This room will be being used at this time tomorrow.", "明日のこの時間、この部屋は使われているところだろう。"],
+    ["Don't touch the wall. It has just been painted.", "壁に触らないでください。塗りたてです（たった今塗られたところです）。"],
+    ["The TV had been repaired when I came home.", "私が家に帰ったとき、テレビはすでに修理されていた。"],
+    ["The tickets will have been sold out by the time I get there.", "私がそこに着くまでに、チケットは売り切れてしまっているだろう。"]
+  ],
+
+  // Lesson 12: 受動態 2
+  [
+    ["Mary was given a gold medal.", "メアリーは金メダルを与えられた。"],
+    ["The gold medal was given to Mary.", "金メダルがメアリーに与えられた。"],
+    ["This bag was bought for me by my grandmother.", "このバッグは祖母が私のために買ってくれた。"],
+    ["The baby was named Catherine by her parents.", "その赤ん坊は両親にキャサリンと名付けられた。"],
+    ["His room is kept clean by him.", "彼の部屋は彼によってきれいに保たれている。"],
+    ["It is said (that) he is very rich.", "彼はとても金持ちだと言われている。"],
+    ["He is said to be very rich.", "彼はとても金持ちだと言われている。"],
+    ["I was spoken to by a foreigner this morning.", "今朝、私は外国人に話しかけられた。"],
+    ["The road is covered with snow.", "道路は雪で覆われている。"],
+    ["We were surprised at the news.", "私たちはそのニュースに驚いた。"],
+    ["He was injured in last night's game.", "彼は昨夜の試合で負傷した。"],
+    ["She is married to a colleague.", "彼女は同僚と結婚している。"]
+  ],
+
+  // Lesson 13: 不定詞 1
+  [
+    ["It's important to get enough sleep.", "十分な睡眠をとることが重要だ。"],
+    ["Her dream is to be a singer.", "彼女の夢は歌手になることだ。"],
+    ["I hope to go to university.", "私は大学に行くことを希望している。"],
+    ["I found it easy to book a hotel online.", "私はオンラインでホテルを予約することが簡単だとわかった。"],
+    ["Luckily, he had friends to help him.", "幸運なことに、彼には助けてくれる友達がいた。"],
+    ["I have a lot of things to do today.", "私は今日、すべきことがたくさんある。"],
+    ["Bring a notebook and something to write with.", "ノートと書くもの（ペンなど）を持ってきなさい。"],
+    ["Bring something to write on.", "（その上に）書くもの（メモ用紙など）を持ってきなさい。"],
+    ["I'm looking for something to write about.", "私は書くためのネタ（書くこと）を探している。"],
+    ["I made a promise to go to the movies with her.", "私は彼女と一緒に映画に行く約束をした。"],
+    ["I got up early to catch the 6:30 train.", "私は6時30分の電車に乗るために早起きした。"],
+    ["I'm glad to see you.", "あなたにお会いできてうれしいです。"],
+    ["He must be clever to answer that question.", "あの質問に答えるなんて、彼は賢いに違いない。"],
+    ["He woke up to find himself in the hospital.", "彼は目を覚ますと、自分が病院にいることに気づいた。"],
+    ["We left early in order not to miss the train.", "私たちは電車に乗り遅れないように早く出発した。"]
+  ],
+
+  // Lesson 14: 不定詞 2
+  [
+    ["It is dangerous for the children to stay here.", "子どもたちがここに留まるのは危険だ。"],
+    ["It was kind of you to help me.", "手伝ってくれてありがとう（手伝ってくれるなんてあなたは親切だった）。"],
+    ["I want you to come to tomorrow's party.", "私はあなたに明日のパーティーに来てほしい。"],
+    ["My parents won't allow me to study abroad.", "両親は私が留学するのを許そうとしない。"],
+    ["He asked me to save a seat for him.", "彼は私に席を確保しておくよう頼んだ。"],
+    ["She told me not to be late.", "彼女は私に遅れないようにと言った。"],
+    ["My mother made me clean my room.", "母は私に部屋の掃除をさせた（強制）。"],
+    ["I had the porter carry my baggage.", "私はポーターに荷物を運んでもらった。"],
+    ["My father let me go to the movies.", "父は私が映画に行くのを許してくれた。"],
+    ["Let me explain.", "私に説明させてください（私が説明しましょう）。"],
+    ["We'll get our son to stop playing games on his smartphone.", "私たちは息子にスマホでゲームをやるのをやめさせる（説得して〜してもらう）。"],
+    ["I saw the man get out of the car.", "私はその男が車から降りるのを見た。"]
+  ],
+
+  // Lesson 15: 不定詞 3
+  [
+    ["I don't know what to do.", "何をすべきかわからない。"],
+    ["Could you tell me which bus to take?", "どちらのバスに乗るべきか教えていただけますか。"],
+    ["He seems to be ill.", "彼は病気であるようだ（今病気だと今思われている）。"],
+    ["He seemed to be ill.", "彼は病気であるようだった（その時病気だとその時思われた）。"],
+    ["He seems to have been ill.", "彼は（以前）病気だったようだ（以前病気だったと今思われている）。"],
+    ["He seemed to have been ill.", "彼は（それ以前に）病気だったようだった（それ以前に病気だったとその時思われた）。"],
+    ["She seems to be enjoying her holiday.", "彼女は休日を楽しんでいるようだ。"],
+    ["The girl appeared to have been waiting for more than two hours.", "その少女は2時間以上待っていたようだった。"],
+    ["Children need to be accompanied by an adult.", "子どもは成人の同伴が必要である。"],
+    ["The stone seems to have been used in the sixth century.", "その石は6世紀に使われていたようだ。"]
+  ],
+
+  // Lesson 16: 不定詞 4
+  [
+    ["The problem is easy to solve.", "その問題は解くのが簡単だ。"],
+    ["I'm ready to leave.", "出発する準備はできている。"],
+    ["I managed to get two tickets for the concert.", "なんとかそのコンサートのチケットを2枚手に入れることができた。"],
+    ["Please come with us if you'd like to.", "よろしければ、私たちと一緒に来てください。"],
+    ["The President is to visit Kyoto today.", "大統領は今日、京都を訪問する予定だ。"],
+    ["To tell (you) the truth, I woke up late this morning.", "実を言うと、私は今朝寝坊した。"],
+    ["I'm too tired to walk.", "私はあまりにも疲れていて歩けない（歩くには疲れすぎている）。"],
+    ["I'm so tired that I can't walk.", "私はとても疲れているので歩けない。"],
+    ["He is smart enough to solve the puzzle.", "彼はそのパズルを解くほど十分賢い（十分賢いのでパズルを解ける）。"],
+    ["He is so smart that he can solve the puzzle.", "彼はとても賢いのでそのパズルを解くことができる。"],
+    ["I'm not so foolish as to believe his story.", "私は彼の話を信じるほど愚かではない。"],
+    ["He was so careless as to leave the door open.", "彼はドアを開けっぱなしにするほど不注意だった（とても不注意だったのでドアを開けっぱなしにした）。"],
+    ["He was so careless that he left the door open.", "彼はとても不注意だったのでドアを開けっぱなしにした。"],
+    ["He was careless enough to leave the door open.", "彼はドアを開けっぱなしにするほど不注意だった。"],
+    ["We arrived early in order to [so as to] get good seats.", "私たちは良い席を確保するために早く到着した。"]
+  ]
     ]
 }
