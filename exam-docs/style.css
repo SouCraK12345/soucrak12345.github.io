@@ -117,12 +117,12 @@ li a:hover {
 
 .action-buttons {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.navigate.secondary {
+.create-answer-btn {
     background: #2c7be5;
 }
 

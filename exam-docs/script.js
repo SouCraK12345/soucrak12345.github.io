@@ -68,19 +68,20 @@ async function fetchJsonWithLoading(url, options) {
 // 例文テストのデータ読み込み
 let en_sample_test_data;
 const en_sample_test_select = document.querySelector('select[name="en-sample-test"]');
-en_sample_test_select.addEventListener("click", async () => {
+async function loadEnSampleTestData() {
     if (en_sample_test_data) return;
     const data = await fetchJsonWithLoading("en_sample_test.json");
     en_sample_test_data = data;
-    let count = 0;
-    for (var i of data.lessonTitles) {
+    data.lessonTitles.forEach((title, index) => {
         const option = document.createElement("option");
-        option.value = count;
-        option.textContent = i;
+        option.value = index;
+        option.textContent = title;
         en_sample_test_select.appendChild(option);
-        count++;
-    }
-});
+    });
+}
+
+en_sample_test_select.addEventListener("click", loadEnSampleTestData);
+en_sample_test_select.addEventListener("focus", loadEnSampleTestData);
 
 en_sample_test_select.addEventListener("change", () => {
     document.querySelector("div.description > a").style.pointerEvents = "auto";
@@ -245,6 +246,9 @@ function buildChemicalFormulaPrint(data) {
 async function create(name) {
     let print_title, html;
     if (name === "en-sample-test") {
+        if (!en_sample_test_data) {
+            await loadEnSampleTestData();
+        }
         print_title = `${en_sample_test_data.lessonTitles[en_sample_test_select.value]} 例文テスト対策プリント`;
         let data = en_sample_test_data.englishSentencesData[en_sample_test_select.value];
         html = `<h1>${print_title}</h1>`;
@@ -262,6 +266,9 @@ async function create(name) {
         });
         html += ``;
     } else if (name === "en-sample-test-answer") {
+        if (!en_sample_test_data) {
+            await loadEnSampleTestData();
+        }
         print_title = `${en_sample_test_data.lessonTitles[en_sample_test_select.value]} 例文テスト解答プリント`;
         let data = en_sample_test_data.englishSentencesData[en_sample_test_select.value];
         html = `<h1>${print_title}</h1>`;
