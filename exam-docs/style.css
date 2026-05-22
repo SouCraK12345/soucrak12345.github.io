@@ -170,6 +170,10 @@ th {
     padding: 10px;
 }
 
+
+.sample_container.answer_sheet {
+    border-bottom: none;
+}
 .workspace {
     display: none;
 }

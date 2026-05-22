@@ -278,7 +278,7 @@ async function create(name) {
   <tr>
     <td class="s_num">${index + 1}</td>
     <td class="s_main">
-      <div class="sample_container">${item[1]}<br><strong>解答:</strong> ${item[0]}</div>
+      <div class="sample_container answer_sheet">${item[1]}<br><strong>解答:</strong> ${item[0]}</div>
     </td>
   </tr>
   </table>
