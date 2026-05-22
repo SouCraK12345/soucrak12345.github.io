@@ -115,6 +115,17 @@ li a:hover {
     gap: 30px;
 }
 
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navigate.secondary {
+    background: #2c7be5;
+}
+
 .workspace {
     background-color: white;
     padding: 10px;
