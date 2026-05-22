@@ -171,8 +171,15 @@ th {
 }
 
 
+
+.answer_sheet_table tr {
+    height: auto;
+}
+
 .sample_container.answer_sheet {
     border-bottom: none;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 .workspace {
     display: none;

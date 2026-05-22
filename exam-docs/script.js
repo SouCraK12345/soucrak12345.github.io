@@ -274,7 +274,7 @@ async function create(name) {
         html = `<h1>${print_title}</h1>`;
         data.forEach((item, index) => {
             html += `
-            <table border="1">
+            <table border="1" class="answer_sheet_table">
   <tr>
     <td class="s_num">${index + 1}</td>
     <td class="s_main">
