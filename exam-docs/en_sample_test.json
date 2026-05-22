@@ -366,8 +366,7 @@
                 "彼は疲れているに違いありません。"
             ]
         ],
-        // Lesson 9: 助動詞 2
-  [
+        [
     ["You should [ought to] be more careful.", "あなた（方）はもっと注意すべきだ。"],
     ["They should [ought to] arrive here soon.", "彼らはもうすぐここに着くはずだ。"],
     ["You had better see a doctor.", "医者に診てもらいなさい。"],
@@ -388,8 +387,7 @@
     ["\"Shall we go to a movie tomorrow?\" \"Yes, let's.\" / \"No, let's not.\"", "「明日映画に行きませんか」「ええ、そうしましょう」「いいえ、よしておきましょう」"]
   ],
 
-  // Lesson 10: 助動詞 3
-  [
+        [
     ["He must have had a good rest.", "彼は十分に休んだに違いない。"],
     ["I may [might] have left the key at home.", "私は家に鍵を置き忘れたかもしれない。"],
     ["She can't [couldn't] have made such a mistake.", "彼女がそんな間違いをしたはずがない。"],
@@ -413,8 +411,7 @@
     ["I cannot help but feel sorry for her.", "彼女を気の毒に思わずにはいられない。"]
   ],
 
-  // Lesson 11: 受動態 1
-  [
+        [
     ["This hall was designed by a famous artist.", "このホールは有名な芸術家によって設計された。"],
     ["German is spoken in Austria.", "オーストリアではドイツ語が話されている。"],
     ["Mail is delivered every day.", "郵便物は毎日配達される。"],
@@ -436,8 +433,7 @@
     ["The tickets will have been sold out by the time I get there.", "私がそこに着くまでに、チケットは売り切れてしまっているだろう。"]
   ],
 
-  // Lesson 12: 受動態 2
-  [
+        [
     ["Mary was given a gold medal.", "メアリーは金メダルを与えられた。"],
     ["The gold medal was given to Mary.", "金メダルがメアリーに与えられた。"],
     ["This bag was bought for me by my grandmother.", "このバッグは祖母が私のために買ってくれた。"],
@@ -452,8 +448,7 @@
     ["She is married to a colleague.", "彼女は同僚と結婚している。"]
   ],
 
-  // Lesson 13: 不定詞 1
-  [
+        [
     ["It's important to get enough sleep.", "十分な睡眠をとることが重要だ。"],
     ["Her dream is to be a singer.", "彼女の夢は歌手になることだ。"],
     ["I hope to go to university.", "私は大学に行くことを希望している。"],
@@ -471,8 +466,7 @@
     ["We left early in order not to miss the train.", "私たちは電車に乗り遅れないように早く出発した。"]
   ],
 
-  // Lesson 14: 不定詞 2
-  [
+        [
     ["It is dangerous for the children to stay here.", "子どもたちがここに留まるのは危険だ。"],
     ["It was kind of you to help me.", "手伝ってくれてありがとう（手伝ってくれるなんてあなたは親切だった）。"],
     ["I want you to come to tomorrow's party.", "私はあなたに明日のパーティーに来てほしい。"],
@@ -487,8 +481,7 @@
     ["I saw the man get out of the car.", "私はその男が車から降りるのを見た。"]
   ],
 
-  // Lesson 15: 不定詞 3
-  [
+        [
     ["I don't know what to do.", "何をすべきかわからない。"],
     ["Could you tell me which bus to take?", "どちらのバスに乗るべきか教えていただけますか。"],
     ["He seems to be ill.", "彼は病気であるようだ（今病気だと今思われている）。"],
@@ -501,8 +494,7 @@
     ["The stone seems to have been used in the sixth century.", "その石は6世紀に使われていたようだ。"]
   ],
 
-  // Lesson 16: 不定詞 4
-  [
+        [
     ["The problem is easy to solve.", "その問題は解くのが簡単だ。"],
     ["I'm ready to leave.", "出発する準備はできている。"],
     ["I managed to get two tickets for the concert.", "なんとかそのコンサートのチケットを2枚手に入れることができた。"],
