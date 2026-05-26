@@ -65,6 +65,16 @@ async function fetchJsonWithLoading(url, options) {
     }
 }
 
+async function fetchTextWithLoading(url, options) {
+    showLoadingMessage();
+    try {
+        const response = await fetch(url, options);
+        return await response.text();
+    } finally {
+        hideLoadingMessage();
+    }
+}
+
 // 例文テストのデータ読み込み
 let en_sample_test_data;
 const en_sample_test_select = document.querySelector('select[name="en-sample-test"]');
@@ -113,7 +123,7 @@ let kanji_test_file_names;
 const ja_kanji_test_select = document.querySelector('select[name="ja-kanji-test"]');
 ja_kanji_test_select.addEventListener("click", async () => {
     if (kanji_test_file_names) { return; }
-    fetchJsonWithLoading("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=getAllFiles&reqFolder=ja_kanji_test", requestOptions)
+    fetchJsonWithLoading("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=getAllFiles&reqFolder=ja-kanji-test", requestOptions)
         .then(result => {
             kanji_test_file_names = result;
             let count = 0;
@@ -365,8 +375,7 @@ function __download(name) {
         if (!math_sub_text.value) return;
         file_name = sub_text_file_names[math_sub_text.value];
     }
-    fetchJsonWithLoading("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=downloadURL&reqFolder=" + name + "&filename=" + encodeURIComponent(file_name), requestOptions)
-        .then(response => response.text())
+    fetchTextWithLoading("https://script.google.com/macros/s/AKfycbyuKss_lBGHfZpyDO59TnHihiobJCLvBcigUETz9Md6rnl4vpbiTVuwK4mFi6y5HfQYbA/exec?reqType=downloadURL&reqFolder=" + name + "&filename=" + encodeURIComponent(file_name), requestOptions)
         .then(result => location.href = result)
         .catch(error => console.log('error', error));
 }
