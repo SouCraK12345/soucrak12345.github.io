@@ -1,0 +1,222 @@
+<style>
+    :root {
+        /* これだけで auto への transition が有効になる */
+        interpolate-size: allow-keywords;
+    }
+    /* 初期フラッシュ防止: JSが処理するまでアカウントパネルを非表示にする */
+    /* .gam-hidden-card,
+    .gam-account-card.gam-hidden-card {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    } */
+
+    .header {
+        position: fixed;
+        /* display: none; */
+        display: flex;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #f0f0f0;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header>a {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+    }
+
+
+    .header>img {
+        height: 3rem;
+        border-radius: 9999px;
+    }
+
+    .links {
+        display: flex;
+        margin-left: 20px;
+        gap: 20px;
+    }
+
+    .links>a {
+        color: #333;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .menu-container {
+        display: none;
+        position: absolute;
+        right: 20px;
+    }
+
+    .account {
+        right: 20px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .account>button {
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #faf4d2;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 100%;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .account>button,
+    .user-icon {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+        .menu-container {
+            display: block;
+        }
+
+        .menu {
+            display: block;
+        }
+
+        .links {
+            display: flex;
+            position: absolute;
+            top: 5rem;
+            background: white;
+            left: -1.3rem;
+            padding: 0 1rem;
+            width: 100dvw;
+            flex-direction: column;
+            z-index: -1;
+            transition: 0.3s;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .links.open {
+            height: auto;
+            padding: 1rem;
+        }
+
+        .account {
+            margin-left: 10px;
+            position: static;
+        }
+    }
+</style>
+<link rel="stylesheet" href="../account-page.css">
+
+<img src="../Assets/nanzan_icon.jpg" alt="なんざんアイコン">
+<a href="/">なんざんホーム</a>
+<a class="menu-container" onclick="open_menu()">
+    <span class="material-symbols-outlined menu">
+        menu
+    </span></a>
+<div class="links">
+    <a href="/exam-docs/">テスト資料</a>
+    <a href="https://tango1800.soucrak.f5.si/" target="_blank">英単語1800</a>
+    <a href="https://soucrak12345.github.io/Tetris/" target="_blank">Tetris</a>
+    <a href="/articles/">ログ</a>
+</div>
+<div class="account">
+    <button type="button" onclick="googleLogin();">ログイン</button>
+    <img src="../Assets/kkrn_icon_user_14.png" class="user-icon" onclick="openPanel()">
+</div>
+
+
+<!-- メインメニューカード -->
+<div class="gam-account-card gam-hidden-card" id="accountMenu" style="display: none;">
+
+    <!-- 閉じるボタン -->
+    <button class="gam-close-btn" id="closeButton" title="閉じる">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+        </svg>
+    </button>
+
+    <!-- ヘッダーエリア -->
+    <div class="gam-header">
+        <div class="gam-email-display">メアド</div>
+
+        <!-- アバター -->
+        <div class="gam-avatar-container">
+            <img src="../Assets/kkrn_icon_user_14.png" alt="ユーザーアバター" class="gam-avatar-img">
+        </div>
+
+        <!-- ユーザー名 -->
+        <div class="gam-user-name">名前</div>
+
+        <!-- アカウント管理ボタン -->
+        <a href="#" class="gam-manage-btn" id="manageBtn"
+            onclick="window.open('https://myaccount.google.com/', '_blank')">Google アカウントを管理</a>
+    </div>
+
+    <!-- サブテキスト -->
+    <div class="gam-section-subtext">設定</div>
+
+    <!-- メニューリスト -->
+    <div class="gam-menu-list">
+
+        <!-- 検索履歴 -->
+        <div class="gam-menu-item" onclick="toggleSafeSearch()">
+            <div class="gam-menu-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e3e3e3">
+                    <path
+                        d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                </svg>
+            </div>
+            <div class="gam-menu-item-text">メール通知</div>
+            <div class="gam-menu-item-status" id="mailStats">オフ</div>
+        </div>
+
+
+        <!-- 保存とコレクション -->
+        <div class="gam-menu-item" onclick="logout()">
+            <div class="gam-menu-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e3e3e3">
+                    <path
+                        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                </svg>
+            </div>
+            <div class="gam-menu-item-text">ログアウト</div>
+        </div>
+
+        <!-- フッター -->
+        <div class="gam-footer-links">
+            <a href="https://github.com/soucrak12345" class="gam-footer-link" target="_blank"
+                onclick="simulateAction('Githubを開きました')">Github ページ</a>
+            <div class="gam-footer-dot"></div>
+            <a href="#" class="gam-footer-link" onclick="window.open('https://soucrak.f5.si/')">なんざんホーム</a>
+        </div>
+
+    </div>
+
+    <!-- 閉じた時の再表示ボタン -->
+    <button class="gam-restore-panel-btn" id="restoreBtn" onclick="restorePanel()">パネルを再表示</button>
+
+    <!-- アクション通知用の擬似トースト -->
+    <div class="gam-toast" id="actionToast"></div>
+
+</div>

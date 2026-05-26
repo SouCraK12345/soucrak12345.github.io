@@ -1,0 +1,394 @@
+/* body {
+    margin: 0;
+    overflow: hidden;
+} */
+
+/* アプリ全体のコンテナおよび内包要素の競合防止リセット */
+.gam-container,
+.gam-container * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* メインコンテナ（Googleアカウントパネル） */
+.gam-account-card {
+    background-color: #202124;
+    border-radius: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    user-select: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    top: 100px;
+    right: 20px;
+    min-width: 320px;
+    opacity: 0;
+}
+
+/* 閉じるボタン */
+.gam-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.gam-close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.gam-close-btn svg {
+    fill: #e8eaed;
+    width: 24px;
+    height: 24px;
+}
+
+/* ヘッダーエリア */
+.gam-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+.gam-email-display {
+    font-size: 14px;
+    color: #e8eaed;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+/* アバターゲット領域 */
+.gam-avatar-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+/* キノピオバーガーのイラスト風SVGアバター */
+.gam-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #f7e6c4;
+    overflow: hidden;
+    border: 2px solid #5f6368;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gam-avatar-camera-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #303134;
+    border: 2px solid #202124;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.gam-avatar-camera-icon svg {
+    fill: #e8eaed;
+    width: 14px;
+    height: 14px;
+}
+
+/* ユーザー名 */
+.gam-user-name {
+    font-size: 20px;
+    font-weight: 400;
+    color: #e8eaed;
+    margin-bottom: 16px;
+}
+
+/* Google アカウントを管理ボタン */
+.gam-manage-btn {
+    background-color: transparent;
+    color: #8ab4f8;
+    border: 1px solid #5f6368;
+    border-radius: 100px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.gam-manage-btn:hover {
+    background-color: rgba(138, 180, 248, 0.08);
+    border-color: #8ab4f8;
+}
+
+/* その他アカウント表示用ピル */
+.gam-other-accounts-pill {
+    background-color: #171717;
+    border-radius: 100px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.gam-other-accounts-pill:hover {
+    background-color: #2a2b2e;
+}
+
+.gam-pill-label {
+    font-size: 14px;
+    color: #e8eaed;
+    font-weight: 500;
+}
+
+.gam-pill-right-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ミニユーザーアバター */
+.gam-mini-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.gam-mini-avatar.gam-blue {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.gam-mini-avatar.gam-blue svg {
+    fill: #ffffff;
+    width: 16px;
+    height: 16px;
+}
+
+.gam-mini-avatar.gam-green {
+    background-color: #0f9d58;
+    color: white;
+}
+
+.gam-arrow-down-icon svg {
+    fill: #9aa0a6;
+    width: 18px;
+    height: 18px;
+}
+
+/* セクションラベル */
+.gam-section-subtext {
+    font-size: 12px;
+    color: #9aa0a6;
+    padding-left: 12px;
+    margin-bottom: 12px;
+    text-align: left;
+    width: 100%;
+}
+
+/* リストアイテムコンテナ */
+.gam-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+/* メニューアイテムベース */
+.gam-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 12px;
+    border-radius: 16px;
+    background-color: #2d2e30;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.gam-menu-item:hover {
+    background-color: #35363a;
+}
+
+.gam-menu-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.gam-menu-item-icon svg {
+    fill: #9aa0a6;
+    width: 22px;
+    height: 22px;
+}
+
+.gam-menu-item-text {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #e8eaed;
+    font-weight: 500;
+}
+
+.gam-menu-item-status {
+    font-size: 12px;
+    color: #9aa0a6;
+    margin-left: 8px;
+    margin-right: 4px;
+}
+
+.gam-menu-item-status.gam-active {
+    color: #8ab4f8;
+}
+
+/* 下部グリッド（その他の設定 & ヘルプ） */
+.gam-menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin-top: 4px;
+    width: 100%;
+}
+
+.gam-grid-item {
+    background-color: #2d2e30;
+    padding: 16px 12px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.gam-grid-item:hover {
+    background-color: #35363a;
+}
+
+.gam-grid-item-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.gam-grid-item-icon svg {
+    fill: #9aa0a6;
+    width: 20px;
+    height: 20px;
+}
+
+.gam-grid-item-text {
+    font-size: 13px;
+    color: #e8eaed;
+    font-weight: 500;
+}
+
+/* フッターリンク */
+.gam-footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    font-size: 11px;
+    color: #9aa0a6;
+}
+
+.gam-footer-link {
+    color: #9aa0a6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.gam-footer-link:hover {
+    color: #e8eaed;
+    text-decoration: underline;
+}
+
+.gam-footer-dot {
+    width: 3px;
+    height: 3px;
+    background-color: #5f6368;
+    border-radius: 50%;
+}
+
+/* 画面が消えた状態（デモ用トグル機能のため） */
+.gam-hidden-card {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+/* デモ用のリセット表示ボタン */
+.gam-restore-panel-btn {
+    background-color: #8ab4f8;
+    color: #202124;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    font-size: 14px;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.gam-restore-panel-btn:hover {
+    background-color: #a4c8ff;
+}
+
+/* トースト通知 */
+.gam-toast {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #303134;
+    color: #e8eaed;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    white-space: nowrap;
+}
+
+.gam-toast.gam-show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}
