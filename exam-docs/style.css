@@ -82,6 +82,11 @@ li a:hover {
     white-space: nowrap;
 }
 
+
+.wrap-on-small {
+    overflow-wrap: anywhere;
+}
+
 .select-container {
     position: relative;
     width: 200px;
@@ -198,6 +203,10 @@ th {
 
     h1 {
         font-size: 22px;
+    }
+
+    .wrap-on-small {
+        white-space: normal;
     }
 }
 
