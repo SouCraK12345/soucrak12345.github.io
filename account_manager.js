@@ -97,7 +97,7 @@ onAuthStateChanged(auth, (user) => {
 });
 
 window.getMailNotification = () => {
-    const url = location.origin == "https://soucrak.f5.si" ? "https://soucrak.f5.si/gas/get" : "http://localhost:8787/gas/get";
+    const url = location.origin == "https://soucrak.f5.si" ? "https://api.soucrak.f5.si/gas/get" : "http://localhost:8787/gas/get";
     return fetch(`${url}`, {
         method: "POST",
         headers: {
@@ -109,7 +109,7 @@ window.getMailNotification = () => {
 
 window.setMailNotification = (enabled) => {
     console.log(`メール通知: ${enabled ? 'オン' : 'オフ'}`);
-    fetch(location.origin == "https://soucrak.f5.si" ? "https://soucrak.f5.si/gas/post" : "http://localhost:8787/gas/post", {
+    fetch(location.origin == "https://soucrak.f5.si" ? "https://api.soucrak.f5.si/gas/post" : "http://localhost:8787/gas/post", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
