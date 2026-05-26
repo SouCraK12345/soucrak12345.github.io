@@ -21,6 +21,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+let token;
+let uid;
+let email;
 
 const provider = new GoogleAuthProvider();
 let loginInProgress = false;
@@ -49,6 +52,7 @@ window.googleLogin = async () => {
 
 // ログアウト
 window.logout = async () => {
+    closeAccountPanel();
     await signOut(auth);
 };
 
@@ -58,6 +62,10 @@ onAuthStateChanged(auth, (user) => {
     let user_icon = document.querySelector(".user-icon");
     const status = document.getElementById('status');
     if (user) {
+        // console.log(user);
+        token = user.accessToken;
+        uid = user.uid;
+        email = user.email;
         console.log(`ログイン中: ${user.email || user.displayName}`);
         user_icon.style.display = "inline-block";
         user_icon.src = user.photoURL || "../Assets/kkrn_icon_user_14.png";
@@ -65,9 +73,53 @@ onAuthStateChanged(auth, (user) => {
         document.querySelector("#accountMenu > div.gam-header > div.gam-email-display").textContent = user.email || "ユーザー";
         document.querySelector("#accountMenu > div.gam-header > div.gam-user-name").textContent = user.displayName || "ユーザー";
         login_button.style.display = "none";
+
+        safeSearchStatus = document.getElementById('mailStats');
+        getMailNotification().then(response => response.json()).then(data => {
+            const isEnabled = data.result.body == "true";
+            console.log(`メール通知: ${isEnabled ? 'オン' : 'オフ'} (サーバーから読み込み)`);
+            isSafeSearchOn = isEnabled;
+            if (isEnabled) {
+                safeSearchStatus.textContent = 'オン';
+                safeSearchStatus.classList.add('gam-active');
+            } else {
+                safeSearchStatus.textContent = 'オフ';
+                safeSearchStatus.classList.remove('gam-active');
+            }
+        }).catch(error => {
+            console.error('メール通知の状態の取得に失敗:', error);
+        });
     } else {
         console.log('未ログイン');
         login_button.style.display = "inline-block";
         user_icon.style.display = "none";
     }
 });
+
+window.getMailNotification = () => {
+    const url = location.origin == "https://soucrak.f5.si" ? "https://soucrak.f5.si/gas/get" : "http://localhost:8787/gas/get";
+    return fetch(`${url}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ path: `user.${uid}.mail.notification` }),
+    });
+};
+
+window.setMailNotification = (enabled) => {
+    console.log(`メール通知: ${enabled ? 'オン' : 'オフ'}`);
+    fetch(location.origin == "https://soucrak.f5.si" ? "https://soucrak.f5.si/gas/post" : "http://localhost:8787/gas/post", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+            path: `user.${uid}.mail`, value: {
+                notification: enabled,
+                email
+            }
+        }),
+    });
+}

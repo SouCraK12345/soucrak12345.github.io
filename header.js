@@ -19,6 +19,7 @@ fetch("/header.html")
             s.src = '/account_manager.js';
             s.setAttribute('data-account-manager', '1');
             document.body.appendChild(s);
+            s.onload = accountManagerLoaded;
         }
     });
 
@@ -52,14 +53,14 @@ let openPanel = () => {
     requestAnimationFrame(() => {
         accountCard.style.opacity = '1';
     });
-    
+
     // クローズボタンのクリックでパネルを閉じる
     closeButton.addEventListener('click', (e) => {
         e.stopPropagation(); // イベントの伝播を防ぐ
         closeAccountPanel();
         document.removeEventListener('click', closeOnClickOutside);
     });
-    
+
     // パネル外をクリックしたら閉じる
     const closeOnClickOutside = (e) => {
         if (!accountCard.contains(e.target) && !document.querySelector('.user-icon').contains(e.target)) {
@@ -67,24 +68,26 @@ let openPanel = () => {
             document.removeEventListener('click', closeOnClickOutside);
         }
     };
-    
+
     document.addEventListener('click', closeOnClickOutside);
 }
 
 
-// セーフサーチのトグル切り替え
+accountManagerLoaded = () => {
+};
+
+// メール通知のトグル切り替え
 let isSafeSearchOn = false;
 function toggleSafeSearch() {
     isSafeSearchOn = !isSafeSearchOn;
     if (isSafeSearchOn) {
         safeSearchStatus.textContent = 'オン';
         safeSearchStatus.classList.add('gam-active');
-        // simulateAction('セーフサーチを「オン」にしました');
     } else {
         safeSearchStatus.textContent = 'オフ';
         safeSearchStatus.classList.remove('gam-active');
-        // simulateAction('セーフサーチを「オフ」にしました');
     }
+    window.setMailNotification(isSafeSearchOn);
 }
 
 // メッセージを表示するトースト機能
