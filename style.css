@@ -138,6 +138,55 @@ button.show-more {
     width: -webkit-fill-available;
 }
 
+.repos-container {
+    gap: 20px;
+    padding: 20px;
+    background-color: #5cb90f;
+}
+
+.videos-container {
+    gap: 20px;
+    padding: 20px;
+    background-color: #da0000;
+}
+
+.container-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.container-in-container {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: #dfdfdf #00000000;
+}
+
+.repo-card {
+    background-color: #00000050;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: min(350px, 80vw);
+    min-width: min(350px, 70vw);
+    max-width: min(350px, 70vw);
+    flex: 0 0 min(350px, 70vw);
+    cursor: pointer;
+}
+
+.repo-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 600px) {
     .carousel-item {
         flex-direction: column;

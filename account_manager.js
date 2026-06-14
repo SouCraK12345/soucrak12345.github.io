@@ -76,7 +76,7 @@ onAuthStateChanged(auth, (user) => {
 
         safeSearchStatus = document.getElementById('mailStats');
         getMailNotification().then(response => response.json()).then(data => {
-            const isEnabled = data.result.body == "true";
+            const isEnabled = data.result.body;
             console.log(`メール通知: ${isEnabled ? 'オン' : 'オフ'} (サーバーから読み込み)`);
             isSafeSearchOn = isEnabled;
             if (isEnabled) {

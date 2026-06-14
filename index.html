@@ -12,7 +12,7 @@
     <title>なんざんホーム</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_left,chevron_right,menu,play_arrow" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=book_2,chevron_left,chevron_right,menu,music_video,play_arrow" />
     <link rel="icon" href="favicon.ico">
 </head>
 
@@ -66,6 +66,37 @@
         <h2 onclick="location.href='/articles/'" class="link">ログ</h2>
     </div>
     <button class="show-more" onclick="location.href = '/articles/'">もっと見る</button>
+    <div class="repos-container">
+        <div class="container-title"><span class="material-symbols-outlined">
+                book_2
+            </span>リポジトリ</div>
+        <div class="container-in-container">
+            <div class="repo-card" onclick="location.href='https://tango1800.soucrak.f5.si'">
+                <div class="repo-title">英単語1800</div>
+                <div class="repo-description">
+                    東進衛星予備校の英単語学習教材「英単語センター1800」の単語を中心に、単語の勉強ができるWebアプリです。複数人での対戦も可能で、知らない単語を集中的に学習できます。</div>
+            </div>
+            <div class="repo-card" onclick="location.href = 'https://soucrak12345.github.io/Tetris/'">
+                <div class="repo-title">Tetris</div>
+                <div class="repo-description">
+                    ハイスピード・高火力で遊べるテトリス。テトリスの攻撃力は最大8段。</div>
+            </div>
+            <div class="repo-card" onclick="location.href = 'https://soucrak12345.github.io/Music-Player/'">
+                <div class="repo-title">Music Player</div>
+                <div class="repo-description">
+                    ブラウザで使える音楽プレイヤー。なんとなくiPadのミュージックアプリに似せて作りました。</div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="videos-container">
+        <div class="container-title"><span class="material-symbols-outlined">
+                music_video
+            </span>動画</div>
+        <div class="container-in-container">
+            <div class="video-card" onclick="location.href = 'https://www.youtube.com/channel/UC9wjvXoQeHqH8sKZt2r5vw'">
+                <div class="video-title"></div>
+            </div>
+    </div> -->
     <script src="script.js"></script>
     <script src="header.js"></script>
     <script type="module">
