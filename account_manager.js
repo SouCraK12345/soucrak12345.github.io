@@ -24,6 +24,7 @@ const auth = getAuth(app);
 let token;
 let uid;
 let email;
+let logged_in = false;
 
 const provider = new GoogleAuthProvider();
 let loginInProgress = false;
@@ -61,6 +62,7 @@ onAuthStateChanged(auth, (user) => {
     let login_button = document.querySelector(".account > button");
     let user_icon = document.querySelector(".user-icon");
     const status = document.getElementById('status');
+    logged_in = Boolean(user);
     if (user) {
         // console.log(user);
         token = user.accessToken;
@@ -122,4 +124,8 @@ window.setMailNotification = (enabled) => {
             }
         }),
     });
+}
+
+window.isLoggedin = () => {
+    return logged_in;
 }

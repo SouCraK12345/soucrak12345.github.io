@@ -47,5 +47,12 @@
         "imgSrc": "Assets/sokutan.png",
         "linkHref": "exam-docs/",
         "linkText": ""
+    },
+    {
+        "title": "Crown テスト予想問題(自動生成) を追加しました。",
+        "description": "AIにCrownのテスト予想問題を自動で作らせます。\nログインしてないと使えません。\nAIに以下のような指示を自動で出してます↓\n\n- 本文内の\"1文\"を抜いて、問題文に日本語訳を載せそこから英文を書かせる問題(このとき、sentence_with_blankにいくつかの語句を載せ、'I [    ] in [    ] [    ]'のように値を設定すること。paraphrases, idiomsを参考にどの文を抜きだすかを決定する。文は1文すべてを抜き出すこと。空欄の数は文の6~7割程度にする。answerには全文を書く。) --- (1)\n- 本文内の単語(連語)を抜いて、問題文にその単語の日本語訳を載せ、単語(連語)を書かせる問題(vocabulary, idiomsを参考にどの単語を抜きだすかを決定する。「本文に入る適切な形で答えなさい」という言葉を明記すること。ただし、そこにどのような形かのヒントを与えない。連語でもsentence_with_blankは設定しない) --- (2)\n- paraphrasesを参考に、文章を別の表現で言い換えさせる問題(sentence_with_blankは設定しない。空欄は、paraphrases > equivalent内にのみ設定する。answerにはparaphrases > equivalentを記載する。) --- (3)\nこの形式以外の問題は作成しない(例えば、単純に単語を答えさせる問題など)",
+        "imgSrc": "Assets/crown-main.png",
+        "linkHref": "exam-docs/",
+        "linkText": ""
     }
 ]

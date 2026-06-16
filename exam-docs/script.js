@@ -187,6 +187,23 @@ async function generateSokutanData(start, end) {
     return return_data
 }
 
+// Crown 本文テスト
+let crown_main_test_data;
+const crown_main_test_select = document.querySelector('select[name="crown-main-test"]');
+crown_main_test_select.addEventListener("click", async () => {
+    if (crown_main_test_data) return;
+    const data = await fetchJsonWithLoading("crown-main.json");
+    crown_main_test_data = data;
+    let count = 0;
+    for (var i in data) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        crown_main_test_select.appendChild(option);
+        count++;
+    }
+});
+
 function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, function (char) {
         return ({
@@ -296,7 +313,6 @@ async function create(name) {
         });
     } else if (name === "crown-tango-test") {
         print_title = `Crown ${crown_tango_test_select.value} 単語テスト`;
-        console.log(print_title);
         workspace.innerHTML = `<h1>${print_title}</h1>`;
         let data = crown_tango_test_data[crown_tango_test_select.value];
         let container = document.createElement("div");
@@ -342,6 +358,99 @@ async function create(name) {
         const end = Number(sokutan_end_input.value);
         print_title = `Sokutan ${start} - ${end}`;
         html = await generateSokutanData(start, end);
+    } else if (name == "crown-main") {
+        if(!isLoggedin()){
+            return alert("AI機能を使うには、ログインが必要です。");
+        }
+        workspace.innerHTML = `<div class="crown-main-container"><h1>Crown テスト対策問題</h1>
+    <p>次の文章を読んで、以下の問いに答えなさい。</p>
+    <div class="cr_main-text"></div>
+    <div class="cr_questions-container">
+    <h2>問題</h2>
+        <ol class="cr_questions_ol"></ol>
+    </div>
+    <div class="cr_answers-container">
+    <h2>答え</h2>
+        <ol class="cr_answers_ol"></ol>
+    </div></div>`;
+        const url = location.origin == "https://soucrak.f5.si" ? "https://api.soucrak.f5.si/ai/crown" : "http://localhost:8787/ai/crown";
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        const question_data = await fetchJsonWithLoading(url, {
+            method: 'POST',
+            headers: myHeaders,
+            body: JSON.stringify(crown_main_test_data[crown_main_test_select.value]),
+            redirect: 'follow'
+        })
+        // const question_data = {
+        //     "main_text": "At the same time, Ikee realized that she (2) to her teammates. On July 4, 2020, she received a birthday message from them: (1)1. But now you're crying because things are hard. Still, we love you, Rikako. You can (3)<u>count on</u> us until the end of time. One day, together again, we will laugh and laugh! The (2) of swimming for Ikee totally changed through her (2). Before her (2), her goal was simple and clear: to become the best swimmer in the world. She said, \"I (2) I could just (2) on swimming and live as I pleased. My only goal was to become stronger.\" As she (2) from her (2), Ikee discovered a new sense of (2). She said, \"I've been thinking a lot about my (2). Did I learn anything from that experience? Yes, I can now (2) so many people. Just being alive is an extraordinary experience.\" With these thoughts, she hopes to (2) people by showing that she has returned to swimming.",
+        //     "questions": [
+        //         {
+        //             "q_num": 1,
+        //             "text": "次の日本語を英文に直しなさい。なお、カッコに入る適切な語句を答えなさい。<br>しかし、今は物事が困難であるがゆえにあなたは泣いています。それでも、私たちはあなたを愛しています、リカコ。",
+        //             "sentence_with_blank": "But [    ] you're [    ] because [    ] are [    ]. Still, we [    ] you, Rikako.",
+        //             "answer": "But now you're crying because things are hard. Still, we love you, Rikako."
+        //         },
+        //         {
+        //             "q_num": 2,
+        //             "text": "本文内の「owe」にあたる言葉を、本文に入る適切な形で答えなさい。",
+        //             "answer": "owed"
+        //         },
+        //         {
+        //             "q_num": 3,
+        //             "text": "傍線部「count on」を別の表現に書き換えなさい。空欄を埋めて答えなさい。<br>You can [    ] [    ] us until the end of time.",
+        //             "answer": "depend on"
+        //         },
+        //         {
+        //             "q_num": 4,
+        //             "text": "本文内の「meaning」にあたる言葉を、本文に入る適切な形で答えなさい。",
+        //             "answer": "meaning"
+        //         },
+        //         {
+        //             "q_num": 5,
+        //             "text": "本文内の「hardships」にあたる言葉を、本文に入る適切な形で答えなさい。",
+        //             "answer": "hardships"
+        //         },
+        //         {
+        //             "q_num": 6,
+        //             "text": "次の日本語を英文に直しなさい。なお、カッコに入る適切な語句を答えなさい。<br>私は泳ぐことだけに集中して、好きなように生きられると思い込んでいました。",
+        //             "sentence_with_blank": "I [    ] I could just [    ] on swimming and [    ] as I [    ].",
+        //             "answer": "I assumed I could just focus on swimming and live as I pleased."
+        //         },
+        //         {
+        //             "q_num": 7,
+        //             "text": "本文内の「recover」にあたる言葉を、本文に入る適切な形で答えなさい。",
+        //             "answer": "recovered"
+        //         },
+        //         {
+        //             "q_num": 8,
+        //             "text": "本文内の「inspire」にあたる言葉を、本文に入る適切な形で答えなさい。",
+        //             "answer": "inspire"
+        //         }
+        //     ]
+        // }
+        const main_text_div = workspace.querySelector("div.cr_main-text");
+        main_text_div.innerHTML = question_data.main_text;
+        const questions_container = workspace.querySelector("div.cr_questions-container");
+        const questions_ol = workspace.querySelector(".cr_questions_ol");
+        question_data.questions.forEach(element => {
+            const li = document.createElement("li");
+            li.innerHTML = element.text;
+            if (Object.keys(element).includes("sentence_with_blank")) {
+                const p = document.createElement("p");
+                p.classList.add("quote");
+                p.innerHTML = element.sentence_with_blank;
+                li.appendChild(p);
+            }
+            questions_ol.appendChild(li);
+        });
+        const answers_ol = workspace.querySelector(".cr_answers_ol");
+        question_data.questions.forEach(element => {
+            const li = document.createElement("li");
+            li.innerHTML = element.answer;
+            answers_ol.appendChild(li);
+        });
+        html = workspace.innerHTML;
     }
     if (!html) return;
     workspace.innerHTML = html;

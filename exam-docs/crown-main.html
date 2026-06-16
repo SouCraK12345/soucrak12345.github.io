@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crown Main</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+        body {
+            font-family: "Kosugi Maru", "Arial";
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .main-text {
+            line-height: 2;
+            border: 2px solid black;
+            border-width: 2px 0;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .questions-container {
+            break-inside: avoid;
+        }
+
+        p.quote{
+            margin-left: 20px;
+            padding: 5px 20px;
+            border-left: 2px solid black;
+        }
+
+        h2{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Crown テスト対策問題</h1>
+    <p>次の文章を読んで、以下の問いに答えなさい。</p>
+    <div class="main-text"></div>
+    <div class="questions-container">
+        <ol class="questions_ol"></ol>
+    </div>
+    <h2>答え</h2>
+    <div class="answers-container">
+        <ol class="answers_ol"></ol>
+    </div>
+    <script>
+        const question_data = {
+            "main_text": "At the same time, Ikee realized that she (2) to her teammates. On July 4, 2020, she received a birthday message from them: (1)1. But now you're crying because things are hard. Still, we love you, Rikako. You can (3)<u>count on</u> us until the end of time. One day, together again, we will laugh and laugh! The (2) of swimming for Ikee totally changed through her (2). Before her (2), her goal was simple and clear: to become the best swimmer in the world. She said, \"I (2) I could just (2) on swimming and live as I pleased. My only goal was to become stronger.\" As she (2) from her (2), Ikee discovered a new sense of (2). She said, \"I've been thinking a lot about my (2). Did I learn anything from that experience? Yes, I can now (2) so many people. Just being alive is an extraordinary experience.\" With these thoughts, she hopes to (2) people by showing that she has returned to swimming.",
+            "questions": [
+                {
+                    "q_num": 1,
+                    "text": "次の日本語を英文に直しなさい。なお、カッコに入る適切な語句を答えなさい。<br>しかし、今は物事が困難であるがゆえにあなたは泣いています。それでも、私たちはあなたを愛しています、リカコ。",
+                    "sentence_with_blank": "But [    ] you're [    ] because [    ] are [    ]. Still, we [    ] you, Rikako.",
+                    "answer": "But now you're crying because things are hard. Still, we love you, Rikako."
+                },
+                {
+                    "q_num": 2,
+                    "text": "本文内の「owe」にあたる言葉を、本文に入る適切な形で答えなさい。",
+                    "answer": "owed"
+                },
+                {
+                    "q_num": 3,
+                    "text": "傍線部「count on」を別の表現に書き換えなさい。空欄を埋めて答えなさい。<br>You can [    ] [    ] us until the end of time.",
+                    "answer": "depend on"
+                },
+                {
+                    "q_num": 4,
+                    "text": "本文内の「meaning」にあたる言葉を、本文に入る適切な形で答えなさい。",
+                    "answer": "meaning"
+                },
+                {
+                    "q_num": 5,
+                    "text": "本文内の「hardships」にあたる言葉を、本文に入る適切な形で答えなさい。",
+                    "answer": "hardships"
+                },
+                {
+                    "q_num": 6,
+                    "text": "次の日本語を英文に直しなさい。なお、カッコに入る適切な語句を答えなさい。<br>私は泳ぐことだけに集中して、好きなように生きられると思い込んでいました。",
+                    "sentence_with_blank": "I [    ] I could just [    ] on swimming and [    ] as I [    ].",
+                    "answer": "I assumed I could just focus on swimming and live as I pleased."
+                },
+                {
+                    "q_num": 7,
+                    "text": "本文内の「recover」にあたる言葉を、本文に入る適切な形で答えなさい。",
+                    "answer": "recovered"
+                },
+                {
+                    "q_num": 8,
+                    "text": "本文内の「inspire」にあたる言葉を、本文に入る適切な形で答えなさい。",
+                    "answer": "inspire"
+                }
+            ]
+        }
+        const main_text_div = document.querySelector("div.main-text");
+        main_text_div.innerHTML = question_data.main_text;
+        const questions_container = document.querySelector("div.questions-container");
+        const questions_ol = document.querySelector(".questions_ol");
+        question_data.questions.forEach(element => {
+            const li = document.createElement("li");
+            li.innerHTML = element.text;
+            if (Object.keys(element).includes("sentence_with_blank")) {
+                const p = document.createElement("p");
+                p.classList.add("quote");
+                p.innerHTML = element.sentence_with_blank;
+                li.appendChild(p);
+            }
+            questions_ol.appendChild(li);
+        });
+        const answers_ol = document.querySelector(".answers_ol");
+        question_data.questions.forEach(element => {
+            const li = document.createElement("li");
+            li.innerHTML = element.answer;
+            answers_ol.appendChild(li);
+        });
+    </script>
+</body>
+
+</html>
