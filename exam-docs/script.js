@@ -179,7 +179,7 @@ async function generateSokutanData(start, end) {
     picked_data.forEach((item, index) => {
         return_data += `<li style="padding: 10px;">${item[0]}</li>`;
     });
-    return_data += "</ol><h2>答え</h2><ol style='column-count: 5'>";
+    return_data += "</ol><h2>答え</h2><ol style='column-count: 3'>";
     picked_data.forEach((item, index) => {
         return_data += `<li style="padding: 5px;">${item[1]}</li>`;
     });
