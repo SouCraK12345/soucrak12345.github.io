@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /account-page.html
+
+Sitemap: https://soucrak.f5.si/sitemap.xml
