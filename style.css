@@ -62,6 +62,11 @@ div.top {
     color: black;
 }
 
+.lm-printer {
+    background-color: #aa7a13;
+    color: white;
+}
+
 .carousel-item>img {
     height: 50%;
     margin-right: 50px;
