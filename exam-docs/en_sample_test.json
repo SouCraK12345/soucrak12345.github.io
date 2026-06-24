@@ -724,47 +724,157 @@
                 "私たちは良い席を確保するために早く到着した。"
             ]
         ],
+        [
             [
-["Lisa and I are in the same class.", "リサと私は同じクラスです。"],
-["I finished my homework and went to bed.", "私は宿題を終えて寝ました。"],
-["Would you like soup or salad? Salad, please.", "「スープとサラダ、どちらになさいますか？」「サラダをお願いします。」"],
-["I went to bed, but I couldn't sleep.", "私は寝ましたが、眠れませんでした。"],
-["I was sick, so I went home early.", "私は気分が悪かったので、早く帰宅しました。"],
-["I don't like ski lifts, for I'm afraid of heights.", "私はスキーリフトが好きではありません。というのは高所恐怖症だからです。"],
-["Turn right at the corner, and you'll find the subway station.", "角を右に曲がりなさい。そうすれば地下鉄の駅があります。"],
-["Hurry up, or you'll be late.", "急ぎなさい。そうしないと遅刻しますよ。"],
-["Plants need both water and the sun.", "植物には水と太陽の両方が必要です。"],
-["Plants need not only water but also the sun.", "植物には水だけでなく太陽も必要です。"],
-["He speaks not English but Spanish.", "彼は英語ではなくスペイン語を話します。"],
-["Either Tom or Steve will come.", "トムかスティーブのどちらかが来るでしょう。"],
-["Neither Tom nor Steve came.", "トムもスティーブも来ませんでした。"],
-["It's clear that he is lying.", "彼が嘘をついているのは明らかです。"],
-["I hope (that) you get well soon.", "あなたがすぐに良くなることを願っています。"],
-["The problem is (that) we don't have much time.", "問題は私たちにあまり時間がないことです。"],
-["I'm glad (that) you're safe.", "あなたが無事でうれしいです。"],
-["Whether the game will be held depends on the weather.", "試合が行われるかどうかは天候次第です。"],
-["The question is whether we can persuade him.", "問題は彼を説得できるかどうかです。"],
-["I don't know if [whether] Tom will come.", "トムが来るかどうか私は知りません。"]
-],
-[
-["When I was seven, my family moved to Tokyo.", "私が7歳のとき、家族で東京に引っ越しました。"],
-["My smartphone rang while I was eating dinner.", "夕食を食べている間にスマートフォンが鳴りました。"],
-["Wash your hands before you eat.", "食べる前に手を洗いなさい。"],
-["We've known each other since we were kids.", "私たちは子供のころからお互いを知っています。"],
-["We continued talking until till we got sleepy.", "私たちは眠くなるまで話し続けました。"],
-["As soon as I got home, the phone rang.", "帰宅してすぐに電話が鳴りました。"],
-["If you need any help, please tell me.", "もし助けが必要なら、私に言ってください。"],
-["I'll lend you my notebooks as long as you give them back.", "返してくれるならノートを貸します。"],
-["As far as I know, he is a good guy.", "私の知る限り、彼は良いやつです。"],
-["We went out shopping, though [although] it was raining.", "雨が降っていましたが、私たちは買い物に出かけました。"],
-["It takes about two hours whether you go by bus or by train.", "バスで行こうと電車で行こうと、約2時間かかります。"],
-["I went home early because I was sick.", "気分が悪かったので早く帰宅しました。"],
-["The book was so interesting that I read it in a day.", "その本はとても面白かったので、1日で読みました。"],
-["It was such an interesting book that I read it in a day.", "それはとても面白い本だったので、1日で読みました。"],
-["I have to get up early so that I can catch the first train.", "始発に乗れるように、早く起きなければなりません。"],
-["Take an umbrella in case it rains.", "雨が降る場合に備えて、傘を持って行きなさい。"],
-["He got out of the country for fear (that) he would be killed.", "彼は殺されるのを恐れてその国から脱出しました。"]
-]
+                "Lisa and I are in the same class.",
+                "リサと私は同じクラスです。"
+            ],
+            [
+                "I finished my homework and went to bed.",
+                "私は宿題を終えて寝ました。"
+            ],
+            [
+                "Would you like soup or salad? Salad, please.",
+                "「スープとサラダ、どちらになさいますか？」「サラダをお願いします。」"
+            ],
+            [
+                "I went to bed, but I couldn't sleep.",
+                "私は寝ましたが、眠れませんでした。"
+            ],
+            [
+                "I was sick, so I went home early.",
+                "私は気分が悪かったので、早く帰宅しました。"
+            ],
+            [
+                "I don't like ski lifts, for I'm afraid of heights.",
+                "私はスキーリフトが好きではありません。というのは高所恐怖症だからです。"
+            ],
+            [
+                "Turn right at the corner, and you'll find the subway station.",
+                "角を右に曲がりなさい。そうすれば地下鉄の駅があります。"
+            ],
+            [
+                "Hurry up, or you'll be late.",
+                "急ぎなさい。そうしないと遅刻しますよ。"
+            ],
+            [
+                "Plants need both water and the sun.",
+                "植物には水と太陽の両方が必要です。"
+            ],
+            [
+                "Plants need not only water but also the sun.",
+                "植物には水だけでなく太陽も必要です。"
+            ],
+            [
+                "He speaks not English but Spanish.",
+                "彼は英語ではなくスペイン語を話します。"
+            ],
+            [
+                "Either Tom or Steve will come.",
+                "トムかスティーブのどちらかが来るでしょう。"
+            ],
+            [
+                "Neither Tom nor Steve came.",
+                "トムもスティーブも来ませんでした。"
+            ],
+            [
+                "It's clear that he is lying.",
+                "彼が嘘をついているのは明らかです。"
+            ],
+            [
+                "I hope (that) you get well soon.",
+                "あなたがすぐに良くなることを願っています。"
+            ],
+            [
+                "The problem is (that) we don't have much time.",
+                "問題は私たちにあまり時間がないことです。"
+            ],
+            [
+                "I'm glad (that) you're safe.",
+                "あなたが無事でうれしいです。"
+            ],
+            [
+                "Whether the game will be held depends on the weather.",
+                "試合が行われるかどうかは天候次第です。"
+            ],
+            [
+                "The question is whether we can persuade him.",
+                "問題は彼を説得できるかどうかです。"
+            ],
+            [
+                "I don't know if [whether] Tom will come.",
+                "トムが来るかどうか私は知りません。"
+            ]
+        ],
+        [
+            [
+                "When I was seven, my family moved to Tokyo.",
+                "私が7歳のとき、家族で東京に引っ越しました。"
+            ],
+            [
+                "My smartphone rang while I was eating dinner.",
+                "夕食を食べている間にスマートフォンが鳴りました。"
+            ],
+            [
+                "Wash your hands before you eat.",
+                "食べる前に手を洗いなさい。"
+            ],
+            [
+                "We've known each other since we were kids.",
+                "私たちは子供のころからお互いを知っています。"
+            ],
+            [
+                "We continued talking until till we got sleepy.",
+                "私たちは眠くなるまで話し続けました。"
+            ],
+            [
+                "As soon as I got home, the phone rang.",
+                "帰宅してすぐに電話が鳴りました。"
+            ],
+            [
+                "If you need any help, please tell me.",
+                "もし助けが必要なら、私に言ってください。"
+            ],
+            [
+                "I'll lend you my notebooks as long as you give them back.",
+                "返してくれるならノートを貸します。"
+            ],
+            [
+                "As far as I know, he is a good guy.",
+                "私の知る限り、彼は良いやつです。"
+            ],
+            [
+                "We went out shopping, though [although] it was raining.",
+                "雨が降っていましたが、私たちは買い物に出かけました。"
+            ],
+            [
+                "It takes about two hours whether you go by bus or by train.",
+                "バスで行こうと電車で行こうと、約2時間かかります。"
+            ],
+            [
+                "I went home early because I was sick.",
+                "気分が悪かったので早く帰宅しました。"
+            ],
+            [
+                "The book was so interesting that I read it in a day.",
+                "その本はとても面白かったので、1日で読みました。"
+            ],
+            [
+                "It was such an interesting book that I read it in a day.",
+                "それはとても面白い本だったので、1日で読みました。"
+            ],
+            [
+                "I have to get up early so that I can catch the first train.",
+                "始発に乗れるように、早く起きなければなりません。"
+            ],
+            [
+                "Take an umbrella in case it rains.",
+                "雨が降る場合に備えて、傘を持って行きなさい。"
+            ],
+            [
+                "He got out of the country for fear (that) he would be killed.",
+                "彼は殺されるのを恐れてその国から脱出しました。"
+            ]
         ]
     ]
 }
