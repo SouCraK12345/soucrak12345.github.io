@@ -52,6 +52,7 @@ h1 {
     padding: 12px 24px;
     text-decoration: none;
     transition: 0.2s;
+    margin: 0 10px;
 }
 
 .issue-report-link:hover {
@@ -430,7 +431,8 @@ th {
     padding: 10px;
 }
 
-.cr_questions-container, .cr_answers-container {
+.cr_questions-container,
+.cr_answers-container {
     break-inside: avoid;
 }
 
