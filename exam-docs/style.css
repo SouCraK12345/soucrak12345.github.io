@@ -20,6 +20,45 @@ h1 {
     margin-bottom: 10px;
 }
 
+
+.issue-report {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin: 20px auto 30px;
+    max-width: 760px;
+    padding: 20px;
+    text-align: center;
+}
+
+.issue-report h2 {
+    border-left: 0;
+    color: #9a3412;
+    margin: 0 0 10px;
+    padding-left: 0;
+}
+
+.issue-report p {
+    margin: 0 0 16px;
+}
+
+.issue-report-link {
+    background: #c2410c;
+    border-radius: 9999px;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.issue-report-link:hover {
+    background: #9a3412;
+    transform: translateY(-2px);
+}
+
 /* セクションタイトル */
 h2 {
     margin-top: 30px;
