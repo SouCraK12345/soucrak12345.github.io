@@ -371,5 +371,77 @@
         "meaning": "〜だけでなく…も"
       }
     ]
+  },
+  "Lesson3 Section4": {
+    "text": "Mariupol was not a safe place for an art project. But to my surprise, when I started painting, children came out of nowhere to join me. We painted a big mitten. The idea is based on a popular Ukrainian story, The Mitten. In the story, one snowy night, an old man drops his mitten. A mouse, a frog, a rabbit, a fox, a wolf, and many other animals climb into the mitten to stay warm. In our painting, you see people from all over the world sharing the warmth of a huge mitten. It is decorated with Easter eggs which represent life and hope. Our painting shows that people's warm hearts can hatch the egg of hope and bring a peaceful life to us all. I still do not have a clear answer to the question: Who am I as a person and as an artist? But one thing has become clear: my art has the power to make people \"super happy.\"",
+    "paraphrases": [
+      {
+        "phrase": "come out of nowhere",
+        "equivalent": "suddenly appear"
+      },
+      {
+        "phrase": "to one's surprise",
+        "equivalent": "unexpectedly"
+      },
+      {
+        "phrase": "all over the world",
+        "equivalent": "worldwide"
+      }
+    ],
+    "vocabulary": [
+      {
+        "word": "nowhere",
+        "meaning": "どこにも〜ない、未知の場所"
+      },
+      {
+        "word": "mitten",
+        "meaning": "ミトン、親指だけが分かれている手袋"
+      },
+      {
+        "word": "Easter",
+        "meaning": "イースター、復活祭"
+      },
+      {
+        "word": "represent",
+        "meaning": "表す、象徴する"
+      },
+      {
+        "word": "Ukrainian",
+        "meaning": "ウクライナの、ウクライナ人［語］の"
+      },
+      {
+        "word": "warmth",
+        "meaning": "温かさ、暖かさ"
+      },
+      {
+        "word": "decorate",
+        "meaning": "飾る、装飾する"
+      },
+      {
+        "word": "peaceful",
+        "meaning": "平和な、穏やかな"
+      },
+      {
+        "word": "super",
+        "meaning": "ものすごく、とても"
+      }
+    ],
+    "idioms": [
+      {
+        "expression": "to one's surprise",
+        "example": "To our surprise, we won the game.",
+        "meaning": "驚いたことに"
+      },
+      {
+        "expression": "be based on ~",
+        "example": "His speech is based on his experience as a scientist.",
+        "meaning": "〜に基づいている"
+      },
+      {
+        "expression": "decorate with...",
+        "example": "The room was decorated with flowers for my birthday.",
+        "meaning": "…で飾る"
+      }
+    ]
   }
 }
