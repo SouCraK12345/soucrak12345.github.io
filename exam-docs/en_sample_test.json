@@ -1,1185 +1,1233 @@
 {
-    "lessonTitles": [
-        "Lesson 1: 文の種類",
-        "Lesson 2: 文型と動詞 1",
-        "Lesson 3: 文型と動詞 2",
-        "Lesson 4: 時制 1",
-        "Lesson 5: 時制 2",
-        "Lesson 6: 完了形 1",
-        "Lesson 7: 完了形 2",
-        "Lesson 8: 助動詞 1",
-        "Lesson 9 助動詞 2",
-        "Lesson 10 助動詞 3",
-        "Lesson 11 受動態 1",
-        "Lesson 12 受動態 2",
-        "Lesson 13 不定詞 1",
-        "Lesson 14 不定詞 2",
-        "Lesson 15 不定詞 3",
-        "Lesson 16 不定詞 4",
-        "Lesson 15 不定詞 3",
-        "Lesson 16 不定詞 4",
-        "Lesson 17 動名詞 1",
-        "Lesson 18 動名詞 2",
-        "Lesson 19 分詞 1",
-        "Lesson 20 分詞 2",
-        "Lesson 21 関係詞 1",
-        "Lesson 37 接続詞 1",
-        "Lesson 38 接続詞 2"
-    ],
-    "englishSentencesData": [
-        [
-            [
-                "I am a student. / I'm not a student.",
-                "私は学生です。 / 私は学生ではありません。"
-            ],
-            [
-                "I play tennis. / I don't play tennis.",
-                "私はテニスをします。 / 私はテニスをしません。"
-            ],
-            [
-                "He can play the flute. / He can't play the flute.",
-                "彼はフルートを吹くことができます。 / 彼はフルートを吹くことができません。"
-            ],
-            [
-                "\"Is he a student?\" \"Yes, he is.\" / \"No, he isn't.\"",
-                "「彼は学生ですか？」「はい、そうです。」 / 「いいえ、違います。」"
-            ],
-            [
-                "\"Do you play tennis?\" \"Yes, I do.\" / \"No, I don't.\"",
-                "「あなたはテニスをしますか？」「はい、します。」 / 「いいえ、しません。」"
-            ],
-            [
-                "\"Can you swim?\" \"Yes, I can.\" / \"No, I can't.\"",
-                "「あなたは泳げますか？」「はい、泳げます。」 / 「いいえ、泳げません。」"
-            ],
-            [
-                "\"What did you buy?\" \"I bought a T-shirt.\"",
-                "「あなたは何を買いましたか？」「私はTシャツを買いました。」"
-            ],
-            [
-                "\"Who plays the hero?\" \"Mike does.\"",
-                "「誰が主役を演じますか？」「マイクです。」"
-            ],
-            [
-                "\"Do you want tea or coffee?\" \"Coffee, please.\"",
-                "「紅茶がいいですか、それともコーヒーがいいですか？」「コーヒーをお願いします。」"
-            ],
-            [
-                "Be careful.",
-                "気をつけなさい。"
-            ],
-            [
-                "Come here.",
-                "ここに来なさい。"
-            ],
-            [
-                "Don't touch the paintings.",
-                "絵に触れてはいけません。"
-            ],
-            [
-                "\"Let's go shopping.\" \"Yes, let's.\" / \"No, let's not.\"",
-                "「買い物に行きましょう。」「ええ、そうしましょう。」 / 「いいえ、やめておきましょう。」"
-            ],
-            [
-                "How beautiful this house is!",
-                "この家はなんて美しいのでしょう！"
-            ],
-            [
-                "What a beautiful house this is!",
-                "これはなんて美しい家なのでしょう！"
-            ],
-            [
-                "\"Can't you swim?\" \"Yes, I can.\" / \"No, I can't.\"",
-                "「泳げないのですか？」「いいえ、泳げます。」 / 「はい、泳げません。」"
-            ],
-            [
-                "\"You are a student, aren't you?\" \"Yes, I am.\" / \"No, I'm not.\"",
-                "「あなたは学生ですよね？」「はい、そうです。」 / 「いいえ、違います。」"
+    "englishSentencesData": {
+        "0": {
+            "title": "Lesson 1: 文の種類",
+            "sentences": [
+                [
+                    "I am a student. / I'm not a student.",
+                    "私は学生です。 / 私は学生ではありません。"
+                ],
+                [
+                    "I play tennis. / I don't play tennis.",
+                    "私はテニスをします。 / 私はテニスをしません。"
+                ],
+                [
+                    "He can play the flute. / He can't play the flute.",
+                    "彼はフルートを吹くことができます。 / 彼はフルートを吹くことができません。"
+                ],
+                [
+                    "\"Is he a student?\" \"Yes, he is.\" / \"No, he isn't.\"",
+                    "「彼は学生ですか？」「はい、そうです。」 / 「いいえ、違います。」"
+                ],
+                [
+                    "\"Do you play tennis?\" \"Yes, I do.\" / \"No, I don't.\"",
+                    "「あなたはテニスをしますか？」「はい、します。」 / 「いいえ、しません。」"
+                ],
+                [
+                    "\"Can you swim?\" \"Yes, I can.\" / \"No, I can't.\"",
+                    "「あなたは泳げますか？」「はい、泳げます。」 / 「いいえ、泳げません。」"
+                ],
+                [
+                    "\"What did you buy?\" \"I bought a T-shirt.\"",
+                    "「あなたは何を買いましたか？」「私はTシャツを買いました。」"
+                ],
+                [
+                    "\"Who plays the hero?\" \"Mike does.\"",
+                    "「誰が主役を演じますか？」「マイクです。」"
+                ],
+                [
+                    "\"Do you want tea or coffee?\" \"Coffee, please.\"",
+                    "「紅茶がいいですか、それともコーヒーがいいですか？」「コーヒーをお願いします。」"
+                ],
+                [
+                    "Be careful.",
+                    "気をつけなさい。"
+                ],
+                [
+                    "Come here.",
+                    "ここに来なさい。"
+                ],
+                [
+                    "Don't touch the paintings.",
+                    "絵に触れてはいけません。"
+                ],
+                [
+                    "\"Let's go shopping.\" \"Yes, let's.\" / \"No, let's not.\"",
+                    "「買い物に行きましょう。」「ええ、そうしましょう。」 / 「いいえ、やめておきましょう。」"
+                ],
+                [
+                    "How beautiful this house is!",
+                    "この家はなんて美しいのでしょう！"
+                ],
+                [
+                    "What a beautiful house this is!",
+                    "これはなんて美しい家なのでしょう！"
+                ],
+                [
+                    "\"Can't you swim?\" \"Yes, I can.\" / \"No, I can't.\"",
+                    "「泳げないのですか？」「いいえ、泳げます。」 / 「はい、泳げません。」"
+                ],
+                [
+                    "\"You are a student, aren't you?\" \"Yes, I am.\" / \"No, I'm not.\"",
+                    "「あなたは学生ですよね？」「はい、そうです。」 / 「いいえ、違います。」"
+                ]
             ]
-        ],
-        [
-            [
-                "People in this town like music.",
-                "この町の人々は音楽が好きです。"
-            ],
-            [
-                "My sister is a college student.",
-                "私の姉（妹）は大学生です。"
-            ],
-            [
-                "She swims in the pool every day.",
-                "彼女は毎日プールで泳ぎます。"
-            ],
-            [
-                "She often buys her clothes at that store.",
-                "彼女はよくその店で服を買います。"
-            ],
-            [
-                "I walk to school.",
-                "私は歩いて登校します。"
-            ],
-            [
-                "There is a tree in the yard.",
-                "庭に木があります。"
-            ],
-            [
-                "He is famous.",
-                "彼は有名です。"
-            ],
-            [
-                "He bought a new watch yesterday.",
-                "彼は昨日新しい時計を買いました。"
+        },
+        "1": {
+            "title": "Lesson 2: 文型と動詞 1",
+            "sentences": [
+                [
+                    "People in this town like music.",
+                    "この町の人々は音楽が好きです。"
+                ],
+                [
+                    "My sister is a college student.",
+                    "私の姉（妹）は大学生です。"
+                ],
+                [
+                    "She swims in the pool every day.",
+                    "彼女は毎日プールで泳ぎます。"
+                ],
+                [
+                    "She often buys her clothes at that store.",
+                    "彼女はよくその店で服を買います。"
+                ],
+                [
+                    "I walk to school.",
+                    "私は歩いて登校します。"
+                ],
+                [
+                    "There is a tree in the yard.",
+                    "庭に木があります。"
+                ],
+                [
+                    "He is famous.",
+                    "彼は有名です。"
+                ],
+                [
+                    "He bought a new watch yesterday.",
+                    "彼は昨日新しい時計を買いました。"
+                ]
             ]
-        ],
-        [
-            [
-                "He gave Sally a ring.",
-                "彼はサリーに指輪をあげました。"
-            ],
-            [
-                "He bought Sally a ring.",
-                "彼はサリーに指輪を買ってあげました。"
-            ],
-            [
-                "We call our dog Elmo.",
-                "私たちは自分たちの犬をエルモと呼びます。"
-            ],
-            [
-                "We discussed the matter.",
-                "私たちはその問題について話し合いました。"
-            ],
-            [
-                "I agree with you.",
-                "私はあなたに同意します。"
-            ],
-            [
-                "He is lying in bed now.",
-                "彼は今、ベッドで横になっています。"
-            ],
-            [
-                "She laid the baby on the bed.",
-                "彼女は赤ちゃんをベッドに寝かせました。"
-            ],
-            [
-                "Stand straight.",
-                "真っ直ぐ立ちなさい。"
-            ],
-            [
-                "I can't stand this weather.",
-                "この天気に耐えられません。"
+        },
+        "2": {
+            "title": "Lesson 3: 文型と動詞 2",
+            "sentences": [
+                [
+                    "He gave Sally a ring.",
+                    "彼はサリーに指輪をあげました。"
+                ],
+                [
+                    "He bought Sally a ring.",
+                    "彼はサリーに指輪を買ってあげました。"
+                ],
+                [
+                    "We call our dog Elmo.",
+                    "私たちは自分たちの犬をエルモと呼びます。"
+                ],
+                [
+                    "We discussed the matter.",
+                    "私たちはその問題について話し合いました。"
+                ],
+                [
+                    "I agree with you.",
+                    "私はあなたに同意します。"
+                ],
+                [
+                    "He is lying in bed now.",
+                    "彼は今、ベッドで横になっています。"
+                ],
+                [
+                    "She laid the baby on the bed.",
+                    "彼女は赤ちゃんをベッドに寝かせました。"
+                ],
+                [
+                    "Stand straight.",
+                    "真っ直ぐ立ちなさい。"
+                ],
+                [
+                    "I can't stand this weather.",
+                    "この天気に耐えられません。"
+                ]
             ]
-        ],
-        [
-            [
-                "I love you.",
-                "あなたを愛しています。"
-            ],
-            [
-                "I usually eat bread for breakfast.",
-                "私はふだん朝食にパンを食べます。"
-            ],
-            [
-                "The sun rises in the east.",
-                "太陽は東から昇る。"
-            ],
-            [
-                "She is playing tennis now.",
-                "彼女は今テニスをしています。"
-            ],
-            [
-                "She is playing tennis these days.",
-                "彼女は最近テニスをしています。"
-            ],
-            [
-                "I loved him.",
-                "私は彼を愛していました。"
-            ],
-            [
-                "He played baseball last week.",
-                "彼は先週野球をしました。"
-            ],
-            [
-                "He usually played soccer after school.",
-                "彼はふだん放課後サッカーをしていました。"
-            ],
-            [
-                "She was playing tennis around 4 p.m.",
-                "彼女は午後4時ごろテニスをしていました。"
-            ],
-            [
-                "He was taking pictures while he was traveling.",
-                "彼は旅行中、写真を撮っていました。"
+        },
+        "3": {
+            "title": "Lesson 4: 時制 1",
+            "sentences": [
+                [
+                    "I love you.",
+                    "あなたを愛しています。"
+                ],
+                [
+                    "I usually eat bread for breakfast.",
+                    "私はふだん朝食にパンを食べます。"
+                ],
+                [
+                    "The sun rises in the east.",
+                    "太陽は東から昇る。"
+                ],
+                [
+                    "She is playing tennis now.",
+                    "彼女は今テニスをしています。"
+                ],
+                [
+                    "She is playing tennis these days.",
+                    "彼女は最近テニスをしています。"
+                ],
+                [
+                    "I loved him.",
+                    "私は彼を愛していました。"
+                ],
+                [
+                    "He played baseball last week.",
+                    "彼は先週野球をしました。"
+                ],
+                [
+                    "He usually played soccer after school.",
+                    "彼はふだん放課後サッカーをしていました。"
+                ],
+                [
+                    "She was playing tennis around 4 p.m.",
+                    "彼女は午後4時ごろテニスをしていました。"
+                ],
+                [
+                    "He was taking pictures while he was traveling.",
+                    "彼は旅行中、写真を撮っていました。"
+                ]
             ]
-        ],
-        [
-            [
-                "I will be seventeen next month.",
-                "私は来月17歳になります。"
-            ],
-            [
-                "I will call you tonight.",
-                "今夜あなたに電話します。"
-            ],
-            [
-                "I'm going to go shopping tomorrow.",
-                "明日買い物に行く予定です。"
-            ],
-            [
-                "Look at the sky. It's going to rain.",
-                "空を見て。雨が降りそうです。"
-            ],
-            [
-                "This time next week I'll be swimming in the sea.",
-                "来週の今ごろ、私は海で泳いでいるでしょう。"
-            ],
-            [
-                "I will be meeting him on Wednesday morning.",
-                "水曜日の午前中に彼と会うことになっています。"
-            ],
-            [
-                "Please call me when you arrive at the hotel.",
-                "ホテルに着いたら電話をください。"
-            ],
-            [
-                "If it rains tomorrow, we will stay home.",
-                "もし明日雨なら、私たちは家にいます。"
-            ],
-            [
-                "My brother is always watching TV.",
-                "兄（弟）はいつもテレビばかり見ています。"
-            ],
-            [
-                "The leaves are becoming yellow.",
-                "葉が黄色くなりかけています。"
-            ],
-            [
-                "I'm leaving for Los Angeles tomorrow.",
-                "明日ロサンゼルスへ向けて出発します。"
-            ],
-            [
-                "The plane leaves for New York at 12:30.",
-                "その飛行機は12時30分にニューヨークへ出発します。"
+        },
+        "4": {
+            "title": "Lesson 5: 時制 2",
+            "sentences": [
+                [
+                    "I will be seventeen next month.",
+                    "私は来月17歳になります。"
+                ],
+                [
+                    "I will call you tonight.",
+                    "今夜あなたに電話します。"
+                ],
+                [
+                    "I'm going to go shopping tomorrow.",
+                    "明日買い物に行く予定です。"
+                ],
+                [
+                    "Look at the sky. It's going to rain.",
+                    "空を見て。雨が降りそうです。"
+                ],
+                [
+                    "This time next week I'll be swimming in the sea.",
+                    "来週の今ごろ、私は海で泳いでいるでしょう。"
+                ],
+                [
+                    "I will be meeting him on Wednesday morning.",
+                    "水曜日の午前中に彼と会うことになっています。"
+                ],
+                [
+                    "Please call me when you arrive at the hotel.",
+                    "ホテルに着いたら電話をください。"
+                ],
+                [
+                    "If it rains tomorrow, we will stay home.",
+                    "もし明日雨なら、私たちは家にいます。"
+                ],
+                [
+                    "My brother is always watching TV.",
+                    "兄（弟）はいつもテレビばかり見ています。"
+                ],
+                [
+                    "The leaves are becoming yellow.",
+                    "葉が黄色くなりかけています。"
+                ],
+                [
+                    "I'm leaving for Los Angeles tomorrow.",
+                    "明日ロサンゼルスへ向けて出発します。"
+                ],
+                [
+                    "The plane leaves for New York at 12:30.",
+                    "その飛行機は12時30分にニューヨークへ出発します。"
+                ]
             ]
-        ],
-        [
-            [
-                "I have just heard the news.",
-                "ちょうどそのニュースを聞いたところです。"
-            ],
-            [
-                "I have lost my key.",
-                "鍵を失くしてしまいました（今もありません）。"
-            ],
-            [
-                "I have met Judy's brother twice.",
-                "ジュディの兄（弟）に2回会ったことがあります。"
-            ],
-            [
-                "She has lived in Paris for three years.",
-                "彼女は3年間パリに住んでいます。"
-            ],
-            [
-                "He has been watching TV since this morning.",
-                "彼は今朝からずっとテレビを見ています。"
-            ],
-            [
-                "I haven't seen him lately.",
-                "最近彼に会っていません。"
-            ],
-            [
-                "I received a letter from him six months ago.",
-                "6ヶ月前に彼から手紙を受け取りました。"
+        },
+        "5": {
+            "title": "Lesson 6: 完了形 1",
+            "sentences": [
+                [
+                    "I have just heard the news.",
+                    "ちょうどそのニュースを聞いたところです。"
+                ],
+                [
+                    "I have lost my key.",
+                    "鍵を失くしてしまいました（今もありません）。"
+                ],
+                [
+                    "I have met Judy's brother twice.",
+                    "ジュディの兄（弟）に2回会ったことがあります。"
+                ],
+                [
+                    "She has lived in Paris for three years.",
+                    "彼女は3年間パリに住んでいます。"
+                ],
+                [
+                    "He has been watching TV since this morning.",
+                    "彼は今朝からずっとテレビを見ています。"
+                ],
+                [
+                    "I haven't seen him lately.",
+                    "最近彼に会っていません。"
+                ],
+                [
+                    "I received a letter from him six months ago.",
+                    "6ヶ月前に彼から手紙を受け取りました。"
+                ]
             ]
-        ],
-        [
-            [
-                "The party had already started when we arrived.",
-                "私たちが到着したとき、パーティーはすでに始まっていました。"
-            ],
-            [
-                "I had never seen an opera until I visited Italy.",
-                "イタリアを訪れるまで、オペラを見たことがありませんでした。"
-            ],
-            [
-                "She had lived in Paris for three years before she came to Japan.",
-                "日本に来る前、彼女は3年間パリに住んでいました。"
-            ],
-            [
-                "We had been playing soccer for an hour when it started to rain.",
-                "雨が降り出したとき、私たちは1時間ずっとサッカーをしていました。"
-            ],
-            [
-                "I heard that Fred had returned to Canada.",
-                "フレッドがカナダに帰ったと聞きました。"
-            ],
-            [
-                "The party will have started by the time we arrive.",
-                "私たちが着くまでに、パーティーは始まってしまっているでしょう。"
-            ],
-            [
-                "I'll have seen the movie three times if I see it again.",
-                "もう一度見れば、その映画を3回見たことになります。"
-            ],
-            [
-                "They will have been married for 20 years next year.",
-                "彼らは来年で結婚して20年になります。"
+        },
+        "6": {
+            "title": "Lesson 7: 完了形 2",
+            "sentences": [
+                [
+                    "The party had already started when we arrived.",
+                    "私たちが到着したとき、パーティーはすでに始まっていました。"
+                ],
+                [
+                    "I had never seen an opera until I visited Italy.",
+                    "イタリアを訪れるまで、オペラを見たことがありませんでした。"
+                ],
+                [
+                    "She had lived in Paris for three years before she came to Japan.",
+                    "日本に来る前、彼女は3年間パリに住んでいました。"
+                ],
+                [
+                    "We had been playing soccer for an hour when it started to rain.",
+                    "雨が降り出したとき、私たちは1時間ずっとサッカーをしていました。"
+                ],
+                [
+                    "I heard that Fred had returned to Canada.",
+                    "フレッドがカナダに帰ったと聞きました。"
+                ],
+                [
+                    "The party will have started by the time we arrive.",
+                    "私たちが着くまでに、パーティーは始まってしまっているでしょう。"
+                ],
+                [
+                    "I'll have seen the movie three times if I see it again.",
+                    "もう一度見れば、その映画を3回見たことになります。"
+                ],
+                [
+                    "They will have been married for 20 years next year.",
+                    "彼らは来年で結婚して20年になります。"
+                ]
             ]
-        ],
-        [
-            [
-                "She can play the piano.",
-                "彼女はピアノを弾くことができます。"
-            ],
-            [
-                "You can use my smartphone.",
-                "私のスマートフォンを使ってもいいですよ。"
-            ],
-            [
-                "\"Can [Could] you open the door?\" \"All right.\"",
-                "「ドアを開けてくれますか［いただけますか］？」「いいですよ。」"
-            ],
-            [
-                "An accident can [could] happen at any time.",
-                "事故はいつでも起こり得ます。"
-            ],
-            [
-                "The rumor can't [couldn't] be true.",
-                "その噂が本当であるはずがありません。"
-            ],
-            [
-                "\"May I ask you a question?\" \"Sure.\"",
-                "「質問してもよろしいですか？」「もちろんです。」"
-            ],
-            [
-                "He may [might] be at home.",
-                "彼は家にいるかもしれません。"
-            ],
-            [
-                "You must get some sleep.",
-                "あなたは眠らなければなりません。"
-            ],
-            [
-                "You must not take pictures here.",
-                "ここで写真を撮ってはいけません。"
-            ],
-            [
-                "I have to go to the dentist today.",
-                "今日は歯医者に行かなければなりません。"
-            ],
-            [
-                "You don't have to take off your shoes.",
-                "靴を脱ぐ必要はありません。"
-            ],
-            [
-                "He must be tired.",
-                "彼は疲れているに違いありません。"
+        },
+        "7": {
+            "title": "Lesson 8: 助動詞 1",
+            "sentences": [
+                [
+                    "She can play the piano.",
+                    "彼女はピアノを弾くことができます。"
+                ],
+                [
+                    "You can use my smartphone.",
+                    "私のスマートフォンを使ってもいいですよ。"
+                ],
+                [
+                    "\"Can [Could] you open the door?\" \"All right.\"",
+                    "「ドアを開けてくれますか［いただけますか］？」「いいですよ。」"
+                ],
+                [
+                    "An accident can [could] happen at any time.",
+                    "事故はいつでも起こり得ます。"
+                ],
+                [
+                    "The rumor can't [couldn't] be true.",
+                    "その噂が本当であるはずがありません。"
+                ],
+                [
+                    "\"May I ask you a question?\" \"Sure.\"",
+                    "「質問してもよろしいですか？」「もちろんです。」"
+                ],
+                [
+                    "He may [might] be at home.",
+                    "彼は家にいるかもしれません。"
+                ],
+                [
+                    "You must get some sleep.",
+                    "あなたは眠らなければなりません。"
+                ],
+                [
+                    "You must not take pictures here.",
+                    "ここで写真を撮ってはいけません。"
+                ],
+                [
+                    "I have to go to the dentist today.",
+                    "今日は歯医者に行かなければなりません。"
+                ],
+                [
+                    "You don't have to take off your shoes.",
+                    "靴を脱ぐ必要はありません。"
+                ],
+                [
+                    "He must be tired.",
+                    "彼は疲れているに違いありません。"
+                ]
             ]
-        ],
-        [
-            [
-                "You should [ought to] be more careful.",
-                "あなた（方）はもっと注意すべきだ。"
-            ],
-            [
-                "They should [ought to] arrive here soon.",
-                "彼らはもうすぐここに着くはずだ。"
-            ],
-            [
-                "You had better see a doctor.",
-                "医者に診てもらいなさい。"
-            ],
-            [
-                "It will rain this afternoon.",
-                "午後には雨が降るだろう。"
-            ],
-            [
-                "I'll do my homework after dinner.",
-                "夕食後に宿題をするつもりだ。"
-            ],
-            [
-                "The door wouldn't open.",
-                "ドアがどうしても開かなかった。"
-            ],
-            [
-                "\"Will [Would] you open the door?\" \"Sure.\"",
-                "「ドアを開けてくれますか［いただけますか］」「いいですよ」"
-            ],
-            [
-                "They will be on the island by now.",
-                "彼らは今ごろ島にいるだろう。"
-            ],
-            [
-                "Babies will cry.",
-                "赤ん坊は泣くものだ。"
-            ],
-            [
-                "We would often go to the movies.",
-                "私たちはよく映画に見に行ったものだ。"
-            ],
-            [
-                "I used to walk to school with my friends.",
-                "私は（以前はよく）友達と一緒に歩いて登校したものだ。"
-            ],
-            [
-                "There used to be a theater in the town.",
-                "（以前は）町に映画館があった。"
-            ],
-            [
-                "\"Shall I open the window?\" \"Yes, please.\" / \"No, thanks.\"",
-                "「窓を開けましょうか」「ええ、お願いします」「いいえ、結構です」"
-            ],
-            [
-                "\"Shall we go to a movie tomorrow?\" \"Yes, let's.\" / \"No, let's not.\"",
-                "「明日映画に行きませんか」「ええ、そうしましょう」「いいえ、よしておきましょう」"
+        },
+        "8": {
+            "title": "Lesson 9 助動詞 2",
+            "sentences": [
+                [
+                    "You should [ought to] be more careful.",
+                    "あなた（方）はもっと注意すべきだ。"
+                ],
+                [
+                    "They should [ought to] arrive here soon.",
+                    "彼らはもうすぐここに着くはずだ。"
+                ],
+                [
+                    "You had better see a doctor.",
+                    "医者に診てもらいなさい。"
+                ],
+                [
+                    "It will rain this afternoon.",
+                    "午後には雨が降るだろう。"
+                ],
+                [
+                    "I'll do my homework after dinner.",
+                    "夕食後に宿題をするつもりだ。"
+                ],
+                [
+                    "The door wouldn't open.",
+                    "ドアがどうしても開かなかった。"
+                ],
+                [
+                    "\"Will [Would] you open the door?\" \"Sure.\"",
+                    "「ドアを開けてくれますか［いただけますか］」「いいですよ」"
+                ],
+                [
+                    "They will be on the island by now.",
+                    "彼らは今ごろ島にいるだろう。"
+                ],
+                [
+                    "Babies will cry.",
+                    "赤ん坊は泣くものだ。"
+                ],
+                [
+                    "We would often go to the movies.",
+                    "私たちはよく映画に見に行ったものだ。"
+                ],
+                [
+                    "I used to walk to school with my friends.",
+                    "私は（以前はよく）友達と一緒に歩いて登校したものだ。"
+                ],
+                [
+                    "There used to be a theater in the town.",
+                    "（以前は）町に映画館があった。"
+                ],
+                [
+                    "\"Shall I open the window?\" \"Yes, please.\" / \"No, thanks.\"",
+                    "「窓を開けましょうか」「ええ、お願いします」「いいえ、結構です」"
+                ],
+                [
+                    "\"Shall we go to a movie tomorrow?\" \"Yes, let's.\" / \"No, let's not.\"",
+                    "「明日映画に行きませんか」「ええ、そうしましょう」「いいえ、よしておきましょう」"
+                ]
             ]
-        ],
-        [
-            [
-                "He must have had a good rest.",
-                "彼は十分に休んだに違いない。"
-            ],
-            [
-                "I may [might] have left the key at home.",
-                "私は家に鍵を置き忘れたかもしれない。"
-            ],
-            [
-                "She can't [couldn't] have made such a mistake.",
-                "彼女がそんな間違いをしたはずがない。"
-            ],
-            [
-                "The accident could have been much worse.",
-                "事故はもっとひどいことになった可能性がある。"
-            ],
-            [
-                "He should [ought to] have arrived home by now.",
-                "彼は今ごろ家に着いているはずだ。"
-            ],
-            [
-                "He could have received treatment.",
-                "彼は治療を受けることができたのに（しなかった）。"
-            ],
-            [
-                "I should [ought to] have taken his advice.",
-                "彼の助言を聞くべきだったのに（しなかった）。"
-            ],
-            [
-                "We needn't have hurried.",
-                "私たちは急ぐ必要はなかったのに（急いでしまった）。"
-            ],
-            [
-                "I would like to make a reservation.",
-                "予約をしたいのですが。"
-            ],
-            [
-                "I would rather stay home than go out.",
-                "外出するよりはむしろ家にいたい。"
-            ],
-            [
-                "He may [might] well win.",
-                "彼はおそらく勝つだろう。／彼が勝つのももっともだ。"
-            ],
-            [
-                "We may [might] as well go in the rain. It will never stop.",
-                "雨の中を行くほうがましだ。どうせやまないのだから。"
-            ],
-            [
-                "You only have to sit quietly.",
-                "ただ静かに座っていさえすればよい。"
-            ],
-            [
-                "You cannot be too careful when you drive.",
-                "運転するときは、いくら注意してもしすぎることはない。"
-            ],
-            [
-                "I cannot help feeling sorry for her.",
-                "彼女を気の毒に思わずにはいられない。／思わざるを得ない。"
-            ],
-            [
-                "I cannot help but feel sorry for her.",
-                "彼女を気の毒に思わずにはいられない。"
+        },
+        "9": {
+            "title": "Lesson 10 助動詞 3",
+            "sentences": [
+                [
+                    "He must have had a good rest.",
+                    "彼は十分に休んだに違いない。"
+                ],
+                [
+                    "I may [might] have left the key at home.",
+                    "私は家に鍵を置き忘れたかもしれない。"
+                ],
+                [
+                    "She can't [couldn't] have made such a mistake.",
+                    "彼女がそんな間違いをしたはずがない。"
+                ],
+                [
+                    "The accident could have been much worse.",
+                    "事故はもっとひどいことになった可能性がある。"
+                ],
+                [
+                    "He should [ought to] have arrived home by now.",
+                    "彼は今ごろ家に着いているはずだ。"
+                ],
+                [
+                    "He could have received treatment.",
+                    "彼は治療を受けることができたのに（しなかった）。"
+                ],
+                [
+                    "I should [ought to] have taken his advice.",
+                    "彼の助言を聞くべきだったのに（しなかった）。"
+                ],
+                [
+                    "We needn't have hurried.",
+                    "私たちは急ぐ必要はなかったのに（急いでしまった）。"
+                ],
+                [
+                    "I would like to make a reservation.",
+                    "予約をしたいのですが。"
+                ],
+                [
+                    "I would rather stay home than go out.",
+                    "外出するよりはむしろ家にいたい。"
+                ],
+                [
+                    "He may [might] well win.",
+                    "彼はおそらく勝つだろう。／彼が勝つのももっともだ。"
+                ],
+                [
+                    "We may [might] as well go in the rain. It will never stop.",
+                    "雨の中を行くほうがましだ。どうせやまないのだから。"
+                ],
+                [
+                    "You only have to sit quietly.",
+                    "ただ静かに座っていさえすればよい。"
+                ],
+                [
+                    "You cannot be too careful when you drive.",
+                    "運転するときは、いくら注意してもしすぎることはない。"
+                ],
+                [
+                    "I cannot help feeling sorry for her.",
+                    "彼女を気の毒に思わずにはいられない。／思わざるを得ない。"
+                ],
+                [
+                    "I cannot help but feel sorry for her.",
+                    "彼女を気の毒に思わずにはいられない。"
+                ]
             ]
-        ],
-        [
-            [
-                "This hall was designed by a famous artist.",
-                "このホールは有名な芸術家によって設計された。"
-            ],
-            [
-                "German is spoken in Austria.",
-                "オーストリアではドイツ語が話されている。"
-            ],
-            [
-                "We were not invited to the party.",
-                "私たちはそのパーティーに招待されなかった。"
-            ],
-            [
-                "Were you invited to the party?",
-                "あなたはそのパーティーに招待されましたか。"
-            ],
-            [
-                "Where was the party held?",
-                "パーティーはどこで開かれましたか。"
-            ],
-            [
-                "This essay must be finished by tomorrow.",
-                "このエッセイは明日までに終わらせなければならない。"
-            ],
-            [
-                "His new movie will be released in May.",
-                "彼の新しい映画は5月に公開されるだろう。"
-            ],
-            [
-                "A new building is being built on the corner.",
-                "新しい建物が角のところで建設中である。"
-            ],
-            [
-                "Don't touch the wall. It has just been painted.",
-                "壁に触らないでください。塗りたてです（たった今塗られたところです）。"
+        },
+        "10": {
+            "title": "Lesson 11 受動態 1",
+            "sentences": [
+                [
+                    "This hall was designed by a famous artist.",
+                    "このホールは有名な芸術家によって設計された。"
+                ],
+                [
+                    "German is spoken in Austria.",
+                    "オーストリアではドイツ語が話されている。"
+                ],
+                [
+                    "We were not invited to the party.",
+                    "私たちはそのパーティーに招待されなかった。"
+                ],
+                [
+                    "Were you invited to the party?",
+                    "あなたはそのパーティーに招待されましたか。"
+                ],
+                [
+                    "Where was the party held?",
+                    "パーティーはどこで開かれましたか。"
+                ],
+                [
+                    "This essay must be finished by tomorrow.",
+                    "このエッセイは明日までに終わらせなければならない。"
+                ],
+                [
+                    "His new movie will be released in May.",
+                    "彼の新しい映画は5月に公開されるだろう。"
+                ],
+                [
+                    "A new building is being built on the corner.",
+                    "新しい建物が角のところで建設中である。"
+                ],
+                [
+                    "Don't touch the wall. It has just been painted.",
+                    "壁に触らないでください。塗りたてです（たった今塗られたところです）。"
+                ]
             ]
-        ],
-        [
-            [
-                "Mary was given a gold medal.",
-                "メアリーは金メダルを与えられた。"
-            ],
-            [
-                "The gold medal was given to Mary.",
-                "金メダルがメアリーに与えられた。"
-            ],
-            [
-                "This bag was bought for me by my grandmother.",
-                "このバッグは祖母が私のために買ってくれた。"
-            ],
-            [
-                "The baby was named Catherine by her parents.",
-                "その赤ん坊は両親にキャサリンと名付けられた。"
-            ],
-            [
-                "It is said (that) he is very rich.",
-                "彼はとても金持ちだと言われている。"
-            ],
-            [
-                "He is said to be very rich.",
-                "彼はとても金持ちだと言われている。"
-            ],
-            [
-                "I was spoken to by a foreigner this morning.",
-                "今朝、私は外国人に話しかけられた。"
-            ],
-            [
-                "The road is covered with snow.",
-                "道路は雪で覆われている。"
-            ],
-            [
-                "We were surprised at the news.",
-                "私たちはそのニュースに驚いた。"
-            ],
-            [
-                "He was injured in last night's game.",
-                "彼は昨夜の試合で負傷した。"
-            ],
-            [
-                "She is married to a colleague.",
-                "彼女は同僚と結婚している。"
+        },
+        "11": {
+            "title": "Lesson 12 受動態 2",
+            "sentences": [
+                [
+                    "Mary was given a gold medal.",
+                    "メアリーは金メダルを与えられた。"
+                ],
+                [
+                    "The gold medal was given to Mary.",
+                    "金メダルがメアリーに与えられた。"
+                ],
+                [
+                    "This bag was bought for me by my grandmother.",
+                    "このバッグは祖母が私のために買ってくれた。"
+                ],
+                [
+                    "The baby was named Catherine by her parents.",
+                    "その赤ん坊は両親にキャサリンと名付けられた。"
+                ],
+                [
+                    "It is said (that) he is very rich.",
+                    "彼はとても金持ちだと言われている。"
+                ],
+                [
+                    "He is said to be very rich.",
+                    "彼はとても金持ちだと言われている。"
+                ],
+                [
+                    "I was spoken to by a foreigner this morning.",
+                    "今朝、私は外国人に話しかけられた。"
+                ],
+                [
+                    "The road is covered with snow.",
+                    "道路は雪で覆われている。"
+                ],
+                [
+                    "We were surprised at the news.",
+                    "私たちはそのニュースに驚いた。"
+                ],
+                [
+                    "He was injured in last night's game.",
+                    "彼は昨夜の試合で負傷した。"
+                ],
+                [
+                    "She is married to a colleague.",
+                    "彼女は同僚と結婚している。"
+                ]
             ]
-        ],
-        [
-            [
-                "It's important to get enough sleep.",
-                "十分な睡眠をとることが重要だ。"
-            ],
-            [
-                "Her dream is to be a singer.",
-                "彼女の夢は歌手になることだ。"
-            ],
-            [
-                "I hope to go to university.",
-                "私は大学に行くことを希望している。"
-            ],
-            [
-                "I found it easy to book a hotel online.",
-                "私はオンラインでホテルを予約することが簡単だとわかった。"
-            ],
-            [
-                "Luckily, he had friends to help him.",
-                "幸運なことに、彼には助けてくれる友達がいた。"
-            ],
-            [
-                "I have a lot of things to do today.",
-                "私は今日、すべきことがたくさんある。"
-            ],
-            [
-                "Bring a notebook and something to write with.",
-                "ノートと書くもの（ペンなど）を持ってきなさい。"
-            ],
-            [
-                "I made a promise to go to the movies with her.",
-                "私は彼女と一緒に映画に行く約束をした。"
-            ],
-            [
-                "I got up early to catch the 6:30 train.",
-                "私は6時30分の電車に乗るために早起きした。"
-            ],
-            [
-                "I'm glad to see you.",
-                "あなたにお会いできてうれしいです。"
-            ],
-            [
-                "He must be clever to answer that question.",
-                "あの質問に答えるなんて、彼は賢いに違いない。"
-            ],
-            [
-                "He woke up to find himself in the hospital.",
-                "彼は目を覚ますと、自分が病院にいることに気づいた。"
+        },
+        "12": {
+            "title": "Lesson 13 不定詞 1",
+            "sentences": [
+                [
+                    "It's important to get enough sleep.",
+                    "十分な睡眠をとることが重要だ。"
+                ],
+                [
+                    "Her dream is to be a singer.",
+                    "彼女の夢は歌手になることだ。"
+                ],
+                [
+                    "I hope to go to university.",
+                    "私は大学に行くことを希望している。"
+                ],
+                [
+                    "I found it easy to book a hotel online.",
+                    "私はオンラインでホテルを予約することが簡単だとわかった。"
+                ],
+                [
+                    "Luckily, he had friends to help him.",
+                    "幸運なことに、彼には助けてくれる友達がいた。"
+                ],
+                [
+                    "I have a lot of things to do today.",
+                    "私は今日、すべきことがたくさんある。"
+                ],
+                [
+                    "Bring a notebook and something to write with.",
+                    "ノートと書くもの（ペンなど）を持ってきなさい。"
+                ],
+                [
+                    "I made a promise to go to the movies with her.",
+                    "私は彼女と一緒に映画に行く約束をした。"
+                ],
+                [
+                    "I got up early to catch the 6:30 train.",
+                    "私は6時30分の電車に乗るために早起きした。"
+                ],
+                [
+                    "I'm glad to see you.",
+                    "あなたにお会いできてうれしいです。"
+                ],
+                [
+                    "He must be clever to answer that question.",
+                    "あの質問に答えるなんて、彼は賢いに違いない。"
+                ],
+                [
+                    "He woke up to find himself in the hospital.",
+                    "彼は目を覚ますと、自分が病院にいることに気づいた。"
+                ]
             ]
-        ],
-        [
-            [
-                "It is dangerous for the children to stay here.",
-                "子どもたちがここに留まるのは危険だ。"
-            ],
-            [
-                "It was kind of you to help me.",
-                "手伝ってくれてありがとう（手伝ってくれるなんてあなたは親切だった）。"
-            ],
-            [
-                "I want you to come to tomorrow's party.",
-                "私はあなたに明日のパーティーに来てほしい。"
-            ],
-            [
-                "She told me not to be late.",
-                "彼女は私に遅れないようにと言った。"
-            ],
-            [
-                "My mother made me clean my room.",
-                "母は私に部屋の掃除をさせた（強制）。"
-            ],
-            [
-                "I saw the man get out of the car.",
-                "私はその男が車から降りるのを見た。"
+        },
+        "13": {
+            "title": "Lesson 14 不定詞 2",
+            "sentences": [
+                [
+                    "It is dangerous for the children to stay here.",
+                    "子どもたちがここに留まるのは危険だ。"
+                ],
+                [
+                    "It was kind of you to help me.",
+                    "手伝ってくれてありがとう（手伝ってくれるなんてあなたは親切だった）。"
+                ],
+                [
+                    "I want you to come to tomorrow's party.",
+                    "私はあなたに明日のパーティーに来てほしい。"
+                ],
+                [
+                    "She told me not to be late.",
+                    "彼女は私に遅れないようにと言った。"
+                ],
+                [
+                    "My mother made me clean my room.",
+                    "母は私に部屋の掃除をさせた（強制）。"
+                ],
+                [
+                    "I saw the man get out of the car.",
+                    "私はその男が車から降りるのを見た。"
+                ]
             ]
-        ],
-        [
-            [
-                "I don't know what to do.",
-                "何をすべきかわからない。"
-            ],
-            [
-                "He seems to be ill.",
-                "彼は病気であるようだ（今病気だと今思われている）。"
-            ],
-            [
-                "He seemed to be ill.",
-                "彼は病気であるようだった（その時病気だとその時思われた）。"
-            ],
-            [
-                "He seems to have been ill.",
-                "彼は（以前）病気だったようだ（以前病気だったと今思われている）。"
-            ],
-            [
-                "He seemed to have been ill.",
-                "彼は（それ以前に）病気だったようだった（それ以前に病気だったとその時思われた）。"
-            ],
-            [
-                "She seems to be enjoying her holiday.",
-                "彼女は休日を楽しんでいるようだ。"
-            ],
-            [
-                "Children need to be accompanied by an adult.",
-                "子どもは成人の同伴が必要である。"
+        },
+        "14": {
+            "title": "Lesson 15 不定詞 3",
+            "sentences": [
+                [
+                    "I don't know what to do.",
+                    "何をすべきかわからない。"
+                ],
+                [
+                    "He seems to be ill.",
+                    "彼は病気であるようだ（今病気だと今思われている）。"
+                ],
+                [
+                    "He seemed to be ill.",
+                    "彼は病気であるようだった（その時病気だとその時思われた）。"
+                ],
+                [
+                    "He seems to have been ill.",
+                    "彼は（以前）病気だったようだ（以前病気だったと今思われている）。"
+                ],
+                [
+                    "He seemed to have been ill.",
+                    "彼は（それ以前に）病気だったようだった（それ以前に病気だったとその時思われた）。"
+                ],
+                [
+                    "She seems to be enjoying her holiday.",
+                    "彼女は休日を楽しんでいるようだ。"
+                ],
+                [
+                    "Children need to be accompanied by an adult.",
+                    "子どもは成人の同伴が必要である。"
+                ]
             ]
-        ],
-        [
-            [
-                "The problem is easy to solve.",
-                "その問題は解くのが簡単だ。"
-            ],
-            [
-                "I'm ready to leave.",
-                "出発する準備はできている。"
-            ],
-            [
-                "I managed to get two tickets for the concert.",
-                "なんとかそのコンサートのチケットを2枚手に入れることができた。"
-            ],
-            [
-                "Please come with us if you'd like to.",
-                "よろしければ、私たちと一緒に来てください。"
-            ],
-            [
-                "The President is to visit Kyoto today.",
-                "大統領は今日、京都を訪問する予定だ。"
-            ],
-            [
-                "To tell (you) the truth, I woke up late this morning.",
-                "実を言うと、私は今朝寝坊した。"
-            ],
-            [
-                "I'm too tired to walk.",
-                "私はあまりにも疲れていて歩けない（歩くには疲れすぎている）。"
-            ],
-            [
-                "He is smart enough to solve the puzzle.",
-                "彼はそのパズルを解くほど十分賢い（十分賢いのでパズルを解ける）。"
-            ],
-            [
-                "I'm not so foolish as to believe his story.",
-                "私は彼の話を信じるほど愚かではない。"
-            ],
-            [
-                "We arrived early in order to [so as to] get good seats.",
-                "私たちは良い席を確保するために早く到着した。"
+        },
+        "15": {
+            "title": "Lesson 16 不定詞 4",
+            "sentences": [
+                [
+                    "The problem is easy to solve.",
+                    "その問題は解くのが簡単だ。"
+                ],
+                [
+                    "I'm ready to leave.",
+                    "出発する準備はできている。"
+                ],
+                [
+                    "I managed to get two tickets for the concert.",
+                    "なんとかそのコンサートのチケットを2枚手に入れることができた。"
+                ],
+                [
+                    "Please come with us if you'd like to.",
+                    "よろしければ、私たちと一緒に来てください。"
+                ],
+                [
+                    "The President is to visit Kyoto today.",
+                    "大統領は今日、京都を訪問する予定だ。"
+                ],
+                [
+                    "To tell (you) the truth, I woke up late this morning.",
+                    "実を言うと、私は今朝寝坊した。"
+                ],
+                [
+                    "I'm too tired to walk.",
+                    "私はあまりにも疲れていて歩けない（歩くには疲れすぎている）。"
+                ],
+                [
+                    "He is smart enough to solve the puzzle.",
+                    "彼はそのパズルを解くほど十分賢い（十分賢いのでパズルを解ける）。"
+                ],
+                [
+                    "I'm not so foolish as to believe his story.",
+                    "私は彼の話を信じるほど愚かではない。"
+                ],
+                [
+                    "We arrived early in order to [so as to] get good seats.",
+                    "私たちは良い席を確保するために早く到着した。"
+                ]
             ]
-        ],
-        [
-            [
-                "Lisa and I are in the same class.",
-                "リサと私は同じクラスです。"
-            ],
-            [
-                "I finished my homework and went to bed.",
-                "私は宿題を終えて寝ました。"
-            ],
-            [
-                "Would you like soup or salad? Salad, please.",
-                "「スープとサラダ、どちらになさいますか？」「サラダをお願いします。」"
-            ],
-            [
-                "I went to bed, but I couldn't sleep.",
-                "私は寝ましたが、眠れませんでした。"
-            ],
-            [
-                "I was sick, so I went home early.",
-                "私は気分が悪かったので、早く帰宅しました。"
-            ],
-            [
-                "I don't like ski lifts, for I'm afraid of heights.",
-                "私はスキーリフトが好きではありません。というのは高所恐怖症だからです。"
-            ],
-            [
-                "Turn right at the corner, and you'll find the subway station.",
-                "角を右に曲がりなさい。そうすれば地下鉄の駅があります。"
-            ],
-            [
-                "Hurry up, or you'll be late.",
-                "急ぎなさい。そうしないと遅刻しますよ。"
-            ],
-            [
-                "Plants need both water and the sun.",
-                "植物には水と太陽の両方が必要です。"
-            ],
-            [
-                "Plants need not only water but also the sun.",
-                "植物には水だけでなく太陽も必要です。"
-            ],
-            [
-                "He speaks not English but Spanish.",
-                "彼は英語ではなくスペイン語を話します。"
-            ],
-            [
-                "Either Tom or Steve will come.",
-                "トムかスティーブのどちらかが来るでしょう。"
-            ],
-            [
-                "Neither Tom nor Steve came.",
-                "トムもスティーブも来ませんでした。"
-            ],
-            [
-                "It's clear that he is lying.",
-                "彼が嘘をついているのは明らかです。"
-            ],
-            [
-                "I hope (that) you get well soon.",
-                "あなたがすぐに良くなることを願っています。"
-            ],
-            [
-                "The problem is (that) we don't have much time.",
-                "問題は私たちにあまり時間がないことです。"
-            ],
-            [
-                "I'm glad (that) you're safe.",
-                "あなたが無事でうれしいです。"
-            ],
-            [
-                "Whether the game will be held depends on the weather.",
-                "試合が行われるかどうかは天候次第です。"
-            ],
-            [
-                "The question is whether we can persuade him.",
-                "問題は彼を説得できるかどうかです。"
-            ],
-            [
-                "I don't know if [whether] Tom will come.",
-                "トムが来るかどうか私は知りません。"
+        },
+        "16": {
+            "title": "Lesson 15 不定詞 3",
+            "sentences": [
+                [
+                    "Lisa and I are in the same class.",
+                    "リサと私は同じクラスです。"
+                ],
+                [
+                    "I finished my homework and went to bed.",
+                    "私は宿題を終えて寝ました。"
+                ],
+                [
+                    "Would you like soup or salad? Salad, please.",
+                    "「スープとサラダ、どちらになさいますか？」「サラダをお願いします。」"
+                ],
+                [
+                    "I went to bed, but I couldn't sleep.",
+                    "私は寝ましたが、眠れませんでした。"
+                ],
+                [
+                    "I was sick, so I went home early.",
+                    "私は気分が悪かったので、早く帰宅しました。"
+                ],
+                [
+                    "I don't like ski lifts, for I'm afraid of heights.",
+                    "私はスキーリフトが好きではありません。というのは高所恐怖症だからです。"
+                ],
+                [
+                    "Turn right at the corner, and you'll find the subway station.",
+                    "角を右に曲がりなさい。そうすれば地下鉄の駅があります。"
+                ],
+                [
+                    "Hurry up, or you'll be late.",
+                    "急ぎなさい。そうしないと遅刻しますよ。"
+                ],
+                [
+                    "Plants need both water and the sun.",
+                    "植物には水と太陽の両方が必要です。"
+                ],
+                [
+                    "Plants need not only water but also the sun.",
+                    "植物には水だけでなく太陽も必要です。"
+                ],
+                [
+                    "He speaks not English but Spanish.",
+                    "彼は英語ではなくスペイン語を話します。"
+                ],
+                [
+                    "Either Tom or Steve will come.",
+                    "トムかスティーブのどちらかが来るでしょう。"
+                ],
+                [
+                    "Neither Tom nor Steve came.",
+                    "トムもスティーブも来ませんでした。"
+                ],
+                [
+                    "It's clear that he is lying.",
+                    "彼が嘘をついているのは明らかです。"
+                ],
+                [
+                    "I hope (that) you get well soon.",
+                    "あなたがすぐに良くなることを願っています。"
+                ],
+                [
+                    "The problem is (that) we don't have much time.",
+                    "問題は私たちにあまり時間がないことです。"
+                ],
+                [
+                    "I'm glad (that) you're safe.",
+                    "あなたが無事でうれしいです。"
+                ],
+                [
+                    "Whether the game will be held depends on the weather.",
+                    "試合が行われるかどうかは天候次第です。"
+                ],
+                [
+                    "The question is whether we can persuade him.",
+                    "問題は彼を説得できるかどうかです。"
+                ],
+                [
+                    "I don't know if [whether] Tom will come.",
+                    "トムが来るかどうか私は知りません。"
+                ]
             ]
-        ],
-        [
-            [
-                "When I was seven, my family moved to Tokyo.",
-                "私が7歳のとき、家族で東京に引っ越しました。"
-            ],
-            [
-                "My smartphone rang while I was eating dinner.",
-                "夕食を食べている間にスマートフォンが鳴りました。"
-            ],
-            [
-                "Wash your hands before you eat.",
-                "食べる前に手を洗いなさい。"
-            ],
-            [
-                "We've known each other since we were kids.",
-                "私たちは子供のころからお互いを知っています。"
-            ],
-            [
-                "We continued talking until till we got sleepy.",
-                "私たちは眠くなるまで話し続けました。"
-            ],
-            [
-                "As soon as I got home, the phone rang.",
-                "帰宅してすぐに電話が鳴りました。"
-            ],
-            [
-                "If you need any help, please tell me.",
-                "もし助けが必要なら、私に言ってください。"
-            ],
-            [
-                "I'll lend you my notebooks as long as you give them back.",
-                "返してくれるならノートを貸します。"
-            ],
-            [
-                "As far as I know, he is a good guy.",
-                "私の知る限り、彼は良いやつです。"
-            ],
-            [
-                "We went out shopping, though [although] it was raining.",
-                "雨が降っていましたが、私たちは買い物に出かけました。"
-            ],
-            [
-                "It takes about two hours whether you go by bus or by train.",
-                "バスで行こうと電車で行こうと、約2時間かかります。"
-            ],
-            [
-                "I went home early because I was sick.",
-                "気分が悪かったので早く帰宅しました。"
-            ],
-            [
-                "The book was so interesting that I read it in a day.",
-                "その本はとても面白かったので、1日で読みました。"
-            ],
-            [
-                "It was such an interesting book that I read it in a day.",
-                "それはとても面白い本だったので、1日で読みました。"
-            ],
-            [
-                "I have to get up early so that I can catch the first train.",
-                "始発に乗れるように、早く起きなければなりません。"
-            ],
-            [
-                "Take an umbrella in case it rains.",
-                "雨が降る場合に備えて、傘を持って行きなさい。"
-            ],
-            [
-                "He got out of the country for fear (that) he would be killed.",
-                "彼は殺されるのを恐れてその国から脱出しました。"
+        },
+        "17": {
+            "title": "Lesson 16 不定詞 4",
+            "sentences": [
+                [
+                    "When I was seven, my family moved to Tokyo.",
+                    "私が7歳のとき、家族で東京に引っ越しました。"
+                ],
+                [
+                    "My smartphone rang while I was eating dinner.",
+                    "夕食を食べている間にスマートフォンが鳴りました。"
+                ],
+                [
+                    "Wash your hands before you eat.",
+                    "食べる前に手を洗いなさい。"
+                ],
+                [
+                    "We've known each other since we were kids.",
+                    "私たちは子供のころからお互いを知っています。"
+                ],
+                [
+                    "We continued talking until till we got sleepy.",
+                    "私たちは眠くなるまで話し続けました。"
+                ],
+                [
+                    "As soon as I got home, the phone rang.",
+                    "帰宅してすぐに電話が鳴りました。"
+                ],
+                [
+                    "If you need any help, please tell me.",
+                    "もし助けが必要なら、私に言ってください。"
+                ],
+                [
+                    "I'll lend you my notebooks as long as you give them back.",
+                    "返してくれるならノートを貸します。"
+                ],
+                [
+                    "As far as I know, he is a good guy.",
+                    "私の知る限り、彼は良いやつです。"
+                ],
+                [
+                    "We went out shopping, though [although] it was raining.",
+                    "雨が降っていましたが、私たちは買い物に出かけました。"
+                ],
+                [
+                    "It takes about two hours whether you go by bus or by train.",
+                    "バスで行こうと電車で行こうと、約2時間かかります。"
+                ],
+                [
+                    "I went home early because I was sick.",
+                    "気分が悪かったので早く帰宅しました。"
+                ],
+                [
+                    "The book was so interesting that I read it in a day.",
+                    "その本はとても面白かったので、1日で読みました。"
+                ],
+                [
+                    "It was such an interesting book that I read it in a day.",
+                    "それはとても面白い本だったので、1日で読みました。"
+                ],
+                [
+                    "I have to get up early so that I can catch the first train.",
+                    "始発に乗れるように、早く起きなければなりません。"
+                ],
+                [
+                    "Take an umbrella in case it rains.",
+                    "雨が降る場合に備えて、傘を持って行きなさい。"
+                ],
+                [
+                    "He got out of the country for fear (that) he would be killed.",
+                    "彼は殺されるのを恐れてその国から脱出しました。"
+                ]
             ]
-        ],
-        [
-            [
-                "I don't know what to do.",
-                "何をすべきかわからない。"
-            ],
-            [
-                "He seems to be ill.",
-                "彼は（今）病気であるようだ。"
-            ],
-            [
-                "He seemed to be ill.",
-                "彼は（その時）病気であるようだった。"
-            ],
-            [
-                "He seems to have been ill.",
-                "彼は（以前）病気だったようだ。"
-            ],
-            [
-                "He seemed to have been ill.",
-                "彼は（それ以前に）病気だったようだった。"
-            ],
-            [
-                "She seems to be enjoying her holiday.",
-                "彼女は休日を楽しんでいるようだ。"
-            ],
-            [
-                "Children need to be accompanied by an adult.",
-                "子どもは成人の同伴が必要である。"
+        },
+        "18": {
+            "title": "Lesson 17 動名詞 1",
+            "sentences": [
+                [
+                    "I don't know what to do.",
+                    "何をすべきかわからない。"
+                ],
+                [
+                    "He seems to be ill.",
+                    "彼は（今）病気であるようだ。"
+                ],
+                [
+                    "He seemed to be ill.",
+                    "彼は（その時）病気であるようだった。"
+                ],
+                [
+                    "He seems to have been ill.",
+                    "彼は（以前）病気だったようだ。"
+                ],
+                [
+                    "He seemed to have been ill.",
+                    "彼は（それ以前に）病気だったようだった。"
+                ],
+                [
+                    "She seems to be enjoying her holiday.",
+                    "彼女は休日を楽しんでいるようだ。"
+                ],
+                [
+                    "Children need to be accompanied by an adult.",
+                    "子どもは成人の同伴が必要である。"
+                ]
             ]
-        ],
-        [
-            [
-                "The problem is easy to solve.",
-                "その問題は解くのが簡単だ。"
-            ],
-            [
-                "I'm ready to leave.",
-                "出発する準備はできている。"
-            ],
-            [
-                "I managed to get two tickets for the concert.",
-                "なんとかそのコンサートのチケットを2枚手に入れることができた。"
-            ],
-            [
-                "Please come with us if you'd like to.",
-                "よろしければ、私たちと一緒に来てください。"
-            ],
-            [
-                "The President is to visit Kyoto today.",
-                "大統領は今日、京都を訪問する予定だ。"
-            ],
-            [
-                "To tell (you) the truth, I woke up late this morning.",
-                "実を言うと、私は今朝寝坊した。"
-            ],
-            [
-                "I'm too tired to walk.",
-                "私はあまりにも疲れていて歩けない。"
-            ],
-            [
-                "He is smart enough to solve the puzzle.",
-                "彼はそのパズルを解くほど十分賢い。"
-            ],
-            [
-                "I'm not so foolish as to believe his story.",
-                "私は彼の話を信じるほど愚かではない。"
-            ],
-            [
-                "We arrived early in order to [so as to] get good seats.",
-                "私たちは良い席を確保するために早く到着した。"
+        },
+        "19": {
+            "title": "Lesson 18 動名詞 2",
+            "sentences": [
+                [
+                    "The problem is easy to solve.",
+                    "その問題は解くのが簡単だ。"
+                ],
+                [
+                    "I'm ready to leave.",
+                    "出発する準備はできている。"
+                ],
+                [
+                    "I managed to get two tickets for the concert.",
+                    "なんとかそのコンサートのチケットを2枚手に入れることができた。"
+                ],
+                [
+                    "Please come with us if you'd like to.",
+                    "よろしければ、私たちと一緒に来てください。"
+                ],
+                [
+                    "The President is to visit Kyoto today.",
+                    "大統領は今日、京都を訪問する予定だ。"
+                ],
+                [
+                    "To tell (you) the truth, I woke up late this morning.",
+                    "実を言うと、私は今朝寝坊した。"
+                ],
+                [
+                    "I'm too tired to walk.",
+                    "私はあまりにも疲れていて歩けない。"
+                ],
+                [
+                    "He is smart enough to solve the puzzle.",
+                    "彼はそのパズルを解くほど十分賢い。"
+                ],
+                [
+                    "I'm not so foolish as to believe his story.",
+                    "私は彼の話を信じるほど愚かではない。"
+                ],
+                [
+                    "We arrived early in order to [so as to] get good seats.",
+                    "私たちは良い席を確保するために早く到着した。"
+                ]
             ]
-        ],
-        [
-            [
-                "Playing basketball is fun.",
-                "バスケットボールをすることは楽しい。"
-            ],
-            [
-                "My favorite pastime is watching movies.",
-                "私の好きな娯楽は映画を見ることだ。"
-            ],
-            [
-                "I like listening to music.",
-                "私は音楽を聴くのが好きだ。"
-            ],
-            [
-                "Thank you for coming today.",
-                "今日は来てくれてありがとう。"
-            ],
-            [
-                "I don't like him [his] going out at night.",
-                "彼が夜に出かけるのは好きではない。"
-            ],
-            [
-                "I'm sorry for not writing sooner.",
-                "もっと早く手紙を書かなくてごめんなさい。"
-            ],
-            [
-                "She is proud of being a nurse.",
-                "彼女は看護師であることを誇りに思っている。"
-            ],
-            [
-                "She was proud of being a nurse.",
-                "彼女は看護師であることを誇りに思っていた。"
-            ],
-            [
-                "She is proud of having been a nurse.",
-                "彼女は看護師であったことを誇りに思っている。"
-            ],
-            [
-                "She was proud of having been a nurse.",
-                "彼女は看護師であったことを誇りに思っていた。"
-            ],
-            [
-                "My little sister is tired of being treated like a child.",
-                "私の妹は子ども扱いされることにうんざりしている。"
+        },
+        "20": {
+            "title": "Lesson 19 分詞 1",
+            "sentences": [
+                [
+                    "Playing basketball is fun.",
+                    "バスケットボールをすることは楽しい。"
+                ],
+                [
+                    "My favorite pastime is watching movies.",
+                    "私の好きな娯楽は映画を見ることだ。"
+                ],
+                [
+                    "I like listening to music.",
+                    "私は音楽を聴くのが好きだ。"
+                ],
+                [
+                    "Thank you for coming today.",
+                    "今日は来てくれてありがとう。"
+                ],
+                [
+                    "I don't like him [his] going out at night.",
+                    "彼が夜に出かけるのは好きではない。"
+                ],
+                [
+                    "I'm sorry for not writing sooner.",
+                    "もっと早く手紙を書かなくてごめんなさい。"
+                ],
+                [
+                    "She is proud of being a nurse.",
+                    "彼女は看護師であることを誇りに思っている。"
+                ],
+                [
+                    "She was proud of being a nurse.",
+                    "彼女は看護師であることを誇りに思っていた。"
+                ],
+                [
+                    "She is proud of having been a nurse.",
+                    "彼女は看護師であったことを誇りに思っている。"
+                ],
+                [
+                    "She was proud of having been a nurse.",
+                    "彼女は看護師であったことを誇りに思っていた。"
+                ],
+                [
+                    "My little sister is tired of being treated like a child.",
+                    "私の妹は子ども扱いされることにうんざりしている。"
+                ]
             ]
-        ],
-        [
-            [
-                "It's no use [good] arguing with him anymore.",
-                "これ以上彼と議論しても無駄だ。"
-            ],
-            [
-                "There is no telling what will happen.",
-                "何が起こるか予測できない。"
-            ],
-            [
-                "That movie is worth seeing.",
-                "その映画は見る価値がある。"
-            ],
-            [
-                "On seeing a police officer, the man ran away.",
-                "警官を見るとすぐに、その男は逃げ出した。"
-            ],
-            [
-                "I feel like going for a drive.",
-                "ドライブに行きたい気分だ。"
-            ],
-            [
-                "I am looking forward to hearing from you.",
-                "あなたからの連絡を楽しみにしている。"
-            ],
-            [
-                "I'm used to getting up early.",
-                "私は早起きすることに慣れている。"
-            ],
-            [
-                "What do you say to going to the movies?",
-                "映画に行きませんか。"
+        },
+        "21": {
+            "title": "Lesson 20 分詞 2",
+            "sentences": [
+                [
+                    "It's no use [good] arguing with him anymore.",
+                    "これ以上彼と議論しても無駄だ。"
+                ],
+                [
+                    "There is no telling what will happen.",
+                    "何が起こるか予測できない。"
+                ],
+                [
+                    "That movie is worth seeing.",
+                    "その映画は見る価値がある。"
+                ],
+                [
+                    "On seeing a police officer, the man ran away.",
+                    "警官を見るとすぐに、その男は逃げ出した。"
+                ],
+                [
+                    "I feel like going for a drive.",
+                    "ドライブに行きたい気分だ。"
+                ],
+                [
+                    "I am looking forward to hearing from you.",
+                    "あなたからの連絡を楽しみにしている。"
+                ],
+                [
+                    "I'm used to getting up early.",
+                    "私は早起きすることに慣れている。"
+                ],
+                [
+                    "What do you say to going to the movies?",
+                    "映画に行きませんか。"
+                ]
             ]
-        ],
-        [
-            [
-                "Firefighters entered the burning house.",
-                "消防士たちが燃えている家に入った。"
-            ],
-            [
-                "Be careful of the broken glass.",
-                "割れたガラスに注意しなさい。"
-            ],
-            [
-                "Do you know the girl talking to Sally?",
-                "サリーと話している少女を知っていますか。"
-            ],
-            [
-                "They have a son named Chris.",
-                "彼らにはクリスという息子がいる。"
-            ],
-            [
-                "This will be an exciting game.",
-                "これはエキサイティングな試合になるだろう。"
-            ],
-            [
-                "There were a lot of excited fans in the train.",
-                "電車にはたくさんの興奮したファンがいた。"
-            ],
-            [
-                "The shopping mall will remain closed until Thursday.",
-                "ショッピングモールは木曜日まで閉まったままだろう。"
-            ],
-            [
-                "He came running to us.",
-                "彼は走って私たちのところへ来た。"
-            ],
-            [
-                "She kept me waiting for an hour.",
-                "彼女は私を1時間待たせた。"
-            ],
-            [
-                "Keep the door locked at night.",
-                "夜はドアに鍵をかけておきなさい。"
-            ],
-            [
-                "I saw Steve waiting for a bus.",
-                "私はスティーブがバスを待っているのを見た。"
-            ],
-            [
-                "I saw the book advertised in the paper.",
-                "私はその本が新聞で宣伝されているのを見た。"
-            ],
-            [
-                "She had [got] her hair cut.",
-                "彼女は髪を切ってもらった。"
-            ],
-            [
-                "She had [got] her bag stolen.",
-                "彼女はバッグを盗まれた。"
-            ],
-            [
-                "Can you make yourself understood in English?",
-                "英語で自分の言いたいことを伝えられますか。"
+        },
+        "22": {
+            "title": "Lesson 21 関係詞 1",
+            "sentences": [
+                [
+                    "Firefighters entered the burning house.",
+                    "消防士たちが燃えている家に入った。"
+                ],
+                [
+                    "Be careful of the broken glass.",
+                    "割れたガラスに注意しなさい。"
+                ],
+                [
+                    "Do you know the girl talking to Sally?",
+                    "サリーと話している少女を知っていますか。"
+                ],
+                [
+                    "They have a son named Chris.",
+                    "彼らにはクリスという息子がいる。"
+                ],
+                [
+                    "This will be an exciting game.",
+                    "これはエキサイティングな試合になるだろう。"
+                ],
+                [
+                    "There were a lot of excited fans in the train.",
+                    "電車にはたくさんの興奮したファンがいた。"
+                ],
+                [
+                    "The shopping mall will remain closed until Thursday.",
+                    "ショッピングモールは木曜日まで閉まったままだろう。"
+                ],
+                [
+                    "He came running to us.",
+                    "彼は走って私たちのところへ来た。"
+                ],
+                [
+                    "She kept me waiting for an hour.",
+                    "彼女は私を1時間待たせた。"
+                ],
+                [
+                    "Keep the door locked at night.",
+                    "夜はドアに鍵をかけておきなさい。"
+                ],
+                [
+                    "I saw Steve waiting for a bus.",
+                    "私はスティーブがバスを待っているのを見た。"
+                ],
+                [
+                    "I saw the book advertised in the paper.",
+                    "私はその本が新聞で宣伝されているのを見た。"
+                ],
+                [
+                    "She had [got] her hair cut.",
+                    "彼女は髪を切ってもらった。"
+                ],
+                [
+                    "She had [got] her bag stolen.",
+                    "彼女はバッグを盗まれた。"
+                ],
+                [
+                    "Can you make yourself understood in English?",
+                    "英語で自分の言いたいことを伝えられますか。"
+                ]
             ]
-        ],
-        [
-            [
-                "I walked around the town taking pictures.",
-                "私は写真を撮りながら町を歩き回った。"
-            ],
-            [
-                "Written in plain English, this book is easy to read.",
-                "やさしい英語で書かれているので、この本は読みやすい。"
-            ],
-            [
-                "I just stood there, not knowing what to do.",
-                "私はどうすべきかわからず、ただそこに立っていた。"
-            ],
-            [
-                "We sat up all night, talking on the phone.",
-                "私たちは一晩中起きて、電話で話をしていた。"
-            ],
-            [
-                "Playing soccer, he hurt his leg.",
-                "サッカーをしているときに、彼は足をけがした。"
-            ],
-            [
-                "The train leaves Nagoya at eight, arriving in Tokyo at ten.",
-                "その列車は8時に名古屋を出発し、10時に東京に到着する。"
-            ],
-            [
-                "Feeling sick, I went to see a doctor.",
-                "気分が悪かったので、医者に診てもらいに行った。"
-            ],
-            [
-                "Having finished my homework, I went to bed.",
-                "宿題を終えてから、寝た。"
-            ],
-            [
-                "It being the holiday season, the train was full.",
-                "ホリデーシーズンだったので、列車は満員だった。"
-            ],
-            [
-                "Judging from this picture, he is very tall.",
-                "この写真から判断すると、彼はとても背が高い。"
-            ],
-            [
-                "He waited for her to come back with the engine running.",
-                "彼はエンジンをかけたまま、彼女が戻ってくるのを待った。"
-            ],
-            [
-                "The woman was sitting with her legs crossed.",
-                "その女性は足を組んで座っていた。"
+        },
+        "23": {
+            "title": "Lesson 37 接続詞 1",
+            "sentences": [
+                [
+                    "I walked around the town taking pictures.",
+                    "私は写真を撮りながら町を歩き回った。"
+                ],
+                [
+                    "Written in plain English, this book is easy to read.",
+                    "やさしい英語で書かれているので、この本は読みやすい。"
+                ],
+                [
+                    "I just stood there, not knowing what to do.",
+                    "私はどうすべきかわからず、ただそこに立っていた。"
+                ],
+                [
+                    "We sat up all night, talking on the phone.",
+                    "私たちは一晩中起きて、電話で話をしていた。"
+                ],
+                [
+                    "Playing soccer, he hurt his leg.",
+                    "サッカーをしているときに、彼は足をけがした。"
+                ],
+                [
+                    "The train leaves Nagoya at eight, arriving in Tokyo at ten.",
+                    "その列車は8時に名古屋を出発し、10時に東京に到着する。"
+                ],
+                [
+                    "Feeling sick, I went to see a doctor.",
+                    "気分が悪かったので、医者に診てもらいに行った。"
+                ],
+                [
+                    "Having finished my homework, I went to bed.",
+                    "宿題を終えてから、寝た。"
+                ],
+                [
+                    "It being the holiday season, the train was full.",
+                    "ホリデーシーズンだったので、列車は満員だった。"
+                ],
+                [
+                    "Judging from this picture, he is very tall.",
+                    "この写真から判断すると、彼はとても背が高い。"
+                ],
+                [
+                    "He waited for her to come back with the engine running.",
+                    "彼はエンジンをかけたまま、彼女が戻ってくるのを待った。"
+                ],
+                [
+                    "The woman was sitting with her legs crossed.",
+                    "その女性は足を組んで座っていた。"
+                ]
             ]
-        ],
-        [
-            [
-                "I met a woman who spoke French well.",
-                "私はフランス語が上手な女性に会った。"
-            ],
-            [
-                "She was reading a novel which was popular with teenagers.",
-                "彼女は10代の若者に人気の小説を読んでいた。"
-            ],
-            [
-                "The people (whom [who]) I met in Korea were nice.",
-                "私が韓国で会った人々は親切だった。"
-            ],
-            [
-                "This is the book (which) he wrote.",
-                "これが彼が書いた本だ。"
-            ],
-            [
-                "I met a woman whose sister is a cartoonist.",
-                "私は姉（妹）が漫画家である女性に会った。"
-            ],
-            [
-                "The house whose roof is red is my uncle's.",
-                "屋根が赤い家は私の叔父（伯父）のものだ。"
-            ],
-            [
-                "She was reading a novel that [which] was popular with teenagers.",
-                "彼女は10代の若者に人気の小説を読んでいた。"
-            ],
-            [
-                "The people (that) I met in Korea were nice.",
-                "私が韓国で会った人々は親切だった。"
+        },
+        "24": {
+            "title": "Lesson 38 接続詞 2",
+            "sentences": [
+                [
+                    "I met a woman who spoke French well.",
+                    "私はフランス語が上手な女性に会った。"
+                ],
+                [
+                    "She was reading a novel which was popular with teenagers.",
+                    "彼女は10代の若者に人気の小説を読んでいた。"
+                ],
+                [
+                    "The people (whom [who]) I met in Korea were nice.",
+                    "私が韓国で会った人々は親切だった。"
+                ],
+                [
+                    "This is the book (which) he wrote.",
+                    "これが彼が書いた本だ。"
+                ],
+                [
+                    "I met a woman whose sister is a cartoonist.",
+                    "私は姉（妹）が漫画家である女性に会った。"
+                ],
+                [
+                    "The house whose roof is red is my uncle's.",
+                    "屋根が赤い家は私の叔父（伯父）のものだ。"
+                ],
+                [
+                    "She was reading a novel that [which] was popular with teenagers.",
+                    "彼女は10代の若者に人気の小説を読んでいた。"
+                ],
+                [
+                    "The people (that) I met in Korea were nice.",
+                    "私が韓国で会った人々は親切だった。"
+                ]
             ]
-        ]
-    ]
+        }
+    }
 }
