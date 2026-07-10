@@ -81,11 +81,11 @@ const en_sample_test_select = document.querySelector('select[name="en-sample-tes
 async function loadEnSampleTestData() {
     if (en_sample_test_data) return;
     const data = await fetchJsonWithLoading("en_sample_test.json");
-    en_sample_test_data = data;
-    data.lessonTitles.forEach((title, index) => {
+    en_sample_test_data = data.englishSentencesData;
+    Object.entries(en_sample_test_data).forEach(([lessonId, lesson]) => {
         const option = document.createElement("option");
-        option.value = index;
-        option.textContent = title;
+        option.value = lessonId;
+        option.textContent = lesson.title;
         en_sample_test_select.appendChild(option);
     });
 }
@@ -276,8 +276,9 @@ async function create(name) {
         if (!en_sample_test_data) {
             await loadEnSampleTestData();
         }
-        print_title = `${en_sample_test_data.lessonTitles[en_sample_test_select.value]} 例文テスト対策プリント`;
-        let data = en_sample_test_data.englishSentencesData[en_sample_test_select.value];
+        const lesson = en_sample_test_data[en_sample_test_select.value];
+        print_title = `${lesson.title} 例文テスト対策プリント`;
+        let data = lesson.sentences;
         html = `<h1>${print_title}</h1>`;
         data.forEach((item, index) => {
             html += `
@@ -296,8 +297,9 @@ async function create(name) {
         if (!en_sample_test_data) {
             await loadEnSampleTestData();
         }
-        print_title = `${en_sample_test_data.lessonTitles[en_sample_test_select.value]} 例文テスト解答プリント`;
-        let data = en_sample_test_data.englishSentencesData[en_sample_test_select.value];
+        const lesson = en_sample_test_data[en_sample_test_select.value];
+        print_title = `${lesson.title} 例文テスト解答プリント`;
+        let data = lesson.sentences;
         html = `<h1>${print_title}</h1>`;
         data.forEach((item, index) => {
             html += `
