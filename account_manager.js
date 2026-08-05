@@ -104,6 +104,7 @@ window.getMailNotification = () => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
         },
         body: JSON.stringify({ path: `user.${uid}.mail.notification` }),
     });
