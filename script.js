@@ -1,7 +1,7 @@
 // カルーセル
 
 let carousel_index = 0;
-let max_index = 4;
+let max_index = 5;
 let carousel = document.querySelector(".carousel");
 let carousel_interval;
 

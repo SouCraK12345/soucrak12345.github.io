@@ -47,6 +47,11 @@ div.top {
     justify-content: center;
 }
 
+.task-tree {
+    background-color: rgb(171 218 209);
+    color: white;
+}
+
 .exam-docs {
     background-color: rgb(16 162 63);
     color: white;
