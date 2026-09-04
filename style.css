@@ -52,6 +52,11 @@ div.top {
     color: white;
 }
 
+.memory-engine {
+    background-color: rgb(218, 199, 171);
+    color: black;
+}
+
 .exam-docs {
     background-color: rgb(16 162 63);
     color: white;
@@ -151,7 +156,7 @@ button.show-more {
 .repos-container {
     gap: 20px;
     padding: 20px;
-    background-color: #5cb90f;
+    background-color: #abd8b7;
 }
 
 .videos-container {
@@ -163,7 +168,7 @@ button.show-more {
 .container-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    color: black;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -180,8 +185,8 @@ button.show-more {
 }
 
 .repo-card {
-    background-color: #00000050;
-    color: white;
+    background-color: #ffffff50;
+    color: black;
     padding: 20px;
     border-radius: 10px;
     width: min(350px, 80vw);

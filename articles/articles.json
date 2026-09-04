@@ -54,5 +54,12 @@
         "imgSrc": "Assets/crown-main.png",
         "linkHref": "exam-docs/",
         "linkText": ""
+    },
+    {
+        "title": "Memory Engine をリリースしました。",
+        "description": "暗記系要素を全部入れてやれって思って作ったWebアプリです。\n開発者の都合上、開発者が学校で習ったところを順に入れていってます。",
+        "imgSrc": "Assets/memory-engine.png",
+        "linkHref": "https://memorize.soucrak.f5.si/",
+        "linkText": ""
     }
 ]
