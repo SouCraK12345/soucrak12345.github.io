@@ -11,7 +11,7 @@ import {
 
 const firebaseConfig = {
     apiKey: 'AIzaSyADIfO9MyeV0-QePXPg4PWTn0_JeuH3_mU',
-    authDomain: 'nanzan-home.firebaseapp.com',
+    authDomain: 'auth.soucrak.f5.si',
     projectId: 'nanzan-home',
     storageBucket: 'nanzan-home.firebasestorage.app',
     messagingSenderId: '19657265870',
