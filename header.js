@@ -21,6 +21,9 @@ fetch("/header.html")
             document.body.appendChild(s);
             s.onload = accountManagerLoaded;
         }
+        if (window.refreshAccountUi) {
+            window.refreshAccountUi();
+        }
     });
 
 let isOpen = false;
@@ -74,6 +77,9 @@ let openPanel = () => {
 
 
 accountManagerLoaded = () => {
+    if (window.refreshAccountUi) {
+        window.refreshAccountUi();
+    }
 };
 
 // メール通知のトグル切り替え

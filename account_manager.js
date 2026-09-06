@@ -25,9 +25,93 @@ let token;
 let uid;
 let email;
 let logged_in = false;
+let currentUser = null;
 
 const provider = new GoogleAuthProvider();
 let loginInProgress = false;
+let emailAuthMode = 'signin';
+
+const getLoginDialog = () => document.getElementById('loginDialog');
+const getLoginError = () => document.getElementById('loginError');
+
+const setLoginError = (message = '') => {
+    const loginError = getLoginError();
+    if (loginError) loginError.textContent = message;
+};
+
+const setLoginBusy = (busy) => {
+    document.querySelectorAll('#loginDialog button, #loginDialog input').forEach((element) => {
+        element.disabled = busy;
+    });
+};
+
+const updateEmailAuthMode = () => {
+    const submitButton = document.getElementById('emailLoginSubmit');
+    const modeButton = document.getElementById('emailLoginModeBtn');
+    const passwordInput = document.getElementById('loginPassword');
+
+    if (submitButton) {
+        submitButton.textContent = emailAuthMode === 'signin' ? 'メールアドレスでログイン' : 'メールアドレスで新規登録';
+    }
+    if (modeButton) {
+        modeButton.textContent = emailAuthMode === 'signin' ? '新規登録に切り替え' : 'ログインに戻る';
+    }
+    if (passwordInput) {
+        passwordInput.autocomplete = emailAuthMode === 'signin' ? 'current-password' : 'new-password';
+    }
+};
+
+const getAuthErrorMessage = (error) => {
+    switch (error.code) {
+        case 'auth/email-already-in-use':
+            return 'このメールアドレスはすでに登録されています。';
+        case 'auth/invalid-email':
+            return 'メールアドレスの形式が正しくありません。';
+        case 'auth/invalid-credential':
+        case 'auth/user-not-found':
+        case 'auth/wrong-password':
+            return 'メールアドレスまたはパスワードが違います。';
+        case 'auth/weak-password':
+            return 'パスワードは6文字以上にしてください。';
+        case 'auth/popup-closed-by-user':
+            return 'Googleログインがキャンセルされました。';
+        case 'auth/too-many-requests':
+            return '試行回数が多すぎます。しばらく待ってから再度お試しください。';
+        default:
+            return 'ログインに失敗しました。時間をおいて再度お試しください。';
+    }
+};
+
+window.openLoginDialog = () => {
+    const loginDialog = getLoginDialog();
+    if (!loginDialog) return;
+
+    setLoginError();
+    updateEmailAuthMode();
+    if (typeof loginDialog.showModal === 'function') {
+        loginDialog.showModal();
+    } else {
+        loginDialog.setAttribute('open', '');
+    }
+};
+
+window.closeLoginDialog = () => {
+    const loginDialog = getLoginDialog();
+    if (!loginDialog) return;
+
+    setLoginError();
+    if (typeof loginDialog.close === 'function') {
+        loginDialog.close();
+    } else {
+        loginDialog.removeAttribute('open');
+    }
+};
+
+window.toggleEmailAuthMode = () => {
+    emailAuthMode = emailAuthMode === 'signin' ? 'signup' : 'signin';
+    setLoginError();
+    updateEmailAuthMode();
+};
 
 // Googleログイン
 window.googleLogin = async () => {
@@ -36,18 +120,51 @@ window.googleLogin = async () => {
 
     loginInProgress = true;
     if (login_button) login_button.disabled = true;
+    setLoginBusy(true);
+    setLoginError();
 
     try {
         const result = await signInWithPopup(auth, provider);
         console.log('Googleログイン:', result.user);
+        window.closeLoginDialog();
     } catch (e) {
         console.error('Googleログインエラー:', e);
-        if (e.code === 'auth/too-many-requests' || String(e.message).includes('429')) {
-            // alert('Too Many Requests が発生しました。しばらく待ってから再度お試しください。');
-        }
+        setLoginError(getAuthErrorMessage(e));
     } finally {
         loginInProgress = false;
         if (login_button) login_button.disabled = false;
+        setLoginBusy(false);
+    }
+};
+
+window.emailLogin = async (event) => {
+    event.preventDefault();
+    if (loginInProgress) return;
+
+    const emailInput = document.getElementById('loginEmail');
+    const passwordInput = document.getElementById('loginPassword');
+    if (!emailInput || !passwordInput) return;
+
+    loginInProgress = true;
+    setLoginBusy(true);
+    setLoginError();
+
+    try {
+        const emailValue = emailInput.value.trim();
+        const passwordValue = passwordInput.value;
+        const result = emailAuthMode === 'signin'
+            ? await signInWithEmailAndPassword(auth, emailValue, passwordValue)
+            : await createUserWithEmailAndPassword(auth, emailValue, passwordValue);
+
+        console.log('メールログイン:', result.user);
+        passwordInput.value = '';
+        window.closeLoginDialog();
+    } catch (e) {
+        console.error('メールログインエラー:', e);
+        setLoginError(getAuthErrorMessage(e));
+    } finally {
+        loginInProgress = false;
+        setLoginBusy(false);
     }
 };
 
@@ -57,10 +174,12 @@ window.logout = async () => {
     await signOut(auth);
 };
 
-// 状態監視
-onAuthStateChanged(auth, (user) => {
+const refreshAccountUi = (user = currentUser) => {
     let login_button = document.querySelector(".account > button");
     let user_icon = document.querySelector(".user-icon");
+    let accountMenu = document.getElementById('accountMenu');
+    if (!login_button || !user_icon || !accountMenu) return;
+
     const status = document.getElementById('status');
     logged_in = Boolean(user);
     if (user) {
@@ -71,12 +190,20 @@ onAuthStateChanged(auth, (user) => {
         console.log(`ログイン中: ${user.email || user.displayName}`);
         user_icon.style.display = "inline-block";
         user_icon.src = user.photoURL || "../Assets/kkrn_icon_user_14.png";
-        document.querySelector("#accountMenu > div.gam-header > div.gam-avatar-container > img").src = user.photoURL || "../Assets/kkrn_icon_user_14.png";
-        document.querySelector("#accountMenu > div.gam-header > div.gam-email-display").textContent = user.email || "ユーザー";
-        document.querySelector("#accountMenu > div.gam-header > div.gam-user-name").textContent = user.displayName || "ユーザー";
+        const menuAvatar = document.querySelector("#accountMenu > div.gam-header > div.gam-avatar-container > img");
+        const menuEmail = document.querySelector("#accountMenu > div.gam-header > div.gam-email-display");
+        const menuUserName = document.querySelector("#accountMenu > div.gam-header > div.gam-user-name");
+        if (menuAvatar) menuAvatar.src = user.photoURL || "../Assets/kkrn_icon_user_14.png";
+        if (menuEmail) menuEmail.textContent = user.email || "ユーザー";
+        if (menuUserName) menuUserName.textContent = user.displayName || "ユーザー";
+        const manageButton = document.getElementById('manageBtn');
+        if (manageButton) {
+            const usesGoogleProvider = user.providerData.some((providerInfo) => providerInfo.providerId === 'google.com');
+            manageButton.style.display = usesGoogleProvider ? 'inline-block' : 'none';
+        }
         login_button.style.display = "none";
 
-        safeSearchStatus = document.getElementById('mailStats');
+        const safeSearchStatus = document.getElementById('mailStats');
         getMailNotification().then(response => response.json()).then(data => {
             const isEnabled = data.result.body;
             console.log(`メール通知: ${isEnabled ? 'オン' : 'オフ'} (サーバーから読み込み)`);
@@ -95,7 +222,16 @@ onAuthStateChanged(auth, (user) => {
         console.log('未ログイン');
         login_button.style.display = "inline-block";
         user_icon.style.display = "none";
+        window.closeLoginDialog();
     }
+};
+
+window.refreshAccountUi = refreshAccountUi;
+
+// 状態監視
+onAuthStateChanged(auth, (user) => {
+    currentUser = user;
+    refreshAccountUi(user);
 });
 
 window.getMailNotification = () => {
