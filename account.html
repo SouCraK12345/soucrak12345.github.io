@@ -213,7 +213,7 @@
 
     <main class="account-page">
         <h1>アカウント管理</h1>
-        <p class="account-lead">ログイン中のアカウントに、メールアドレスとパスワードでログインする方法を追加できます。</p>
+        <p class="account-lead">ログイン中のアカウントに、メール・パスワード認証や Google 認証を追加できます。</p>
 
         <section class="account-card" id="signedOutCard">
             <div class="account-empty">
@@ -255,7 +255,7 @@
                     </label>
                     <div class="account-actions">
                         <button type="submit" class="account-button" id="passwordSubmit">認証を追加</button>
-                        <button type="button" class="account-button secondary hidden" id="googleAccountButton">Google アカウントを開く</button>
+                        <button type="button" class="account-button secondary" id="googleAccountButton">Google 認証を追加</button>
                     </div>
                 </form>
                 <p class="account-message" id="accountMessage" aria-live="polite"></p>
@@ -271,6 +271,8 @@
             onAuthStateChanged,
             EmailAuthProvider,
             linkWithCredential,
+            GoogleAuthProvider,
+            linkWithPopup,
             updatePassword,
         } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 
@@ -286,6 +288,7 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const googleProvider = new GoogleAuthProvider();
 
         const signedOutCard = document.getElementById('signedOutCard');
         const accountCard = document.getElementById('accountCard');
@@ -305,6 +308,7 @@
 
         let currentUser = null;
         let hasPasswordProvider = false;
+        let hasGoogleProvider = false;
 
         const providerLabels = {
             'google.com': 'Google',
@@ -333,7 +337,11 @@
                 case 'auth/weak-password':
                     return 'パスワードは6文字以上にしてください。';
                 case 'auth/provider-already-linked':
-                    return 'メール・パスワード認証はすでに追加されています。';
+                    return 'この認証方法はすでに追加されています。';
+                case 'auth/popup-closed-by-user':
+                    return 'Google 認証がキャンセルされました。';
+                case 'auth/account-exists-with-different-credential':
+                    return 'この Google アカウントのメールアドレスは、別のログイン方法で使われています。';
                 case 'auth/requires-recent-login':
                     return '安全のため、もう一度ログインしてから操作してください。';
                 case 'auth/network-request-failed':
@@ -359,6 +367,13 @@
                 chip.textContent = 'メール・パスワード 未設定';
                 authStatus.appendChild(chip);
             }
+
+            if (!hasGoogleProvider) {
+                const chip = document.createElement('div');
+                chip.className = 'auth-chip';
+                chip.textContent = 'Google 未連携';
+                authStatus.appendChild(chip);
+            }
         };
 
         const renderAccount = (user) => {
@@ -370,7 +385,7 @@
             if (!user) return;
 
             hasPasswordProvider = user.providerData.some((provider) => provider.providerId === 'password');
-            const hasGoogleProvider = user.providerData.some((provider) => provider.providerId === 'google.com');
+            hasGoogleProvider = user.providerData.some((provider) => provider.providerId === 'google.com');
 
             profileImage.src = user.photoURL || 'Assets/kkrn_icon_user_14.png';
             profileName.textContent = user.displayName || 'ユーザー';
@@ -382,7 +397,7 @@
             passwordSectionText.textContent = hasPasswordProvider
                 ? 'このアカウントのメール・パスワードログイン用パスワードを変更できます。'
                 : 'このアカウントにパスワードを設定すると、Google ログインに加えてメールアドレスとパスワードでもログインできます。';
-            googleAccountButton.classList.toggle('hidden', !hasGoogleProvider);
+            googleAccountButton.textContent = hasGoogleProvider ? 'Google アカウントを開く' : 'Google 認証を追加';
             renderProviderChips(user);
         };
 
@@ -429,7 +444,32 @@
         });
 
         googleAccountButton.addEventListener('click', () => {
-            window.open('https://myaccount.google.com/', '_blank', 'noopener');
+            if (hasGoogleProvider) {
+                window.open('https://myaccount.google.com/', '_blank', 'noopener');
+                return;
+            }
+
+            if (!currentUser) {
+                setMessage('ログインしてから操作してください。', true);
+                return;
+            }
+
+            setBusy(true);
+            setMessage();
+
+            linkWithPopup(currentUser, googleProvider)
+                .then(async () => {
+                    setMessage('Google 認証を追加しました。');
+                    await currentUser.reload();
+                    renderAccount(auth.currentUser);
+                })
+                .catch((error) => {
+                    console.error('Google 認証の設定エラー:', error);
+                    setMessage(getAuthErrorMessage(error), true);
+                })
+                .finally(() => {
+                    setBusy(false);
+                });
         });
 
         onAuthStateChanged(auth, renderAccount);
