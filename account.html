@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アカウント管理 | なんざんホーム</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        body {
+            min-height: 100vh;
+            height: auto;
+            background: #f5f7fb;
+        }
+
+        main.account-page {
+            width: min(920px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 112px 0 48px;
+        }
+
+        .account-page h1 {
+            margin: 0 0 10px;
+            color: #1f2937;
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+        }
+
+        .account-lead {
+            margin: 0 0 24px;
+            color: #5f6b7a;
+            line-height: 1.8;
+        }
+
+        .account-card {
+            background: #ffffff;
+            border: 1px solid #dfe4ec;
+            border-radius: 8px;
+            box-shadow: 0 16px 40px rgba(32, 45, 64, 0.08);
+            padding: 24px;
+        }
+
+        .account-profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e6ebf2;
+        }
+
+        .account-profile img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #eef2f7;
+        }
+
+        .account-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .account-email {
+            margin-top: 4px;
+            color: #617083;
+            overflow-wrap: anywhere;
+        }
+
+        .auth-status {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .auth-chip {
+            border: 1px solid #cfd8e3;
+            border-radius: 999px;
+            padding: 8px 12px;
+            color: #405064;
+            background: #f8fafc;
+            font-size: 0.9rem;
+        }
+
+        .auth-chip.active {
+            border-color: #0f766e;
+            color: #0f766e;
+            background: #edfdfa;
+        }
+
+        .account-section h2 {
+            margin: 0 0 12px;
+            border: none;
+            padding: 0;
+            color: #263445;
+            font-size: 1.2rem;
+        }
+
+        .account-section p {
+            margin: 0 0 16px;
+            color: #617083;
+            line-height: 1.7;
+        }
+
+        .account-form {
+            display: grid;
+            gap: 14px;
+        }
+
+        .account-form label {
+            display: grid;
+            gap: 6px;
+            color: #344256;
+            font-weight: 600;
+        }
+
+        .account-form input {
+            min-height: 44px;
+            border: 1px solid #cfd8e3;
+            border-radius: 8px;
+            padding: 0 12px;
+            font: inherit;
+        }
+
+        .account-form input:focus {
+            border-color: #1a73e8;
+            outline: 2px solid rgba(26, 115, 232, 0.16);
+        }
+
+        .account-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        .account-button {
+            border: none;
+            border-radius: 8px;
+            background: #1a73e8;
+            color: #ffffff;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 700;
+            min-height: 44px;
+            padding: 0 18px;
+        }
+
+        .account-button:hover {
+            background: #1765cc;
+        }
+
+        .account-button.secondary {
+            border: 1px solid #cfd8e3;
+            background: #ffffff;
+            color: #263445;
+        }
+
+        .account-button.secondary:hover {
+            background: #f8fafc;
+        }
+
+        .account-button:disabled,
+        .account-form input:disabled {
+            cursor: wait;
+            opacity: 0.65;
+        }
+
+        .account-message {
+            min-height: 1.4em;
+            margin: 12px 0 0;
+            color: #0f766e;
+            line-height: 1.6;
+        }
+
+        .account-message.error {
+            color: #b3261e;
+        }
+
+        .account-empty {
+            display: grid;
+            gap: 14px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+            main.account-page {
+                width: min(100% - 20px, 920px);
+                padding-top: 96px;
+            }
+
+            .account-card {
+                padding: 18px;
+            }
+
+            .account-profile {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+
+    <main class="account-page">
+        <h1>アカウント管理</h1>
+        <p class="account-lead">ログイン中のアカウントに、メールアドレスとパスワードでログインする方法を追加できます。</p>
+
+        <section class="account-card" id="signedOutCard">
+            <div class="account-empty">
+                <div>
+                    <h2>ログインが必要です</h2>
+                    <p>アカウント管理を開くには先にログインしてください。</p>
+                </div>
+                <button type="button" class="account-button" onclick="openLoginDialog()">ログイン</button>
+            </div>
+        </section>
+
+        <section class="account-card hidden" id="accountCard">
+            <div class="account-profile">
+                <img src="Assets/kkrn_icon_user_14.png" alt="ユーザーアバター" id="profileImage">
+                <div>
+                    <div class="account-name" id="profileName">ユーザー</div>
+                    <div class="account-email" id="profileEmail"></div>
+                </div>
+            </div>
+
+            <div class="auth-status" id="authStatus"></div>
+
+            <section class="account-section">
+                <h2 id="passwordSectionTitle">メール・パスワード認証</h2>
+                <p id="passwordSectionText">このアカウントにパスワードを設定すると、Google ログインに加えてメールアドレスとパスワードでもログインできます。</p>
+
+                <form class="account-form" id="passwordForm">
+                    <label>
+                        メールアドレス
+                        <input type="email" id="accountEmail" autocomplete="email" readonly>
+                    </label>
+                    <label>
+                        パスワード
+                        <input type="password" id="accountPassword" autocomplete="new-password" required minlength="6">
+                    </label>
+                    <label>
+                        パスワード確認
+                        <input type="password" id="accountPasswordConfirm" autocomplete="new-password" required minlength="6">
+                    </label>
+                    <div class="account-actions">
+                        <button type="submit" class="account-button" id="passwordSubmit">認証を追加</button>
+                        <button type="button" class="account-button secondary hidden" id="googleAccountButton">Google アカウントを開く</button>
+                    </div>
+                </form>
+                <p class="account-message" id="accountMessage" aria-live="polite"></p>
+            </section>
+        </section>
+    </main>
+
+    <script src="header.js"></script>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+        import {
+            getAuth,
+            onAuthStateChanged,
+            EmailAuthProvider,
+            linkWithCredential,
+            updatePassword,
+        } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+
+        const firebaseConfig = {
+            apiKey: 'AIzaSyADIfO9MyeV0-QePXPg4PWTn0_JeuH3_mU',
+            authDomain: 'auth.soucrak.f5.si',
+            projectId: 'nanzan-home',
+            storageBucket: 'nanzan-home.firebasestorage.app',
+            messagingSenderId: '19657265870',
+            appId: '1:19657265870:web:da9a6372f644bff25fb69f',
+            measurementId: 'G-9BV2543QVK',
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const signedOutCard = document.getElementById('signedOutCard');
+        const accountCard = document.getElementById('accountCard');
+        const profileImage = document.getElementById('profileImage');
+        const profileName = document.getElementById('profileName');
+        const profileEmail = document.getElementById('profileEmail');
+        const authStatus = document.getElementById('authStatus');
+        const passwordForm = document.getElementById('passwordForm');
+        const accountEmail = document.getElementById('accountEmail');
+        const accountPassword = document.getElementById('accountPassword');
+        const accountPasswordConfirm = document.getElementById('accountPasswordConfirm');
+        const passwordSubmit = document.getElementById('passwordSubmit');
+        const passwordSectionTitle = document.getElementById('passwordSectionTitle');
+        const passwordSectionText = document.getElementById('passwordSectionText');
+        const accountMessage = document.getElementById('accountMessage');
+        const googleAccountButton = document.getElementById('googleAccountButton');
+
+        let currentUser = null;
+        let hasPasswordProvider = false;
+
+        const providerLabels = {
+            'google.com': 'Google',
+            password: 'メール・パスワード',
+        };
+
+        const setMessage = (message = '', isError = false) => {
+            accountMessage.textContent = message;
+            accountMessage.classList.toggle('error', isError);
+        };
+
+        const setBusy = (busy) => {
+            passwordForm.querySelectorAll('button, input').forEach((element) => {
+                if (element === accountEmail) return;
+                element.disabled = busy;
+            });
+        };
+
+        const getAuthErrorMessage = (error) => {
+            switch (error.code) {
+                case 'auth/email-already-in-use':
+                case 'auth/credential-already-in-use':
+                    return 'このメールアドレスは、すでに別のログイン方法で使われています。';
+                case 'auth/invalid-email':
+                    return 'メールアドレスの形式が正しくありません。';
+                case 'auth/weak-password':
+                    return 'パスワードは6文字以上にしてください。';
+                case 'auth/provider-already-linked':
+                    return 'メール・パスワード認証はすでに追加されています。';
+                case 'auth/requires-recent-login':
+                    return '安全のため、もう一度ログインしてから操作してください。';
+                case 'auth/network-request-failed':
+                    return 'ネットワーク接続に失敗しました。時間をおいて再度お試しください。';
+                default:
+                    return '設定に失敗しました。時間をおいて再度お試しください。';
+            }
+        };
+
+        const renderProviderChips = (user) => {
+            authStatus.innerHTML = '';
+
+            user.providerData.forEach((provider) => {
+                const chip = document.createElement('div');
+                chip.className = 'auth-chip active';
+                chip.textContent = `${providerLabels[provider.providerId] || provider.providerId} 連携済み`;
+                authStatus.appendChild(chip);
+            });
+
+            if (!hasPasswordProvider) {
+                const chip = document.createElement('div');
+                chip.className = 'auth-chip';
+                chip.textContent = 'メール・パスワード 未設定';
+                authStatus.appendChild(chip);
+            }
+        };
+
+        const renderAccount = (user) => {
+            currentUser = user;
+            signedOutCard.classList.toggle('hidden', Boolean(user));
+            accountCard.classList.toggle('hidden', !user);
+            setMessage();
+
+            if (!user) return;
+
+            hasPasswordProvider = user.providerData.some((provider) => provider.providerId === 'password');
+            const hasGoogleProvider = user.providerData.some((provider) => provider.providerId === 'google.com');
+
+            profileImage.src = user.photoURL || 'Assets/kkrn_icon_user_14.png';
+            profileName.textContent = user.displayName || 'ユーザー';
+            profileEmail.textContent = user.email || 'メールアドレスなし';
+            accountEmail.value = user.email || '';
+            accountEmail.disabled = !user.email;
+            passwordSubmit.textContent = hasPasswordProvider ? 'パスワードを変更' : '認証を追加';
+            passwordSectionTitle.textContent = hasPasswordProvider ? 'パスワード変更' : 'メール・パスワード認証';
+            passwordSectionText.textContent = hasPasswordProvider
+                ? 'このアカウントのメール・パスワードログイン用パスワードを変更できます。'
+                : 'このアカウントにパスワードを設定すると、Google ログインに加えてメールアドレスとパスワードでもログインできます。';
+            googleAccountButton.classList.toggle('hidden', !hasGoogleProvider);
+            renderProviderChips(user);
+        };
+
+        passwordForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            setMessage();
+
+            if (!currentUser) {
+                setMessage('ログインしてから操作してください。', true);
+                return;
+            }
+
+            if (!currentUser.email) {
+                setMessage('このアカウントにはメールアドレスがないため、メール・パスワード認証を追加できません。', true);
+                return;
+            }
+
+            if (accountPassword.value !== accountPasswordConfirm.value) {
+                setMessage('確認用パスワードが一致しません。', true);
+                return;
+            }
+
+            setBusy(true);
+            try {
+                if (hasPasswordProvider) {
+                    await updatePassword(currentUser, accountPassword.value);
+                    setMessage('パスワードを変更しました。');
+                } else {
+                    const credential = EmailAuthProvider.credential(currentUser.email, accountPassword.value);
+                    await linkWithCredential(currentUser, credential);
+                    setMessage('メール・パスワード認証を追加しました。');
+                }
+
+                accountPassword.value = '';
+                accountPasswordConfirm.value = '';
+                await currentUser.reload();
+                renderAccount(auth.currentUser);
+            } catch (error) {
+                console.error('メール・パスワード認証の設定エラー:', error);
+                setMessage(getAuthErrorMessage(error), true);
+            } finally {
+                setBusy(false);
+            }
+        });
+
+        googleAccountButton.addEventListener('click', () => {
+            window.open('https://myaccount.google.com/', '_blank', 'noopener');
+        });
+
+        onAuthStateChanged(auth, renderAccount);
+    </script>
+</body>
+
+</html>

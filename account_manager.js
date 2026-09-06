@@ -198,8 +198,7 @@ const refreshAccountUi = (user = currentUser) => {
         if (menuUserName) menuUserName.textContent = user.displayName || "ユーザー";
         const manageButton = document.getElementById('manageBtn');
         if (manageButton) {
-            const usesGoogleProvider = user.providerData.some((providerInfo) => providerInfo.providerId === 'google.com');
-            manageButton.style.display = usesGoogleProvider ? 'inline-block' : 'none';
+            manageButton.style.display = 'inline-block';
         }
         login_button.style.display = "none";
 
