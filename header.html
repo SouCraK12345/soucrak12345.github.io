@@ -163,6 +163,10 @@
         font-size: 0.85rem;
     }
 
+    .login-hidden {
+        display: none !important;
+    }
+
     .login-separator::before,
     .login-separator::after {
         content: "";
@@ -219,6 +223,23 @@
         font-weight: 600;
         padding: 4px;
         align-self: center;
+    }
+
+    .twofa-step {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .twofa-step.active {
+        display: flex;
+    }
+
+    .login-help-text {
+        margin: 0;
+        color: #5f6368;
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 
     .login-error {
@@ -295,16 +316,26 @@
         <button type="button" class="login-google-btn" onclick="googleLogin()">Googleでログイン</button>
         <div class="login-separator">または</div>
         <form class="email-login-form" id="emailLoginForm" onsubmit="emailLogin(event)">
-            <label>
-                メールアドレス
-                <input type="email" id="loginEmail" autocomplete="email" required>
-            </label>
-            <label>
-                パスワード
-                <input type="password" id="loginPassword" autocomplete="current-password" required minlength="6">
-            </label>
+            <div class="twofa-step active" id="emailPasswordStep">
+                <label>
+                    メールアドレス
+                    <input type="email" id="loginEmail" autocomplete="email" required>
+                </label>
+                <label>
+                    パスワード
+                    <input type="password" id="loginPassword" autocomplete="current-password" required minlength="6">
+                </label>
+            </div>
+            <div class="twofa-step" id="emailTwoFactorStep">
+                <p class="login-help-text" id="twoFactorHelpText"></p>
+                <label>
+                    認証コード
+                    <input type="text" id="loginTwoFactorCode" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6">
+                </label>
+            </div>
             <p class="login-error" id="loginError" aria-live="polite"></p>
             <button type="submit" class="login-submit-btn" id="emailLoginSubmit">メールアドレスでログイン</button>
+            <button type="button" class="login-mode-btn" id="emailTwoFactorBackBtn" onclick="cancelEmailTwoFactor()" hidden>戻る</button>
             <button type="button" class="login-mode-btn" id="emailLoginModeBtn" onclick="toggleEmailAuthMode()">新規登録に切り替え</button>
         </form>
     </div>

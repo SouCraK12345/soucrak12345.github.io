@@ -13,13 +13,16 @@ fetch("/header.html")
             isOpen = !isOpen;
         }
         // 自動でアカウント管理スクリプトを読み込む（ページによっては含まれていないため）
-        if (!document.querySelector('script[data-account-manager]')) {
+        const accountManagerScript = document.querySelector('script[data-account-manager], script[src="/account_manager.js"]');
+        if (!accountManagerScript) {
             const s = document.createElement('script');
             s.type = 'module';
             s.src = '/account_manager.js';
             s.setAttribute('data-account-manager', '1');
             document.body.appendChild(s);
             s.onload = accountManagerLoaded;
+        } else {
+            accountManagerScript.setAttribute('data-account-manager', '1');
         }
         if (window.refreshAccountUi) {
             window.refreshAccountUi();

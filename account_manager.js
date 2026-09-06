@@ -30,6 +30,13 @@ let currentUser = null;
 const provider = new GoogleAuthProvider();
 let loginInProgress = false;
 let emailAuthMode = 'signin';
+let emailTwoFactor = null;
+let emailSecondFactorStarting = false;
+let emailSecondFactorVerified = false;
+let emailSecondFactorPendingUid = null;
+let keepLoginDialogOpen = false;
+
+const TWO_FACTOR_API_URL = 'https://script.google.com/macros/s/AKfycbyV1UxQR_nGKNyNQWQ-nNqCr2VKY9P9idjI9x93u4NAcs05Mi9nvM_9PfU-G2LuaQbDZg/exec';
 
 const getLoginDialog = () => document.getElementById('loginDialog');
 const getLoginError = () => document.getElementById('loginError');
@@ -45,13 +52,107 @@ const setLoginBusy = (busy) => {
     });
 };
 
+const setEmailTwoFactorStep = (active, emailValue = '') => {
+    const passwordStep = document.getElementById('emailPasswordStep');
+    const twoFactorStep = document.getElementById('emailTwoFactorStep');
+    const twoFactorInput = document.getElementById('loginTwoFactorCode');
+    const twoFactorHelpText = document.getElementById('twoFactorHelpText');
+    const backButton = document.getElementById('emailTwoFactorBackBtn');
+    const modeButton = document.getElementById('emailLoginModeBtn');
+    const googleButton = document.querySelector('.login-google-btn');
+    const separator = document.querySelector('.login-separator');
+
+    passwordStep?.classList.toggle('active', !active);
+    twoFactorStep?.classList.toggle('active', active);
+    if (backButton) backButton.hidden = !active;
+    if (modeButton) modeButton.hidden = active;
+    if (googleButton) googleButton.hidden = active;
+    if (separator) separator.hidden = active;
+    googleButton?.classList.toggle('login-hidden', active);
+    separator?.classList.toggle('login-hidden', active);
+    if (twoFactorInput) {
+        twoFactorInput.required = active;
+        if (!active) twoFactorInput.value = '';
+    }
+    if (twoFactorHelpText) {
+        twoFactorHelpText.textContent = active
+            ? `${emailValue} に送信された6桁の認証コードを入力してください。`
+            : '';
+    }
+};
+
+const extractTwoFactorId = (data) => {
+    if (typeof data === 'string') return data;
+    if (typeof data?.body === 'string') return data.body;
+    if (typeof data?.result === 'string') return data.result;
+    if (typeof data?.result?.body === 'string') return data.result.body;
+    if (typeof data?.data === 'string') return data.data;
+
+    return data?.id
+        || data?.body?.id
+        || data?.result?.id
+        || data?.result?.body?.id
+        || data?.data?.id
+        || null;
+};
+
+const isTwoFactorVerified = (data) => {
+    const value = data?.verified
+        ?? data?.success
+        ?? data?.ok
+        ?? data?.body?.verified
+        ?? data?.body?.success
+        ?? data?.result?.verified
+        ?? data?.result?.success
+        ?? data?.result?.body?.verified
+        ?? data?.result?.body?.success;
+
+    if (typeof data === 'string') return ['true', 'ok', 'success', 'verified'].includes(data.toLowerCase());
+    if (typeof value === 'boolean') return value;
+    if (typeof value === 'string') return ['true', 'ok', 'success', 'verified'].includes(value.toLowerCase());
+    return false;
+};
+
+const postTwoFactor = async (body) => {
+    const response = await fetch(TWO_FACTOR_API_URL, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(body),
+    });
+
+    let data = null;
+    try {
+        data = await response.json();
+    } catch {
+        throw new Error('2FAレスポンスの読み取りに失敗しました。');
+    }
+
+    if (!response.ok || data?.error || data?.result?.error) {
+        throw new Error(data?.error || data?.result?.error || '2FA APIでエラーが発生しました。');
+    }
+
+    return data;
+};
+
+const resetEmailTwoFactor = () => {
+    emailTwoFactor = null;
+    emailSecondFactorStarting = false;
+    emailSecondFactorVerified = false;
+    emailSecondFactorPendingUid = null;
+    keepLoginDialogOpen = false;
+    setEmailTwoFactorStep(false);
+};
+
 const updateEmailAuthMode = () => {
     const submitButton = document.getElementById('emailLoginSubmit');
     const modeButton = document.getElementById('emailLoginModeBtn');
     const passwordInput = document.getElementById('loginPassword');
 
     if (submitButton) {
-        submitButton.textContent = emailAuthMode === 'signin' ? 'メールアドレスでログイン' : 'メールアドレスで新規登録';
+        submitButton.textContent = emailTwoFactor ? '認証してログイン' : (emailAuthMode === 'signin' ? 'メールアドレスでログイン' : 'メールアドレスで新規登録');
     }
     if (modeButton) {
         modeButton.textContent = emailAuthMode === 'signin' ? '新規登録に切り替え' : 'ログインに戻る';
@@ -87,6 +188,7 @@ window.openLoginDialog = () => {
     if (!loginDialog) return;
 
     setLoginError();
+    resetEmailTwoFactor();
     updateEmailAuthMode();
     if (typeof loginDialog.showModal === 'function') {
         loginDialog.showModal();
@@ -100,6 +202,10 @@ window.closeLoginDialog = () => {
     if (!loginDialog) return;
 
     setLoginError();
+    if (emailSecondFactorPendingUid && !emailSecondFactorVerified) {
+        signOut(auth).catch((error) => console.error('2FAキャンセル時のログアウトに失敗:', error));
+    }
+    resetEmailTwoFactor();
     if (typeof loginDialog.close === 'function') {
         loginDialog.close();
     } else {
@@ -110,6 +216,16 @@ window.closeLoginDialog = () => {
 window.toggleEmailAuthMode = () => {
     emailAuthMode = emailAuthMode === 'signin' ? 'signup' : 'signin';
     setLoginError();
+    resetEmailTwoFactor();
+    updateEmailAuthMode();
+};
+
+window.cancelEmailTwoFactor = async () => {
+    setLoginError();
+    if (emailSecondFactorPendingUid && !emailSecondFactorVerified) {
+        await signOut(auth);
+    }
+    resetEmailTwoFactor();
     updateEmailAuthMode();
 };
 
@@ -143,6 +259,7 @@ window.emailLogin = async (event) => {
 
     const emailInput = document.getElementById('loginEmail');
     const passwordInput = document.getElementById('loginPassword');
+    const twoFactorInput = document.getElementById('loginTwoFactorCode');
     if (!emailInput || !passwordInput) return;
 
     loginInProgress = true;
@@ -152,16 +269,75 @@ window.emailLogin = async (event) => {
     try {
         const emailValue = emailInput.value.trim();
         const passwordValue = passwordInput.value;
+        if (emailTwoFactor) {
+            const codeValue = twoFactorInput?.value.trim() || '';
+            const verifyData = await postTwoFactor({
+                type: '2fa_verify',
+                id: emailTwoFactor.id,
+                email: emailTwoFactor.email,
+                code: codeValue,
+            });
+
+            if (!isTwoFactorVerified(verifyData)) {
+                await signOut(auth);
+                resetEmailTwoFactor();
+                updateEmailAuthMode();
+                throw new Error('認証コードが正しくありません。もう一度メールアドレスとパスワードからログインしてください。');
+            }
+
+            emailSecondFactorVerified = true;
+            console.log('メールログイン2FA認証完了:', auth.currentUser);
+            passwordInput.value = '';
+            resetEmailTwoFactor();
+            refreshAccountUi(auth.currentUser);
+            window.closeLoginDialog();
+            return;
+        }
+
         const result = emailAuthMode === 'signin'
-            ? await signInWithEmailAndPassword(auth, emailValue, passwordValue)
+            ? await (async () => {
+                emailSecondFactorStarting = true;
+                keepLoginDialogOpen = true;
+                return signInWithEmailAndPassword(auth, emailValue, passwordValue);
+            })()
             : await createUserWithEmailAndPassword(auth, emailValue, passwordValue);
 
         console.log('メールログイン:', result.user);
-        passwordInput.value = '';
-        window.closeLoginDialog();
+        if (emailAuthMode === 'signin') {
+            emailSecondFactorPendingUid = result.user.uid;
+            emailSecondFactorVerified = false;
+            keepLoginDialogOpen = true;
+            refreshAccountUi(null);
+            const requestData = await postTwoFactor({
+                type: '2fa_request',
+                email: emailValue,
+            });
+            const twoFactorId = extractTwoFactorId(requestData);
+            if (!twoFactorId) {
+                throw new Error('2FA認証IDを取得できませんでした。');
+            }
+            emailSecondFactorStarting = false;
+            emailTwoFactor = {
+                id: twoFactorId,
+                email: emailValue,
+            };
+            setEmailTwoFactorStep(true, emailValue);
+            updateEmailAuthMode();
+            twoFactorInput?.focus();
+        } else {
+            passwordInput.value = '';
+            window.closeLoginDialog();
+        }
     } catch (e) {
         console.error('メールログインエラー:', e);
-        setLoginError(getAuthErrorMessage(e));
+        if (emailSecondFactorPendingUid && !emailSecondFactorVerified && !emailTwoFactor) {
+            await signOut(auth);
+            resetEmailTwoFactor();
+        } else if (!emailTwoFactor) {
+            resetEmailTwoFactor();
+        }
+        emailSecondFactorStarting = false;
+        setLoginError(e.code ? getAuthErrorMessage(e) : e.message);
     } finally {
         loginInProgress = false;
         setLoginBusy(false);
@@ -221,7 +397,9 @@ const refreshAccountUi = (user = currentUser) => {
         console.log('未ログイン');
         login_button.style.display = "inline-block";
         user_icon.style.display = "none";
-        window.closeLoginDialog();
+        if (!keepLoginDialogOpen) {
+            window.closeLoginDialog();
+        }
     }
 };
 
@@ -230,6 +408,10 @@ window.refreshAccountUi = refreshAccountUi;
 // 状態監視
 onAuthStateChanged(auth, (user) => {
     currentUser = user;
+    if (user && (emailSecondFactorStarting || emailSecondFactorPendingUid === user.uid) && !emailSecondFactorVerified) {
+        refreshAccountUi(null);
+        return;
+    }
     refreshAccountUi(user);
 });
 
