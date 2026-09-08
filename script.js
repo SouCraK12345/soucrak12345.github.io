@@ -52,6 +52,7 @@ function createArticle({
   // main（中身がある場合のみ作る）
   if (title || description || linkHref) {
     const main = document.createElement("main");
+    main.style.width = "100%";
 
     // h3（あれば）
     if (title) {

@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Crown 英訳トレーニング</title>
+    <style>
+        :root {
+            --ink: #17202a;
+            --muted: #667085;
+            --line: #dde5df;
+            --paper: #fffefa;
+            --mint: #e3f3e9;
+            --green: #087443;
+            --navy: #193a57;
+            --orange: #db6c35
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: #f4f7f5;
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif
+        }
+
+        .shell {
+            width: min(960px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 36px 0 64px
+        }
+
+        .progress {
+            min-width: 170px;
+            margin: 0 0 18px auto;
+            width: 170px;
+            padding-top: 8px;
+            text-align: right;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .section-picker {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .section-picker select {
+            min-width: 210px;
+            border: 1px solid #bfcfc3;
+            border-radius: 10px;
+            padding: 10px 12px;
+            color: var(--ink);
+            background: #fff;
+            font: inherit
+        }
+
+        .bar {
+            overflow: hidden;
+            height: 7px;
+            margin-top: 8px;
+            border-radius: 999px;
+            background: #dbe7df
+        }
+
+        .bar>span {
+            display: block;
+            width: 0;
+            height: 100%;
+            border-radius: inherit;
+            background: var(--green);
+            transition: width .25s ease
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--paper);
+            box-shadow: 0 16px 45px rgba(28, 51, 38, .07)
+        }
+
+        .topline {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 20px 24px 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 99px;
+            padding: 5px 10px;
+            background: var(--mint);
+            color: #17623e;
+            font-size: 12px;
+            font-weight: 700
+        }
+
+        .correct-count {
+            margin: 14px 24px 0;
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .prompt {
+            padding: 30px 24px 32px;
+            font-size: clamp(17px, 2.2vw, 21px);
+            font-weight: 750;
+            line-height: 1.65;
+            letter-spacing: .01em
+        }
+
+        .word-bank {
+            margin: 0 24px 24px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line)
+        }
+
+        .word-bank h2 { margin: 0 0 8px; font-size: 14px }
+        .word-bank p { margin: 0 0 12px; color: var(--muted); font-size: 12px }
+        .word-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0 }
+        .word-list li { padding: 5px 10px; border-radius: 7px; background: var(--mint); color: #17623e; font-size: 14px }
+        .word-list li.entered { background: #e9eceb; color: #68716c }
+
+        .answer {
+            margin-top: 18px;
+            padding: 24px
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 750
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 128px;
+            resize: vertical;
+            border: 1px solid #bfcfc3;
+            border-radius: 12px;
+            padding: 15px;
+            outline: none;
+            color: var(--ink);
+            background: #fff;
+            font: 16px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
+        }
+
+        textarea:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 4px rgba(8, 116, 67, .12)
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 15px
+        }
+
+        .left,
+        .right {
+            display: flex;
+            gap: 10px
+        }
+
+        button {
+            cursor: pointer;
+            border: 1px solid #b8c8bc;
+            border-radius: 10px;
+            padding: 11px 15px;
+            background: #fff;
+            color: var(--ink);
+            font: 700 14px inherit;
+            transition: transform .16s, background .16s, border .16s
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            background: #f5faf6
+        }
+
+        button.primary {
+            border-color: var(--green);
+            background: var(--green);
+            color: #fff
+        }
+
+        button.primary:hover {
+            background: #065f37
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            opacity: .45;
+            transform: none
+        }
+
+        .result {
+            display: none;
+            margin-top: 18px;
+            overflow: hidden
+        }
+
+        .result.show {
+            display: block
+        }
+
+        .result-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 22px;
+            background: var(--navy);
+            color: #fff
+        }
+
+        .result-head strong {
+            font-size: 16px
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 11px;
+            color: #dce9f2;
+            font-size: 12px
+        }
+
+        .dot {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            margin-right: 4px
+        }
+
+        .correct {
+            background: #b9f4cd;
+            color: #075b32
+        }
+
+        .missing {
+            background: #ffe4b6;
+            color: #914500
+        }
+
+        .extra {
+            background: #ffd1d1;
+            color: #9b2727
+        }
+
+        .compare {
+            padding: 22px
+        }
+
+        .reference {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .sentence {
+            padding: 16px;
+            border: 1px solid #e0e8e2;
+            border-radius: 12px;
+            background: #fbfdfb;
+            font: 16px/1.85 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
+        }
+
+        mark {
+            padding: 2px 4px;
+            border-radius: 4px;
+            background: transparent
+        }
+
+        .reference-line {
+            margin-top: 12px;
+            color: #425466;
+            font-size: 13px
+        }
+
+        .reference-line span {
+            color: #17202a;
+            font: 600 14px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
+        }
+
+        .hint {
+            margin: 17px 0 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .hint b {
+            color: var(--orange)
+        }
+
+        [hidden] { display: none !important }
+        nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px }
+        nav a { color: var(--green); padding: 8px 12px; border-radius: 8px; text-decoration: none }
+        nav a[aria-current="page"] { background: var(--mint); font-weight: 750 }
+        .page-card { padding: 24px }
+        h2 { margin: 0 0 16px; font-size: 23px }
+        .description { color: var(--muted); line-height: 1.8 }
+        .page-link { display: inline-block; padding: 12px 18px; border-radius: 10px; background: var(--green); color: white; text-decoration: none }
+        .history-item { margin-top: 16px; padding: 20px; overflow-wrap: anywhere }
+        #historyList { list-style: none; padding: 0; margin: 0 }
+        .history-japanese { font-size: 16px; line-height: 1.8 }
+        .sentence { overflow-wrap: anywhere }
+        .notice { color: #914500; line-height: 1.7 }
+        @media(max-width:600px) {
+            .shell {
+                width: min(100% - 22px, 960px);
+                padding-top: 22px
+            }
+
+            .progress {
+                min-width: 116px
+            }
+
+            .topline,
+            .prompt,
+            .answer {
+                padding-left: 18px;
+                padding-right: 18px
+            }
+
+            .prompt {
+                padding-top: 25px
+            }
+
+            .result-head {
+                align-items: flex-start;
+                gap: 12px;
+                flex-direction: column
+            }
+
+            .actions {
+                justify-content: flex-end
+            }
+
+            .left {
+                order: 2
+            }
+
+            .right {
+                margin-left: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="shell">
+        <nav aria-label="メインナビゲーション">
+            <a href="#home">トップ</a><a href="#range">範囲選択</a><a href="#history">回答履歴</a>
+        </nav>
+        <p id="storageNotice" class="notice" role="status" hidden></p>
+        <section id="homePage" class="card page-card">
+            <h2>日本語から、英文を組み立てよう。</h2>
+            <p class="description">学習する範囲を選び、日本語を英訳しましょう。答え合わせで原文との差分を確認できます。</p>
+            <p id="homeStats" class="description"></p>
+            <a class="page-link" href="#range">範囲を選んで始める →</a>
+            <p class="description">答え合わせした回答はこのブラウザに保存され、回答履歴から振り返れます。</p>
+        </section>
+        <section id="rangePage" class="card page-card" hidden>
+            <h2>学習する範囲を選択</h2>
+        <div class="section-picker">
+            <label for="sectionSelect">Section</label>
+            <select id="sectionSelect" aria-label="演習するSectionを選択"></select>
+        </div>
+            <p id="rangeCount" class="description"></p>
+            <button id="start" class="primary">この範囲で始める →</button>
+        </section>
+        <div id="exercisePage" hidden>
+            <div class="progress" id="exerciseProgress" hidden><span id="count">1 / 12</span>
+                <div class="bar"><span id="bar"></span></div>
+            </div>
+        <section class="card" aria-live="polite">
+            <div class="topline"><span class="tag" id="lesson">Lesson 4 · Section 1</span><span id="topic">Ocean
+                    plastic</span></div>
+            <p class="correct-count" id="correctCount" role="status" title="句読点・大文字小文字を除いて原文と一致した回答の回数">これまでの正解：0回</p>
+            <div class="prompt" id="japanese"></div>
+            <section class="word-bank" aria-labelledby="wordBankTitle">
+                <h2 id="wordBankTitle">必要な単語</h2>
+                <p>原文に使われる単語をアルファベット順で表示しています。同じ単語も必要な回数分表示し、入力した個数分だけグレーになります。</p>
+                <ul class="word-list" id="wordList"></ul>
+            </section>
+        </section>
+        <section class="card answer"><label for="input">あなたの英訳</label><textarea id="input" placeholder="ここに英文を入力してください"
+                spellcheck="true"></textarea>
+            <div class="actions">
+                <div class="left"><button id="prev">← 前の問題</button><button id="next">次の問題 →</button></div>
+                <div class="right"><button id="clear">入力を消す</button><button class="primary" id="check">答え合わせ</button>
+                </div>
+            </div>
+        </section>
+        <section class="card result" id="result">
+            <div class="result-head"><strong>あなたの英文と原文の差分</strong>
+                <div class="legend"><span><i class="dot correct"></i>一致</span><span><i
+                            class="dot missing"></i>原文にあって不足</span><span><i class="dot extra"></i>あなたの文のみ</span></div>
+            </div>
+            <div class="compare">
+                <p class="reference">あなたの英文（色付きの箇所が差分です）</p>
+                <div class="sentence" id="diff"></div>
+                <p class="reference-line">原文：<span id="reference"></span></p>
+                <p class="hint"><b>ヒント：</b>句読点・大文字小文字は採点に含めず、単語の並びを比べています。</p>
+            </div>
+        </section>
+        </div>
+        <section id="historyPage" hidden>
+            <h2>回答履歴</h2>
+            <p class="description">新しい回答から表示しています。</p>
+            <p class="description">履歴はこのブラウザに保存されます。ブラウザの保存データを削除すると履歴も消えます。</p>
+            <label for="historySection">範囲で絞り込む</label>
+            <div class="section-picker"><select id="historySection"><option value="">すべての範囲</option></select></div>
+            <p id="historyCount" class="description" aria-live="polite"></p>
+            <ul id="historyList"></ul>
+        </section>
+    </main>
+    <script>
+        const questions = [
+            // Lesson 4 · Section 1
+            ['Lesson 4 · Section 1', 'Ocean plastic', 'プラスチックは海洋汚染の主な原因の一つです。', 'Plastic is one of the major causes of ocean pollution.'],
+            ['Lesson 4 · Section 1', 'Boyan Slat', '彼がまだオランダの高校生だったとき、ボイヤン・スラットはそれについて何かしようと決心しました。', 'While he was still a high school student in the Netherlands, Boyan Slat decided to do something about it.'],
+            ['Lesson 4 · Section 1', 'Greece', '2011年、私が16歳のとき、ギリシャへダイビングに行きました。', 'In 2011, when I was 16, I went diving in Greece.'],
+            ['Lesson 4 · Section 1', 'Expectation', '私は美しい海を体験することにワクワクしていました。', 'I was excited to experience the beautiful ocean.'],
+            ['Lesson 4 · Section 1', 'Boyan Slat', 'しかし、それは私の予想とはまったく異なっていました。私は魚よりも多くのプラスチックごみを見ました。', 'However, it was totally different from my expectations: I saw more plastic waste than fish.'],
+            ['Lesson 4 · Section 1', 'Question', '私は「なぜ私たちはこれを掃除できないのだろうか？」と自問しました。', 'I asked myself, "Why can\'t we just clean this up?"'],
+            ['Lesson 4 · Section 1', 'Decision', '世間知らずだったのかもしれませんが、やってみようと決めました。', 'Maybe I was being naive, but I decided to give it a try.'],
+            ['Lesson 4 · Section 1', 'The Ocean Cleanup', '2013年までに、私はNPO法人「ザ・オーシャン・クリーンアップ」を設立しました。', 'By 2013, I had founded an NPO, The Ocean Cleanup.'],
+            ['Lesson 4 · Section 1', 'The Ocean Cleanup', '私たちの使命は、海からプラスチックを取り除くことです。', 'Our mission is to remove plastic from the oceans.'],
+            ['Lesson 4 · Section 1', 'Target', '私たちの目標は、プラスチックごみが蓄積する主要な場所の一つである北太平洋の広大な海域です。', 'Our target is a huge area in the North Pacific Ocean, one of the major sites of plastic waste accumulation.'],
+            ['Lesson 4 · Section 1', 'System', 'いくつかの困難を経て、2021年に私たちのシステムが作動するようになりました。', 'After some difficulties, we got our system to work in 2021.'],
+            ['Lesson 4 · Section 1', 'Method', '2隻の船が水中を通して障壁を引くことでプラスチックを集めます。', 'Two boats collect plastic by pulling a barrier through the water.'],
+            ['Lesson 4 · Section 1', 'Recycling', 'ごみは引き上げられ、リサイクルのために岸へと運ばれます。', 'The waste is pulled out and taken to shore for recycling.'],
+            ['Lesson 4 · Section 1', 'Progress', '私たちはまだ実証段階ですが、進展を見せています。', 'We are still at the pilot stage, but we are making progress.'],
+            ['Lesson 4 · Section 1', 'Removal', '私たちは対象地域のプラスチックの0.2パーセント以上を取り除きました。', "We've removed more than 0.2 percent of the plastic in the target area."],
+            ['Lesson 4 · Section 1', 'Timeframe', 'このプロジェクトにどれくらいの時間がかかるかは、まだ正確にはわかりません。', 'We still don\'t know exactly how long the project will take.'],
+            ['Lesson 4 · Section 1', 'Challenge', 'しかし、このペースでは500年かかってしまいます。', 'However, at this rate it will take us 500 years.'],
+            ['Lesson 4 · Section 1', 'Solution', 'もっと良い方法があるはずです。', 'There must be a better way.'],
+
+            // Lesson 4 · Section 2
+            ['Lesson 4 · Section 2', 'Plastic reduction', 'プラスチックによる海洋汚染を止めるより良い方法は、単にプラスチックの使用を減らすことでしょう。', 'A better way to stop polluting the oceans with plastic would be to simply reduce the use of plastic.'],
+            ['Lesson 4 · Section 2', 'Demand', '20世紀前半にプラスチックが導入されて以来、その需要は急速に増加しました。', 'Since the introduction of plastics in the first half of the 20th century, the demand has increased rapidly.'],
+            ['Lesson 4 · Section 2', 'Plastic use', '毎年約4億トンのプラスチックが生産されています。', 'About 400 million tons of plastic is produced each year.'],
+            ['Lesson 4 · Section 2', 'Scale', 'それはエンパイア・ステート・ビル1,000棟分以上の重さがあります。', 'It weighs more than 1,000 Empire State Buildings.'],
+            ['Lesson 4 · Section 2', 'Inflow', 'そして、毎年900万トンから1400万トンのプラスチックが川、湖、海に流入していると考えられています。', 'And somewhere between 9 million and 14 million tons is believed to enter rivers, lakes, and oceans each year.'],
+            ['Lesson 4 · Section 2', 'Difficulty', '日常の暮らしの中でプラスチックなしではやっていけないため、使用量を減らすことは難しいでしょう。', 'Reducing the amount of plastic we use will be difficult because we cannot do without plastic in our daily lives.'],
+            ['Lesson 4 · Section 2', 'Growth', '世界人口が増加し、より多くの人々が現代的な生活を楽しむようになるにつれて、プラスチックの需要は自然と高まります。', "As the world's population increases and more people start to enjoy modern life, the demand for plastic will naturally grow."],
+            ['Lesson 4 · Section 2', 'Prediction', '一部の研究者によると、プラスチックの使用量は2060年までに3倍になるということです。', 'According to some researchers, the use of plastic will become three times greater by 2060.'],
+            ['Lesson 4 · Section 2', 'Regulations', 'カナダやEUは特定のプラスチック製品の「使い捨て」を禁止しました。', 'Canada and the EU have banned "single use" of certain plastic items.'],
+            ['Lesson 4 · Section 2', 'Effect', 'しかし、これによって削減される消費量はごくわずかです。', 'But this will reduce consumption only in a small way.'],
+            ['Lesson 4 · Section 2', 'Reality', 'プラスチックの使用全体を減らすことは、ほぼ不可能です。', 'It will be nearly impossible to reduce plastic use as a whole.'],
+
+            // Lesson 4 · Section 3
+            ['Lesson 4 · Section 3', 'Question', 'さて、プラスチック汚染を減らす効果的な方法があるのか疑問に思うかもしれません。', 'Now, you may wonder if there is any effective way to reduce plastic pollution.'],
+            ['Lesson 4 · Section 3', 'Waste management', '一つの方法は、廃棄物管理を改善することです。', 'One way is to improve waste management.'],
+            ['Lesson 4 · Section 3', 'Heavy users', 'ヨーロッパ、アメリカ、日本、韓国の人々は、プラスチックの最大級の使用者です。', 'People in Europe, the United States, Japan, and South Korea are among the heaviest users of plastic.'],
+            ['Lesson 4 · Section 3', 'Consumption', '彼らは世界全体の約3分の1を消費しています。', 'They consume about one-third of the global total.'],
+            ['Lesson 4 · Section 3', 'Inflow share', 'しかし、これらの国々が海に流れ込むごみに責任を負っているのは、わずか1パーセント程度です。', 'However, these countries are responsible for only around one percent of what flows into the ocean.'],
+            ['Lesson 4 · Section 3', 'Reason', 'これは一部には、彼らのゴミ収集および処分システムによるものです。', 'This is partly due to their systems for waste collection and disposal.'],
+            ['Lesson 4 · Section 3', 'Hot spots', 'しかし廃棄物管理は、アジアの他の多くの国々や西アフリカ、ラテンアメリカではそれほど効果的ではありません。', 'Waste management, however, is not so effective in many other countries in Asia, as well as in West Africa and Latin America.'],
+            ['Lesson 4 · Section 3', 'Hot spots', 'それらは世界のプラスチック汚染のホットスポットです。', 'They are the plastic pollution hot spots of the world.'],
+            ['Lesson 4 · Section 3', 'Ideal', '理想的には、世界中のすべての都市が良いゴミ収集・処分システムを持つべきです。', 'Ideally, every city in the world should have good garbage collection and disposal systems.'],
+            ['Lesson 4 · Section 3', 'Cost', 'しかし、廃棄物管理には費用がかかります。', 'But waste management is costly.'],
+            ['Lesson 4 · Section 3', 'Time', 'システムを改善するには何年もかかる可能性があります。', 'Improving systems could take many years.'],
+            ['Lesson 4 · Section 3', 'Current state', 'その間にも、毎日何千トンものプラスチックが川を通じて海に流出し続けています。', 'In the meantime, thousands of tons of plastic continue to flow into the ocean every day through rivers.'],
+            ['Lesson 4 · Section 3', 'Research', '私たちは世界中の10万以上の川を調べました。', 'We looked at more than 100,000 of the world\'s rivers.'],
+            ['Lesson 4 · Section 3', 'Finding', '海に流出する全プラスチックの80パーセント近くが、わずか1,000本の川（わずか1パーセント）から来ていることが分かりました。', 'We found that nearly 80 percent of all plastic flowing into the ocean comes from just 1,000 of those rivers: just one percent.'],
+            ['Lesson 4 · Section 3', 'Direction', 'この事実が、海をきれいにするためのより良い方法を私たちに指し示してくれました。', 'This fact pointed us toward a better way to clean the oceans.'],
+            ['Lesson 4 · Section 3', 'Focus', '世界がより良い廃棄物管理システムを構築するのを待つ間、私たちは川に焦点を当てることができます。', 'While we wait for the world to build better waste management systems, we can focus on rivers.'],
+            ['Lesson 4 · Section 3', 'Rivers', '私たちは蛇口を閉めることができます。', 'We can turn off the tap.'],
+
+            // Lesson 4 · Section 4
+            ['Lesson 4 · Section 4', 'Active rivers', 'ザ・オーシャン・クリーンアップは、インドネシア、マレーシア、ベトナム、ドミニカ共和国、アメリカなどの国々の10の川で既に取り組んでいます。', 'The Ocean Cleanup is already working on 10 rivers in countries like Indonesia, Malaysia, Vietnam, the Dominican Republic, and the United States.'],
+            ['Lesson 4 · Section 4', 'Guatemala', '私たちの最新の活動場所は、グアテマラのモタグア川です。', 'Our latest site is the Río Motagua in Guatemala.'],
+            ['Lesson 4 · Section 4', 'Amount', '最初の3週間だけで、816トンのごみを回収しました。', 'In the first three weeks alone, we collected 816 tons of trash.'],
+            ['Lesson 4 · Section 4', 'Plastic proportion', 'この量のうち、272トンがプラスチックでした。', 'Of this amount, 272 tons was plastic.'],
+            ['Lesson 4 · Section 4', 'Comparison', 'これは、フランスから1年間に海へ流出する全プラスチックごみよりも多い量です。', 'This is more than all of the plastic waste that flows into the ocean from France in one year.'],
+            ['Lesson 4 · Section 4', 'Impact', 'プラスチック汚染は環境を害し、経済に損害を与え、沿岸地域の人口の健康を脅かす可能性があります。', 'Plastic pollution harms the environment, damages the economy, and can threaten the health of people in coastal areas.'],
+            ['Lesson 4 · Section 4', 'Threat', 'プラスチックは、今日私たちの海が直面している最大の脅威の一つです。', 'Plastic is one of the biggest threats our oceans face today.'],
+            ['Lesson 4 · Section 4', 'Difficulty', 'プラスチックの使用を減らすことは環境にとって良いことですが、難しいことです。', 'Reducing plastic use is good for the environment, but it is difficult.'],
+            ['Lesson 4 · Section 4', 'Possibility', 'これは、私たちにできることが何もないという意味ではありません。', "This doesn't mean that there is nothing we can do about it."],
+            ['Lesson 4 · Section 4', 'Solutions', '効果的な解決策が存在することを、私たちは知っています。', 'We know effective solutions exist.'],
+            ['Lesson 4 · Section 4', 'River collection', '川でプラスチックを回収することは、私たちの目標を達成するための最も経済的な方法です。', 'Collecting plastic in rivers is the most economical method to reach our goal.'],
+            ['Lesson 4 · Section 4', 'Urgency', 'しかし、無駄にできる時間はありません。', 'But there is no time to waste.'],
+
+            // Lesson 5 · Section 1
+            ['Lesson 5 · Section 1', 'Jane Goodall', 'ジェーン・グドールはチンパンジーに関する研究だけでなく、自然を保護する取り組みでも有名です。', 'Jane Goodall is famous not only for her work with chimpanzees but also for her effort to conserve nature.'],
+            ['Lesson 5 · Section 1', 'Interview', 'ここでは、ケンが彼女の人生と仕事についてインタビューします。', 'Here, Ken interviews her about her life and work.'],
+            ['Lesson 5 · Section 1', 'Greeting', 'ケン：グドール博士、本日はインタビューにお時間をいただきありがとうございます。', 'Ken: Dr. Goodall, thank you for taking time for this interview.'],
+            ['Lesson 5 · Section 1', 'Background', 'あなたがアフリカで何年もチンパンジーを研究されていたことは知っています。', 'I know that you spent many years studying chimpanzees in Africa.'],
+            ['Lesson 5 · Section 1', 'Decision time', '最初にアフリカに行こうと決めたのはいつですか？', 'When did you first decide to go to Africa?'],
+            ['Lesson 5 · Section 1', 'Inspiration', 'ジェーン：ドリトル先生やターザンの本を読んだ後でした。', 'Jane: It was after I read the Doctor Dolittle and the Tarzan books.'],
+            ['Lesson 5 · Section 1', 'Dream', '11歳のとき、私はどうにかしてアフリカへ行き、動物たちと暮らし、彼らを研究し、彼らについての本を書こうと心に決めました。', 'When I was 11, I knew that somehow I would go to Africa to live with animals, study them, and write books about them.'],
+            ['Lesson 5 · Section 1', 'Aspiration', 'ケン：いつか動物に関わる仕事をしたいと思っている若者はたくさんいると思います。', "I'm sure there are lots of young people who want to work with animals someday."],
+            ['Lesson 5 · Section 1', 'Preparation', '彼らはどのように準備すればよいでしょうか？', 'How can they prepare themselves?'],
+            ['Lesson 5 · Section 1', 'Jane Goodall', '動物を理解するために、あなたができることはたくさんあります。', 'There are a lot of things you can do in order to understand animals.'],
+            ['Lesson 5 · Section 1', 'Observation', '彼らをよく見て、その行動を観察することが非常に重要です。', 'It is very important that you watch them and observe their behavior.'],
+            ['Lesson 5 · Section 1', 'Inquiry', 'また、メモを書き、質問をすることも重要です。', 'It is also important that you write notes and ask questions.'],
+            ['Lesson 5 · Section 1', 'Determination', 'もし本気でやる気があるのなら、真剣に努力しなければなりません。', "If you are really determined, you'll have to work really hard."],
+            ['Lesson 5 · Section 1', 'Advice', 'あらゆる機会を活用し、諦めないでください。', "Take advantage of every opportunity, and don't give up."],
+
+            // Lesson 5 · Section 2
+            ['Lesson 5 · Section 2', 'Fieldwork', 'ケン：あなたは野生のチンパンジーを観察するフィールドワークをたくさん行いましたね。', 'Ken: You did a lot of fieldwork, observing chimpanzees in the wild.'],
+            ['Lesson 5 · Section 2', 'Similarity', '彼らは何らかの形で人間と似ていますか？', 'Are they in any way like humans?'],
+            ['Lesson 5 · Section 2', 'Chimpanzees', 'チンパンジーと人間には、多くの共通点があります。', 'Chimps and humans have a lot in common.'],
+            ['Lesson 5 · Section 2', 'DNA share', 'DNAの98.6パーセントを共有しているのです。', 'sharing 98.6 percent of DNA.'],
+            ['Lesson 5 · Section 2', 'Brain & Behavior', '彼らの脳は私たちの脳と非常によく似ており、行動の多くも私たちのようです。', 'Their brains are very much like ours and much of their behavior is like ours.'],
+            ['Lesson 5 · Section 2', 'Family bond', 'チンパンジーの家族のメンバーは非常に親密で、しばしば助け合います。', 'The members of a chimp family are very close, often helping one another.'],
+            ['Lesson 5 · Section 2', 'Emotions', '彼らは悲しみ、喜び、恐れ、怒りを感じることができます。', 'They can feel sad, happy, afraid, and angry.'],
+            ['Lesson 5 · Section 2', 'Character', 'ケン：彼らの性格はどうですか——つまり、フレンドリーですか？それとも残酷ですか？', 'Ken: What about their character—I mean, are they friendly? Are they cruel?'],
+            ['Lesson 5 · Section 2', 'Nature', 'ジェーン：彼らは普段はフレンドリーですが、人間と同じように残酷になることもあります。', 'Jane: They are usually friendly, but they can be cruel, just like humans.'],
+            ['Lesson 5 · Section 2', 'Surprise', 'ケン：本当ですか？', 'Ken: Really?'],
+            ['Lesson 5 · Section 2', 'Territory', 'ジェーン：オスは縄張りを守るために、時々他の群れのチンパンジーを攻撃します。', 'Jane: The males sometimes attack chimps from another community to protect their territories.'],
+            ['Lesson 5 · Section 2', 'Kindness', 'しかし、彼らはとても優しく、愛情深くなることもあります。', 'But they can be very kind and loving too.'],
+            ['Lesson 5 · Section 2', 'Episode', 'かつてメルという名のチンパンジーが3歳くらいの頃、母親を亡くして一人取り残されました。', 'Once, when he was about three years old, a chimp called Mel lost his mother and was left alone.'],
+            ['Lesson 5 · Section 2', 'Concern', '私たちは皆、彼が死んでしまうだろうと思いました。', "We all thought he'd die."],
+            ['Lesson 5 · Section 2', 'Adoption', 'しかし驚いたことに、スピンドルという12歳のオスのチンパンジーが彼の世話をしたのです。', 'But, to our surprise, a 12-year-old male chimp called Spindle took care of him.'],
+            ['Lesson 5 · Section 2', 'Detail', 'ケン：どのようにですか？', 'Ken: In what way?'],
+            ['Lesson 5 · Section 2', 'Caring', 'ジェーン：メルは彼の背中に乗り、夜は巣を共有していました。', 'Jane: Mel would ride on his back and share his nest at night.'],
+            ['Lesson 5 · Section 2', 'Sharing', 'メルがおねだりをすれば、自分の食べ物を分け与えていました。', 'He shared his food if Mel asked for it.'],
+            ['Lesson 5 · Section 2', 'Conclusion', 'チンパンジーは本当に愛情深く、思いやりを持つことができるのです。', 'Chimps can indeed be loving and caring.'],
+
+            // Lesson 5 · Section 3
+            ['Lesson 5 · Section 3', 'Lecture tour', 'ケン：あなたは世界中を旅して、自然の保全についての講演をなさっていますね。', 'Ken: You travel all over the world, giving talks about the conservation of nature.'],
+            ['Lesson 5 · Section 3', 'Question', '何かコメントはありますか？', 'Do you have any comment?'],
+            ['Lesson 5 · Section 3', 'Animal rights', 'ジェーン：はい、私たち人間は野生動物にも生きる権利があることを理解しなければなりません。', 'Jane: Yes, we humans must understand that wild animals have the right to live.'],
+            ['Lesson 5 · Section 3', 'Wild places', '彼らには野生の場所が必要です。', 'They need wild places.'],
+            ['Lesson 5 · Section 3', 'Preservation', 'それに、私たちが破壊してはならない生物が存在します。', 'Besides, there are some kinds of living things that we must not destroy.'],
+            ['Lesson 5 · Section 3', 'Medicine', '人間の病気のための多くの薬は、植物や昆虫から作られています。', 'Many drugs for human diseases come from plants and insects.'],
+            ['Lesson 5 · Section 3', 'Loss', '私たちが野生の地域を破壊するとき、知らず知らずのうちにガン治療薬を破壊しているのかもしれません。', 'When we destroy a wild area, maybe we are destroying the cure for cancer without knowing it.'],
+            ['Lesson 5 · Section 3', 'Understanding', 'ケン：なるほど。', 'Ken: I see.'],
+            ['Lesson 5 · Section 3', 'Nature', '自然界のすべてはつながっています。', 'Everything in nature is connected.'],
+            ['Lesson 5 · Section 3', 'Pattern of life', '植物や動物が、生命の全体の模様を作り上げています。', 'Plants and animals make up a whole pattern of life.'],
+            ['Lesson 5 · Section 3', 'Disruption', 'もし私たちがその模様を壊してしまうと、あらゆる問題が生じる可能性があります。', 'If we destroy that pattern, all kinds of things can go wrong.'],
+            ['Lesson 5 · Section 3', 'Elaboration', 'ケン：それについてもう少し詳しく話していただけますか？', 'Could you say more about that?'],
+            ['Lesson 5 · Section 3', 'Example', 'ジェーン：もちろんです。', 'Jane: Sure.'],
+            ['Lesson 5 · Section 3', 'Rabbits', 'ある時イングランドで、ウサギが農家の穀物を荒らしていました。', "One time in England, rabbits were destroying farmers' grain."],
+            ['Lesson 5 · Section 3', 'Farmers', '農民たちはウサギを駆除しました。', 'The farmers killed the rabbits.'],
+            ['Lesson 5 · Section 3', 'Foxes', 'するとキツネの食べ物が足りなくなり、農家のニワトリを襲い始めました。', "Then foxes didn't have enough to eat and they started killing the farmers' chickens."],
+            ['Lesson 5 · Section 3', 'Rats', '農民たちは次にキツネを駆除したため、ネズミが急速に増え、ウサギが食べたのと同じくらいの穀物を破壊しました。', 'The farmers then killed the foxes, and rats quickly increased in number and destroyed just as much grain as the rabbits had eaten.'],
+            ['Lesson 5 · Section 3', 'Warning', '私たち人間は、自分たちの環境を壊し、それとともに自分自身をも滅ぼしかねない危機に瀕しているのです。', 'We humans are in danger of destroying our environment and ourselves along with it.'],
+
+            // Lesson 5 · Section 4
+            ['Lesson 5 · Section 4', 'Future', 'ケン：私たちの未来について心配していますか？', 'Ken: Are you worried about our future?'],
+            ['Lesson 5 · Section 4', 'Hope', 'ジェーン：ええ、心配しています。', 'Jane: Yes, I am.'],
+            ['Lesson 5 · Section 4', 'Roots & Shoots', '私の希望は若者にあります。', 'My hope lies in young people.'],
+            ['Lesson 5 · Section 4', 'Origin', 'だからこそ私は「ルーツ＆シューツ」を始めました。', "That's why I started Roots & Shoots."],
+            ['Lesson 5 · Section 4', 'Start', 'それは1991年にタンザニアの高校生のグループから始まりました。', 'It began with a group of high school students in Tanzania in 1991.'],
+            ['Lesson 5 · Section 4', 'Meaning of Roots', '根（Roots）は岩を押しのけて水にたどり着くことができるため、「ルーツ＆シューツ」と呼ばれています。', 'It is called Roots & Shoots because roots can work their way through rocks to reach water.'],
+            ['Lesson 5 · Section 4', 'Meaning of Shoots', 'そして芽（Shoots）は壁を突き破って日光に手を伸ばすことができます。', 'And shoots can break through a wall to reach the sunlight.'],
+            ['Lesson 5 · Section 4', 'Symbolism', '岩や壁は、人間が地球にもたらした問題のことです。', 'The rocks and wall are the problems humans have caused to our earth.'],
+            ['Lesson 5 · Section 4', 'Organization', 'ケン：若者のためのクラブのようなものですか？', 'Ken: Is it a kind of club for young people?'],
+            ['Lesson 5 · Section 4', 'Global network', 'ジェーン：はい。今では世界中にグループがあり、各グループが3つのプロジェクトを選びます：人を助けるもの、動物を助けるもの、環境を助けるものです。', 'Jane: Yes. We now have groups all over the world and each group chooses three projects: one to help people, one to help animals, one to help the environment.'],
+            ['Lesson 5 · Section 4', 'Better world', '悲しんでいる人があなたに微笑みかけたとき、犬があなたに尾を振ったとき、あるいは喉が渇いた植物に水をあげたとき、世界はより良い場所になります。', 'The world is a better place when a sad person smiles at you, when a dog wags its tail for you, or when you give water to a thirsty plant.'],
+            ['Lesson 5 · Section 4', 'Mission', 'それが「ルーツ＆シューツ」のすべてです。', "That's what Roots & Shoots is all about."],
+            ['Lesson 5 · Section 4', 'Final question', 'ケン：最後に一言ありますか？', 'Ken: Some final words?'],
+            ['Lesson 5 · Section 4', 'Choices', 'ジェーン：人々は、毎日行う小さな選択の果たす結果について考えるべきです。', 'Jane: People should think about the consequences of the little choices they make each day.'],
+            ['Lesson 5 · Section 4', 'Examples', '何を買うか？何を食べるか？何を着るか？', 'What to buy? What to eat? What to wear?'],
+            ['Lesson 5 · Section 4', 'Individual impact', 'あなたの一人は一人に過ぎませんが、あなたの行動は世界全体に影響を与えます。', 'You are just one person, but what you do affects the whole world.'],
+            ['Lesson 5 · Section 4', 'Collective change', 'あなたが行う変化は小さいかもしれませんが、千人、そして百万人、最終的に十億人の人々がそれらの変化を起こせば、これは大きな違いを生むことになります。', 'The changes you make may be small, but if a thousand, then a million, finally a billion people all make those changes, this is going to make a big difference.'],
+            ['Lesson 5 · Section 4', 'Appreciation', 'ケン：グドール博士、あなたの考えを共有していただき本当にありがとうございました。', 'Ken: Dr. Goodall, thank you very much for sharing your ideas with us.'],
+
+            // Lesson 6 · Section 1
+            ['Lesson 6 · Section 1', 'Generative AI', '生成AIシステムは、コンピュータにできることへの私たちの考えを完全に変えました。', 'Generative AI systems have completely changed what we think computers can do.'],
+            ['Lesson 6 · Section 1', 'Interview setup', 'ユミはAIシステムであるチャットボットにインタビューし、それが何であるかを探ります。', "Yumi interviews Chatbot, an AI system, to find out what it's all about."],
+            ['Lesson 6 · Section 1', 'Greeting', 'ユミ：こんにちは！私は高校1年生のユミです。あなたのことについてもっと知りたいと思っています。', "Yumi: Hi there! I'm Yumi, a first-year high school student, and I'm curious to know more about you."],
+            ['Lesson 6 · Section 1', 'Basic question', 'あなたとお話しするのはこれが初めてなので、いくつかの基本的な質問から始めさせてください：生成AIシステムとは何ですか？', 'Since this is my first experience chatting with you, let me start with some basic questions: What is a generative AI system?'],
+            ['Lesson 6 · Section 1', 'Mechanism', 'どのように機能するのですか？', 'How does it work?'],
+            ['Lesson 6 · Section 1', 'Chatbot reply', 'チャットボット（＝チャット）：こんにちは、ユミ！あなたとお話しできてうれしいです。', "Chatbot (= Chat): Hi, Yumi! I'm happy to chat with you."],
+            ['Lesson 6 · Section 1', 'Generative AI', '私は会話をするように設計されたAIプログラムです。', 'I am an AI program designed to engage in conversation.'],
+            ['Lesson 6 · Section 1', 'Training', '私は本、記事、ウェブサイトなどからの膨大な量のテキストで訓練を受けています。', "I've received training on a vast amount of text from books, articles, websites, and more."],
+            ['Lesson 6 · Section 1', 'Capability', 'これにより、表現のパターン、文法、ニュアンスを理解し、返答を生成することができます。', 'This helps me understand patterns of expression, grammar, and nuances, enabling me to generate responses.'],
+            ['Lesson 6 · Section 1', 'Role', '情報を提供し、楽しく会話ができる親しみやすいアシスタントだと思ってください。', 'Think of me as a friendly assistant who can provide information and have fun chats.'],
+            ['Lesson 6 · Section 1', 'Multilingual question', 'ユミ：さまざまな言語で話せますか？', 'Yumi: Can you talk in different languages?'],
+            ['Lesson 6 · Section 1', 'Multilingual capability', 'チャット：もちろんです！主に英語に焦点を当てていますが、他の言語も扱うことができます。', "Chat: Absolutely! While I'm mainly focused on English, I can also handle other languages."],
+            ['Lesson 6 · Section 1', 'Language list', '私が扱える言語のリストはこちらです：英語、スペイン語、フランス語、ドイツ語、イタリア語、ロシア語、中国語、日本語などです。', "Here's a list of languages I can handle: English, Spanish, French, German, Italian, Russian, Chinese, Japanese, and more."],
+            ['Lesson 6 · Section 1', 'Proficiency question', 'ユミ：それらの言語すべてが得意ですか？', 'Yumi: Are you good at all those languages?'],
+            ['Lesson 6 · Section 1', 'Proficiency level', 'チャット：うーん、完全にはそうではありません。', 'Chat: Well, not quite.'],
+            ['Lesson 6 · Section 1', 'Limitation', 'これらの言語でお手伝いすることはできますが、すべての慣用句やニュアンスを理解できるわけではないかもしれません。', 'I can assist you in these languages, but I might not catch all the idioms or nuances.'],
+            ['Lesson 6 · Section 1', 'Support', 'でも心配しないでください。お手伝いできるよう最善を尽くします！', "But don't worry. I'll do my best to help you out!"],
+
+            // Lesson 6 · Section 2
+            ['Lesson 6 · Section 2', 'Changes', 'ユミ：生成AIシステムは、特にサービス分野で世界に大きな変化をもたらしたと聞いています。', "Yumi: I've heard that generative AI systems have brought about big changes in the world, especially in services."],
+            ['Lesson 6 · Section 2', 'Topic request', 'それについて話していただけますか？', 'Can you talk about that?'],
+            ['Lesson 6 · Section 2', 'Services', 'チャット：もちろんです！言語や文化を越えてコミュニケーションをとるのに役立つ翻訳サービスを提供できます。', 'Chat: Absolutely! I can offer translation services to help you communicate across languages and cultures.'],
+            ['Lesson 6 · Section 2', 'Creative help', 'また、物語や詩のアイデアを生成することでライターを助けることもできます。', 'I can also help writers by generating ideas for stories and poems.'],
+            ['Lesson 6 · Section 2', 'Praise', 'ユミ：わあ！あなたはとても才能がありますね。', 'Yumi: Wow! You are so talented.'],
+            ['Lesson 6 · Section 2', 'Other areas', '他にあなたが手伝える分野はありますか？', 'Are there any other areas where you can help?'],
+            ['Lesson 6 · Section 2', 'Customer support', 'チャット：もちろんです、質問に答えたり問題を解決したりすることで、企業のカスタマーサポートを支援できます。', 'Chat: Sure, I can help companies with customer support by answering questions and solving problems.'],
+            ['Lesson 6 · Section 2', 'Education', 'そして教育の分野では、さまざまな方法で学生をサポートできます。', 'And in education, I can support students in many ways.'],
+            ['Lesson 6 · Section 2', 'English learning', 'ユミ：いいですね！私の英語学習を手伝うことについてはどうですか？', 'Yumi: Nice! What about helping me with my English?'],
+            ['Lesson 6 · Section 2', 'Assistance', 'チャット：レポートの文法的な間違いを見つけたり、エッセイを改善するための提案をしたりするなど、さまざまな方法であなたを助けることができます。', 'Chat: I can help you in various ways, such as finding grammatical mistakes in your reports or offering suggestions to improve your essays.'],
+            ['Lesson 6 · Section 2', 'Caution', 'ただし、すべての作業を私に頼り切るべきではありません。', 'However, you should not rely on me to do all the work for you.'],
+            ['Lesson 6 · Section 2', 'Self-growth', '自分自身で学び、成長することがあなたにとって一番です。', "It's best for you to learn and grow on your own."],
+            ['Lesson 6 · Section 2', 'Purpose', '私の目的はあなたの学習をサポートすることであり、あなたの努力に取って代わることではありません。', 'My purpose is to support your studies, not to replace your efforts.'],
+            ['Lesson 6 · Section 2', 'Understanding', 'ユミ：理解しました。あなたは英語力を向上させたい学生にとって最高のパートナーのようですね。', "Yumi: I understand. You're like a great partner for students looking to improve their English."],
+            ['Lesson 6 · Section 2', 'Reliance', '頼りにしています。', "I'll count on you."],
+
+            // Lesson 6 · Section 3
+            ['Lesson 6 · Section 3', 'Knowledge', 'ユミ：あなたはたくさんの異なることについてよく知っていますよね。', "Yumi: You know a lot about many different things, don't you?"],
+            ['Lesson 6 · Section 3', 'Accuracy question', '失礼でなければいいのですが、聞かせてください：あなたは常に正確な情報を提供していますか？', "I hope this isn't rude, but I have to ask: Do you always provide accurate information?"],
+            ['Lesson 6 · Section 3', 'Imperfection', 'チャット：最善を尽くしていますが、完璧ではありません。', "Chat: I do my best, but I'm not perfect."],
+            ['Lesson 6 · Section 3', 'Source', '私の知識は広範な訓練から来ており、学んだことに基づいて返答を生成します。', "My knowledge comes from extensive training, and I generate responses based on what I've learned."],
+            ['Lesson 6 · Section 3', 'Errors', 'しかし、時々間違いを犯すことがあります。', 'But I sometimes make errors.'],
+            ['Lesson 6 · Section 3', 'Generative AI', '情報を常に二重に確認するのは良い考えです。', 'It is always a good idea to double-check information.'],
+            ['Lesson 6 · Section 3', 'Acknowledge', 'ユミ：分かりました。気をつけます。', "Yumi: Got it. I'll be careful."],
+            ['Lesson 6 · Section 3', 'Bias question', 'インターネットから学習しているため、あなたの返答に偏り（バイアス）があるのではないかと人々は心配しています。', 'People worry about biases in your responses due to learning from the internet.'],
+            ['Lesson 6 · Section 3', 'Concern', 'それは現実の懸念事項ですか？', 'Is that a real concern?'],
+            ['Lesson 6 · Section 3', 'Bias reality', 'チャット：残念ながら、そうです。', 'Chat: Unfortunately, yes.'],
+            ['Lesson 6 · Section 3', 'Improvement', 'ですが信じてください、人々はAIシステムの偏りを減らし、性能を向上させるために一生懸命取り組んでいます。', 'But trust me, people are working hard to reduce AI systems\' biases and improve their performance.'],
+            ['Lesson 6 · Section 3', 'Relief', 'ユミ：それを知れて良かったです。', "That's good to know."],
+            ['Lesson 6 · Section 3', 'Security question', 'セキュリティの問題はどうですか？プライバシーとデータの安全性を保護するための対策が講じられていると信じています。', "What about security issues? I believe measures are taken to protect privacy and data security."],
+            ['Lesson 6 · Section 3', 'Safety query', '私たちが本当に安全なのか気になっているだけです。', "I'm just wondering if we are truly safe."],
+            ['Lesson 6 · Section 3', 'Honesty', 'チャット：正直に言って、あなたの懸念はもっともです。', 'Chat: To be honest, your concern makes sense.'],
+            ['Lesson 6 · Section 3', 'Safety tip', '念のため、個人の情報をAIシステムと共有しないのが常に一番です。', "It's always best not to share your personal information with AI systems just to play it safe."]
+        ];
+        const sections = [...new Set(questions.map(question => question[0]))];
+        let selectedSection = sections[0];
+        let sectionQuestions = questions.filter(question => question[0] === selectedSection);
+        let index = 0;
+        const el = id => document.getElementById(id);
+        const historyKey = 'memory-engine-answer-history-v1';
+        let answers = [];
+        let storageReadable = true;
+        let lastSubmission = '';
+        try {
+            const saved = JSON.parse(localStorage.getItem(historyKey) || '[]');
+            if (!Array.isArray(saved) || !saved.every(item => item &&
+                ['section', 'topic', 'japanese', 'reference', 'answer', 'date'].every(key => typeof item[key] === 'string') &&
+                Number.isFinite(Date.parse(item.date)))) throw new Error('Invalid history');
+            answers = saved;
+        } catch {
+            storageReadable = false;
+            showStorageNotice();
+        }
+        function showStorageNotice() {
+            el('storageNotice').hidden = false;
+            el('storageNotice').textContent = '回答履歴を保存・読み込みできません。この画面で追加した履歴は再読み込みすると失われる可能性があります。';
+        }
+        function renderHistory() {
+            const filtered = answers.filter(item => !el('historySection').value || item.section === el('historySection').value);
+            el('historyCount').textContent = filtered.length ? `${filtered.length}件の回答` : 'まだ回答履歴がありません。答え合わせすると、ここに記録されます。';
+            el('historyList').innerHTML = filtered.map(item => `
+                <li class="card history-item">
+                    <span class="tag">${escape(item.section)}</span>
+                    <p class="history-japanese">${escape(item.japanese)}</p>
+                    <div class="sentence" aria-label="原文との差分">${diffWords(item.answer, item.reference)}</div>
+                    <p class="reference-line">原文：<span>${escape(item.reference)}</span></p>
+                </li>`).join('');
+        }
+        function showPage() {
+            const requested = location.hash.slice(1) || 'home';
+            const page = ['home', 'range', 'exercise', 'history'].includes(requested) ? requested : 'home';
+            ['home', 'range', 'exercise', 'history'].forEach(name => el(`${name}Page`).hidden = name !== page);
+            el('exerciseProgress').hidden = page !== 'exercise';
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.hash === `#${page}`) link.setAttribute('aria-current', 'page');
+                else link.removeAttribute('aria-current');
+            });
+            el('homeStats').textContent = `${sections.length}範囲・全${questions.length}問 ／ 回答履歴 ${answers.length}件`;
+            if (page === 'history') renderHistory();
+            if (page === 'exercise') el('input').focus();
+            else {
+                el(`${page}Page`).setAttribute('tabindex', '-1');
+                el(`${page}Page`).focus();
+            }
+        }
+        const tokenize = text => text.toLowerCase().match(/[a-z]+(?:'[a-z]+)?|\d+(?:\.\d+)?/g) || [];
+
+        const escape = text => text.replace(/[&<>"']/g, character => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        }[character]));
+
+        function diffWords(actual, expected) {
+            const actualWords = tokenize(actual);
+            const expectedWords = tokenize(expected);
+            const lengths = Array.from(
+                { length: actualWords.length + 1 },
+                () => Array(expectedWords.length + 1).fill(0)
+            );
+
+            for (let actualIndex = actualWords.length - 1; actualIndex >= 0; actualIndex--) {
+                for (let expectedIndex = expectedWords.length - 1; expectedIndex >= 0; expectedIndex--) {
+                    lengths[actualIndex][expectedIndex] = actualWords[actualIndex] === expectedWords[expectedIndex]
+                        ? lengths[actualIndex + 1][expectedIndex + 1] + 1
+                        : Math.max(
+                            lengths[actualIndex + 1][expectedIndex],
+                            lengths[actualIndex][expectedIndex + 1]
+                        );
+                }
+            }
+
+            let actualIndex = 0;
+            let expectedIndex = 0;
+            const output = [];
+
+            while (actualIndex < actualWords.length || expectedIndex < expectedWords.length) {
+                if (
+                    actualIndex < actualWords.length &&
+                    expectedIndex < expectedWords.length &&
+                    actualWords[actualIndex] === expectedWords[expectedIndex]
+                ) {
+                    output.push(['correct', actualWords[actualIndex++]]);
+                    expectedIndex++;
+                } else if (
+                    expectedIndex < expectedWords.length &&
+                    (actualIndex === actualWords.length || lengths[actualIndex][expectedIndex + 1] >= (lengths[actualIndex + 1]?.[expectedIndex] ?? 0))
+                ) {
+                    output.push(['missing', expectedWords[expectedIndex++]]);
+                } else if (actualIndex < actualWords.length) {
+                    output.push(['extra', actualWords[actualIndex++]]);
+                }
+            }
+
+            return output
+                .map(([type, word]) => `<mark class="${type}">${escape(word)}</mark>`)
+                .join(' ');
+        }
+
+        function renderCorrectCount() {
+            const question = sectionQuestions[index];
+            const expected = tokenize(question[3]).join(' ');
+            const count = answers.filter(item =>
+                item.section === question[0] && item.japanese === question[2] &&
+                item.reference === question[3] && expected &&
+                tokenize(item.answer).join(' ') === expected
+            ).length;
+            el('correctCount').textContent = `これまでの正解：${count}回`;
+        }
+
+        const wordBankTokens = text => text.toLowerCase().replace(/’/g, "'")
+            .match(/[\p{L}]+(?:'[\p{L}]+)?|\d+(?:[.,]\d+)*/gu) || [];
+
+        function renderWordList() {
+            const entered = new Map();
+            wordBankTokens(el('input').value).forEach(word => entered.set(word, (entered.get(word) || 0) + 1));
+            el('wordList').innerHTML = wordBankTokens(sectionQuestions[index][3])
+                .sort((a, b) => a.localeCompare(b, 'en'))
+                .map(word => {
+                    const remaining = entered.get(word) || 0;
+                    if (remaining > 0) entered.set(word, remaining - 1);
+                    return `<li${remaining > 0 ? ' class="entered" aria-label="' + escape(word) + '（入力済み）"' : ''}>${escape(word)}</li>`;
+                }).join('');
+        }
+
+        function render() {
+            const question = sectionQuestions[index];
+            renderCorrectCount();
+            el('lesson').textContent = question[0];
+            el('topic').textContent = question[1];
+            el('japanese').textContent = question[2];
+            el('reference').textContent = question[3];
+            el('count').textContent = `${index + 1} / ${sectionQuestions.length}`;
+            el('bar').style.width = `${(index + 1) / sectionQuestions.length * 100}%`;
+            el('input').value = '';
+            renderWordList();
+            lastSubmission = '';
+            el('result').classList.remove('show');
+            el('prev').disabled = index === 0;
+            el('next').disabled = index === sectionQuestions.length - 1;
+            if (!el('exercisePage').hidden) el('input').focus();
+        }
+
+        sections.forEach(section => {
+            const option = document.createElement('option');
+            option.value = section;
+            option.textContent = section;
+            el('sectionSelect').append(option);
+            el('historySection').append(option.cloneNode(true));
+        });
+
+        function updateRangeCount() {
+            el('rangeCount').textContent = `${questions.filter(question => question[0] === el('sectionSelect').value).length}問を練習します。`;
+        }
+        el('sectionSelect').onchange = updateRangeCount;
+        el('historySection').onchange = renderHistory;
+        el('start').onclick = () => {
+            selectedSection = el('sectionSelect').value;
+            sectionQuestions = questions.filter(question => question[0] === selectedSection);
+            index = 0;
+            render();
+            location.hash = 'exercise';
+        };
+
+        el('check').onclick = () => {
+            const text = el('input').value.trim();
+
+            if (!text) {
+                el('input').focus();
+                return;
+            }
+
+            el('diff').innerHTML = diffWords(text, sectionQuestions[index][3]);
+            if (lastSubmission !== text) {
+                const question = sectionQuestions[index];
+                answers.unshift({section: question[0], topic: question[1], japanese: question[2], reference: question[3], answer: text, date: new Date().toISOString()});
+                try {
+                    if (!storageReadable) throw new Error('Storage unavailable');
+                    localStorage.setItem(historyKey, JSON.stringify(answers));
+                    el('storageNotice').hidden = true;
+                } catch { showStorageNotice(); }
+                lastSubmission = text;
+            }
+            renderCorrectCount();
+            el('result').classList.add('show');
+            el('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        };
+
+        el('clear').onclick = () => {
+            el('input').value = '';
+            renderWordList();
+            el('result').classList.remove('show');
+            el('input').focus();
+        };
+
+        el('prev').onclick = () => {
+            if (index) {
+                index--;
+                render();
+            }
+        };
+
+        el('next').onclick = () => {
+            if (index < sectionQuestions.length - 1) {
+                index++;
+                render();
+            }
+        };
+
+        el('input').addEventListener('keydown', event => {
+            if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+                el('check').click();
+            }
+        });
+
+        el('input').addEventListener('input', () => {
+            el('result').classList.remove('show');
+            renderWordList();
+        });
+        window.addEventListener('hashchange', showPage);
+        updateRangeCount();
+        render();
+        showPage();
+    </script>
+</body>
+
+</html>

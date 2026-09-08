@@ -68,5 +68,12 @@
         "imgSrc": "",
         "linkHref": "exam-docs/",
         "linkText": ""
+    },
+    {
+        "title": "「Crown 本文英訳練習サイト」を追加しました。",
+        "description": "Codexに気まぐれで作らせたやつです。作者がこれを使ってテストで高得点を取れたら、更新すると思います。\n現在、Crown本文の4-1~6-3まで入っています。",
+        "imgSrc": "Assets/crown-practice.png",
+        "linkHref": "translation/",
+        "linkText": ""
     }
 ]
