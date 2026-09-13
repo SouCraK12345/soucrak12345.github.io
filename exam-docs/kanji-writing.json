@@ -1,0 +1,2427 @@
+[
+  {
+    "step": "第33回",
+    "items": [
+      {
+        "kanji": "絡",
+        "example": "釣り糸が<b>カラマル</b>。",
+        "answer": "絡まる"
+      },
+      {
+        "kanji": "絡",
+        "example": "電話で欠席を<b>レンラク</b>する。",
+        "answer": "連絡"
+      },
+      {
+        "kanji": "絡",
+        "example": "あまりにも<b>タンラク</b>的な思考。",
+        "answer": "短絡"
+      },
+      {
+        "kanji": "絡",
+        "example": "前後の<b>ミャクラク</b>のない話。",
+        "answer": "脈絡"
+      },
+      {
+        "kanji": "雄",
+        "example": "ひなの<b>シユウ</b>を判別する。",
+        "answer": "雌雄"
+      },
+      {
+        "kanji": "雄",
+        "example": "彼は国民的<b>エイユウ</b>となった。",
+        "answer": "英雄"
+      },
+      {
+        "kanji": "雄",
+        "example": "<b>ユウダイ</b>な景色が広がる。",
+        "answer": "雄大"
+      },
+      {
+        "kanji": "普",
+        "example": "<b>フヘン</b>的な考え方に基づく。",
+        "answer": "普遍"
+      },
+      {
+        "kanji": "普",
+        "example": "<b>フツウ</b>は自転車で登校する。",
+        "answer": "普通"
+      },
+      {
+        "kanji": "偉",
+        "example": "回連覇の<b>イギョウ</b>を成し遂げる。",
+        "answer": "偉業"
+      },
+      {
+        "kanji": "偉",
+        "example": "<b>イダイ</b>な足跡を残した画家。",
+        "answer": "偉大"
+      },
+      {
+        "kanji": "偉",
+        "example": "夏休みに<b>イジン</b>の伝記を読む。",
+        "answer": "偉人"
+      },
+      {
+        "kanji": "幅",
+        "example": "株価の<b>シンブク</b>が大きい。",
+        "answer": "振幅"
+      },
+      {
+        "kanji": "幅",
+        "example": "首相に<b>ゼンプク</b>の信頼を置く。",
+        "answer": "全幅"
+      },
+      {
+        "kanji": "幅",
+        "example": "床の間に<b>ガフク</b>を掛ける。",
+        "answer": "画幅"
+      },
+      {
+        "kanji": "渡",
+        "example": "<b>ドコウ</b>手続きを代行する。",
+        "answer": "渡航"
+      },
+      {
+        "kanji": "渡",
+        "example": "毎年白鳥が<b>トライ</b>する湖。",
+        "answer": "渡来"
+      },
+      {
+        "kanji": "渡",
+        "example": "戦後の<b>カト</b>的な状況にある。",
+        "answer": "過渡"
+      },
+      {
+        "kanji": "渡",
+        "example": "土地と建物を<b>ジョウド</b>する。",
+        "answer": "譲渡"
+      },
+      {
+        "kanji": "越",
+        "example": "南極で<b>エットウ</b>する。",
+        "answer": "越冬"
+      },
+      {
+        "kanji": "越",
+        "example": "内心では<b>ユウエツ</b>感を抱く。",
+        "answer": "優越"
+      },
+      {
+        "kanji": "訴",
+        "example": "詐欺罪での<b>コクソ</b>を検討する。",
+        "answer": "告訴"
+      },
+      {
+        "kanji": "訴",
+        "example": "一審後に国が<b>コウソ</b>する。",
+        "answer": "控訴"
+      },
+      {
+        "kanji": "訴",
+        "example": "減刑を<b>アイゾ</b>する。",
+        "answer": "哀訴"
+      },
+      {
+        "kanji": "尋",
+        "example": "初対面の人に名前を<b>タズネル</b>。",
+        "answer": "尋ねる"
+      },
+      {
+        "kanji": "尋",
+        "example": "怪しい男を<b>ジンモン</b>する。",
+        "answer": "尋問"
+      },
+      {
+        "kanji": "尋",
+        "example": "<b>ジンジョウ</b>ではない熱狂ぶり。",
+        "answer": "尋常"
+      },
+      {
+        "kanji": "握",
+        "example": "初対面の<b>アクシュ</b>を交わす。",
+        "answer": "握手"
+      },
+      {
+        "kanji": "握",
+        "example": "<b>アクリョク</b>を鍛える。",
+        "answer": "握力"
+      },
+      {
+        "kanji": "握",
+        "example": "政権の<b>ショウアク</b>を図る。",
+        "answer": "掌握"
+      },
+      {
+        "kanji": "堅",
+        "example": "<b>ケンジツ</b>な守備を誇る選手。",
+        "answer": "堅実"
+      },
+      {
+        "kanji": "堅",
+        "example": "小さいが<b>ケンゴ</b>なつくりの城。",
+        "answer": "堅固"
+      },
+      {
+        "kanji": "堅",
+        "example": "同盟を<b>ケンジ</b>する方針を示す。",
+        "answer": "堅持"
+      },
+      {
+        "kanji": "遅",
+        "example": "<b>チヒツ</b>で有名な小説家。",
+        "answer": "遅筆"
+      },
+      {
+        "kanji": "遅",
+        "example": "<b>チチ</b>としてはかどらない。",
+        "answer": "遅遅"
+      },
+      {
+        "kanji": "遅",
+        "example": "寝坊して<b>ヂコク</b>する。",
+        "answer": "遅刻"
+      }
+    ]
+  },
+  {
+    "step": "第34回",
+    "items": [
+      {
+        "kanji": "御",
+        "example": "<b>オヤゴ</b>さんはお元気ですか。",
+        "answer": "親御"
+      },
+      {
+        "kanji": "御",
+        "example": "運転を自動的に<b>セイギョ</b>する。",
+        "answer": "制御"
+      },
+      {
+        "kanji": "御",
+        "example": "攻撃は最大の<b>ボウギョ</b>。",
+        "answer": "防御"
+      },
+      {
+        "kanji": "嘆",
+        "example": "倫理観の喪失を<b>ガイダン</b>する。",
+        "answer": "慨嘆"
+      },
+      {
+        "kanji": "嘆",
+        "example": "天を仰いで<b>タンソク</b>する。",
+        "answer": "嘆息"
+      },
+      {
+        "kanji": "嘆",
+        "example": "<b>ヒタン</b>の涙に暮れる。",
+        "answer": "悲嘆"
+      },
+      {
+        "kanji": "嘆",
+        "example": "我が身の不幸を<b>ナゲク</b>。",
+        "answer": "嘆く"
+      },
+      {
+        "kanji": "嘆",
+        "example": "寛大な処分を<b>タンガン</b>する。",
+        "answer": "嘆願"
+      },
+      {
+        "kanji": "嘆",
+        "example": "最新技術に<b>キョウタン</b>する。",
+        "answer": "驚嘆"
+      },
+      {
+        "kanji": "嘆",
+        "example": "<b>カンタン</b>に値する美しい演奏。",
+        "answer": "感嘆"
+      },
+      {
+        "kanji": "嘆",
+        "example": "思わず<b>エイタン</b>の声をもらす。",
+        "answer": "詠嘆"
+      },
+      {
+        "kanji": "堤",
+        "example": "川沿いに<b>テイボウ</b>を築く。",
+        "answer": "堤防"
+      },
+      {
+        "kanji": "替",
+        "example": "会議で<b>ダイタイ</b>案を提示する。",
+        "answer": "代替"
+      },
+      {
+        "kanji": "替",
+        "example": "昼夜<b>コウタイ</b>制で勤務する。",
+        "answer": "交替"
+      },
+      {
+        "kanji": "距",
+        "example": "家から駅までの<b>キョリ</b>を測る。",
+        "answer": "距離"
+      },
+      {
+        "kanji": "奥",
+        "example": "ジャングルの<b>オクチ</b>で暮らす。",
+        "answer": "奥地"
+      },
+      {
+        "kanji": "奥",
+        "example": "師匠から<b>オウギ</b>を伝授される。",
+        "answer": "奥義"
+      },
+      {
+        "kanji": "幾",
+        "example": "<b>キカ</b>学模様の布を使う。",
+        "answer": "幾何"
+      },
+      {
+        "kanji": "幾",
+        "example": "<b>イクエ</b>にもお礼申し上げます。",
+        "answer": "幾重"
+      },
+      {
+        "kanji": "載",
+        "example": "砂利を<b>セキサイ</b>したトラック。",
+        "answer": "積載"
+      },
+      {
+        "kanji": "載",
+        "example": "優れた機能を<b>トウサイ</b>する。",
+        "answer": "搭載"
+      },
+      {
+        "kanji": "載",
+        "example": "文化祭の様子が新聞に<b>ノル</b>。",
+        "answer": "載る"
+      },
+      {
+        "kanji": "載",
+        "example": "小説を月刊誌に<b>レンサイ</b>する。",
+        "answer": "連載"
+      },
+      {
+        "kanji": "載",
+        "example": "書類に必要事項を<b>キサイ</b>する。",
+        "answer": "記載"
+      },
+      {
+        "kanji": "載",
+        "example": "<b>センザイ</b>一遇の好機到来。",
+        "answer": "千載"
+      },
+      {
+        "kanji": "触",
+        "example": "美術作品に<b>ショクハツ</b>される。",
+        "answer": "触発"
+      },
+      {
+        "kanji": "触",
+        "example": "柔らかい布の<b>カンショク</b>。",
+        "answer": "感触"
+      },
+      {
+        "kanji": "触",
+        "example": "すれ違いざまに肩が<b>フレル</b>。",
+        "answer": "触れる"
+      },
+      {
+        "kanji": "触",
+        "example": "大ヒット映画の<b>サワリ</b>の部分。",
+        "answer": "触り"
+      },
+      {
+        "kanji": "跡",
+        "example": "歴史に大きな<b>ソクセキ</b>を残す。",
+        "answer": "足跡"
+      },
+      {
+        "kanji": "跡",
+        "example": "逃走車を<b>ツイセキ</b>する。",
+        "answer": "追跡"
+      },
+      {
+        "kanji": "跡",
+        "example": "雪山から<b>キセキ</b>的に生還した。",
+        "answer": "奇跡"
+      },
+      {
+        "kanji": "跡",
+        "example": "長男が<b>アトメ</b>を継ぐ。",
+        "answer": "跡目"
+      },
+      {
+        "kanji": "微",
+        "example": "口元に<b>ビショウ</b>を浮かべる。",
+        "answer": "微笑"
+      },
+      {
+        "kanji": "微",
+        "example": "人生の<b>キビ</b>に触れる物語。",
+        "answer": "機微"
+      },
+      {
+        "kanji": "微",
+        "example": "<b>ケンビキョウ</b>の使い方を学ぶ。",
+        "answer": "顕微鏡"
+      },
+      {
+        "kanji": "微",
+        "example": "計画を<b>ビサイ</b>に説明する。",
+        "answer": "微細"
+      },
+      {
+        "kanji": "微",
+        "example": "業界の<b>スイビ</b>を嘆く。",
+        "answer": "衰微"
+      },
+      {
+        "kanji": "蓄",
+        "example": "将来のために<b>ビチク</b>しておく。",
+        "answer": "備蓄"
+      },
+      {
+        "kanji": "蓄",
+        "example": "石油を<b>チョチク</b>する。",
+        "answer": "貯蓄"
+      },
+      {
+        "kanji": "蓄",
+        "example": "身体に<b>チクセキ</b>する。",
+        "answer": "蓄積"
+      },
+      {
+        "kanji": "蓄",
+        "example": "知識を<b>タクワエル</b>。",
+        "answer": "蓄える"
+      },
+      {
+        "kanji": "傾",
+        "example": "出題<b>ケイコウ</b>を分析する。",
+        "answer": "傾向"
+      },
+      {
+        "kanji": "傾",
+        "example": "全力を<b>ケイチュウ</b>する。",
+        "answer": "傾注"
+      },
+      {
+        "kanji": "継",
+        "example": "今後も<b>ケイゾク</b>して審議する。",
+        "answer": "継続"
+      },
+      {
+        "kanji": "継",
+        "example": "<b>コウケイ</b>の機種を発表する。",
+        "answer": "後継"
+      },
+      {
+        "kanji": "継",
+        "example": "卒業後は家業を<b>ツグ</b>予定だ。",
+        "answer": "継ぐ"
+      },
+      {
+        "kanji": "飾",
+        "example": "壁面を造花で<b>ソウショク</b>する。",
+        "answer": "装飾"
+      },
+      {
+        "kanji": "飾",
+        "example": "<b>フクショク</b>業界を目ざす。",
+        "answer": "服飾"
+      },
+      {
+        "kanji": "飾",
+        "example": "<b>フンショク</b>決算を防止する。",
+        "answer": "粉飾"
+      },
+      {
+        "kanji": "飾",
+        "example": "<b>キョショク</b>に満ちた人生。",
+        "answer": "虚飾"
+      },
+      {
+        "kanji": "誇",
+        "example": "<b>コダイ</b>な広告を禁止する。",
+        "answer": "誇大"
+      },
+      {
+        "kanji": "誇",
+        "example": "輝かしい実績を<b>ホコル</b>。",
+        "answer": "誇る"
+      },
+      {
+        "kanji": "勧",
+        "example": "保険の<b>カンユウ</b>の仕事。",
+        "answer": "勧誘"
+      },
+      {
+        "kanji": "勧",
+        "example": "住民に避難<b>カンコク</b>が出る。",
+        "answer": "勧告"
+      },
+      {
+        "kanji": "勧",
+        "example": "陸上部への入部を<b>ススメル</b>。",
+        "answer": "勧める"
+      },
+      {
+        "kanji": "鼓",
+        "example": "<b>タイコ</b>をたたいて音を出してみる。",
+        "answer": "太鼓"
+      },
+      {
+        "kanji": "鼓",
+        "example": "母の料理に<b>シタツツミ</b>を打つ。",
+        "answer": "舌鼓"
+      },
+      {
+        "kanji": "鼓",
+        "example": "期待に胸の<b>コドウ</b>が高まる。",
+        "answer": "鼓動"
+      },
+      {
+        "kanji": "鼓",
+        "example": "平和主義を<b>コスイ</b>する。",
+        "answer": "鼓吹"
+      },
+      {
+        "kanji": "違",
+        "example": "喉の奥に<b>イワカン</b>がある。",
+        "answer": "違和感"
+      },
+      {
+        "kanji": "違",
+        "example": "記載内容が事実と<b>ソウイ</b>する。",
+        "answer": "相違"
+      },
+      {
+        "kanji": "違",
+        "example": "駐車<b>イハン</b>を取り締まる。",
+        "answer": "違反"
+      },
+      {
+        "kanji": "慎",
+        "example": "計画を<b>シンチョウ</b>に進める。",
+        "answer": "慎重"
+      },
+      {
+        "kanji": "慎",
+        "example": "不用意な発言を<b>ツツシム</b>。",
+        "answer": "慎む"
+      },
+      {
+        "kanji": "詳",
+        "example": "水質を<b>ショウサイ</b>に調査する。",
+        "answer": "詳細"
+      },
+      {
+        "kanji": "詳",
+        "example": "<b>クワシイ</b>地図を用意する。",
+        "answer": "詳しい"
+      },
+      {
+        "kanji": "詳",
+        "example": "作者<b>ミショウ</b>の物語。",
+        "answer": "未詳"
+      },
+      {
+        "kanji": "暇",
+        "example": "<b>ヨカ</b>の過ごし方を見直す。",
+        "answer": "余暇"
+      },
+      {
+        "kanji": "暇",
+        "example": "<b>スンカ</b>を惜しんで勉強する。",
+        "answer": "寸暇"
+      },
+      {
+        "kanji": "暇",
+        "example": "男性も育児<b>キュウカ</b>をとる。",
+        "answer": "休暇"
+      },
+      {
+        "kanji": "誉",
+        "example": "<b>メイヨ</b>ある賞をいただいた。",
+        "answer": "名誉"
+      },
+      {
+        "kanji": "誉",
+        "example": "勝利の<b>エイヨ</b>をたたえる。",
+        "answer": "栄誉"
+      },
+      {
+        "kanji": "誉",
+        "example": "<b>キヨ</b>褒貶を顧みない。",
+        "answer": "毀誉"
+      }
+    ]
+  },
+  {
+    "step": "第35回",
+    "items": [
+      {
+        "kanji": "跳",
+        "example": "助走をつけて<b>チョウヤク</b>する。",
+        "answer": "跳躍"
+      },
+      {
+        "kanji": "跳",
+        "example": "釣り上げた魚が<b>ハネル</b>。",
+        "answer": "跳ねる"
+      },
+      {
+        "kanji": "端",
+        "example": "要点を<b>ダンテキ</b>にまとめる。",
+        "answer": "端的"
+      },
+      {
+        "kanji": "端",
+        "example": "<b>タンセイ</b>な身のこなし。",
+        "answer": "端正"
+      },
+      {
+        "kanji": "端",
+        "example": "母は昆虫を<b>キョクダン</b>に嫌う。",
+        "answer": "極端"
+      },
+      {
+        "kanji": "端",
+        "example": "時代の<b>センタン</b>を行く技術。",
+        "answer": "先端"
+      },
+      {
+        "kanji": "端",
+        "example": "地域医療の<b>イッタン</b>を担う。",
+        "answer": "一端"
+      },
+      {
+        "kanji": "端",
+        "example": "物語の<b>ホッタン</b>を紹介する。",
+        "answer": "発端"
+      },
+      {
+        "kanji": "端",
+        "example": "本番に向け準備<b>バンタン</b>整う。",
+        "answer": "万端"
+      },
+      {
+        "kanji": "端",
+        "example": "<b>ハスウ</b>は切り捨てる。",
+        "answer": "端数"
+      },
+      {
+        "kanji": "雅",
+        "example": "身のこなしの<b>ユウガ</b>な女性。",
+        "answer": "優雅"
+      },
+      {
+        "kanji": "雅",
+        "example": "<b>ガガク</b>が演奏される。",
+        "answer": "雅楽"
+      },
+      {
+        "kanji": "駆",
+        "example": "日記文学の<b>セング</b>をなす作品。",
+        "answer": "先駆"
+      },
+      {
+        "kanji": "駆",
+        "example": "山道を四輪<b>クドウ</b>車が進む。",
+        "answer": "駆動"
+      },
+      {
+        "kanji": "駆",
+        "example": "子供が校庭を<b>カケル</b>。",
+        "answer": "駆ける"
+      },
+      {
+        "kanji": "駆",
+        "example": "最新の音響技術を<b>グシ</b>する。",
+        "answer": "駆使"
+      },
+      {
+        "kanji": "駆",
+        "example": "倉庫内の害虫を<b>グジョ</b>する。",
+        "answer": "駆除"
+      },
+      {
+        "kanji": "隠",
+        "example": "「方丈記」は<b>インジャ</b>の文学だ。",
+        "answer": "隠者"
+      },
+      {
+        "kanji": "隠",
+        "example": "犯人<b>イントク</b>の罪に問われる。",
+        "answer": "隠匿"
+      },
+      {
+        "kanji": "遣",
+        "example": "外国に特使を<b>ハゲン</b>する。",
+        "answer": "派遣"
+      },
+      {
+        "kanji": "遣",
+        "example": "祖母から<b>コヅカイ</b>をもらう。",
+        "answer": "小遣い"
+      },
+      {
+        "kanji": "較",
+        "example": "複数社の見積もりを<b>ヒカク</b>する。",
+        "answer": "比較"
+      },
+      {
+        "kanji": "慢",
+        "example": "<b>タイマン</b>のそしりを免れない。",
+        "answer": "怠慢"
+      },
+      {
+        "kanji": "慢",
+        "example": "故郷の名産品を<b>ジマン</b>する。",
+        "answer": "自慢"
+      },
+      {
+        "kanji": "慢",
+        "example": "初戦で大勝して<b>マンシン</b>する。",
+        "answer": "慢心"
+      },
+      {
+        "kanji": "慢",
+        "example": "<b>コウマン</b>な態度が嫌われる。",
+        "answer": "高慢"
+      },
+      {
+        "kanji": "慢",
+        "example": "<b>カンマン</b>な動きが目につく。",
+        "answer": "緩慢"
+      },
+      {
+        "kanji": "慢",
+        "example": "病状は<b>マンセイ</b>化している。",
+        "answer": "慢性"
+      },
+      {
+        "kanji": "滴",
+        "example": "<b>テンテキ</b>で栄養を与える。",
+        "answer": "点滴"
+      },
+      {
+        "kanji": "滴",
+        "example": "葉の上に<b>スイテキ</b>がつく。",
+        "answer": "水滴"
+      },
+      {
+        "kanji": "滴",
+        "example": "<b>イッテキ</b>の水も飲まない。",
+        "answer": "一滴"
+      },
+      {
+        "kanji": "滴",
+        "example": "額から汗が<b>シタタル</b>。",
+        "answer": "滴る"
+      },
+      {
+        "kanji": "徴",
+        "example": "ハトは平和の<b>ショウチョウ</b>だ。",
+        "answer": "象徴"
+      },
+      {
+        "kanji": "徴",
+        "example": "<b>トクチョウ</b>のある話し方。",
+        "answer": "特徴"
+      },
+      {
+        "kanji": "徴",
+        "example": "町内会費を<b>チョウシュウ</b>する。",
+        "answer": "徴収"
+      },
+      {
+        "kanji": "需",
+        "example": "エアコンの<b>ジュヨウ</b>が増える。",
+        "answer": "需要"
+      },
+      {
+        "kanji": "需",
+        "example": "田舎では車が<b>ヒツジュ</b>品だ。",
+        "answer": "必需"
+      }
+    ]
+  },
+  {
+    "step": "第36回",
+    "items": [
+      {
+        "kanji": "腐",
+        "example": "食品の<b>フハイ</b>を防止する。",
+        "answer": "腐敗"
+      },
+      {
+        "kanji": "腐",
+        "example": "<b>チンプ</b>な発想しか浮かばない。",
+        "answer": "陳腐"
+      },
+      {
+        "kanji": "腐",
+        "example": "息子の教育に<b>フシン</b>する。",
+        "answer": "腐心"
+      },
+      {
+        "kanji": "摘",
+        "example": "手術で弾を<b>テキシュツ</b>する。",
+        "answer": "摘出"
+      },
+      {
+        "kanji": "摘",
+        "example": "書類の間違いを<b>シテキ</b>する。",
+        "answer": "指摘"
+      },
+      {
+        "kanji": "摘",
+        "example": "巨額の不正を<b>テキハツ</b>する。",
+        "answer": "摘発"
+      },
+      {
+        "kanji": "維",
+        "example": "心身の健康の<b>イジ</b>に努める。",
+        "answer": "維持"
+      },
+      {
+        "kanji": "維",
+        "example": "食物<b>センイ</b>を多く含む食品。",
+        "answer": "繊維"
+      },
+      {
+        "kanji": "維",
+        "example": "明治<b>イシン</b>に功績のあった人。",
+        "answer": "維新"
+      },
+      {
+        "kanji": "儀",
+        "example": "厳かに<b>ギシキ</b>を執り行う。",
+        "answer": "儀式"
+      },
+      {
+        "kanji": "儀",
+        "example": "三毛猫が<b>ギョウギ</b>よく座る。",
+        "answer": "行儀"
+      },
+      {
+        "kanji": "儀",
+        "example": "<b>レイギ</b>正しく頭を下げる。",
+        "answer": "礼儀"
+      },
+      {
+        "kanji": "儀",
+        "example": "<b>ギレイ</b>的な挨拶状を受け取る。",
+        "answer": "儀礼"
+      },
+      {
+        "kanji": "儀",
+        "example": "彼には独特の<b>リュウギ</b>がある。",
+        "answer": "流儀"
+      },
+      {
+        "kanji": "儀",
+        "example": "受付で<b>シュウギ</b>袋を手渡す。",
+        "answer": "祝儀"
+      },
+      {
+        "kanji": "儀",
+        "example": "恩師の<b>ソウギ</b>に参列する。",
+        "answer": "葬儀"
+      },
+      {
+        "kanji": "儀",
+        "example": "入学祝いに<b>チキュウギ</b>を贈る。",
+        "answer": "地球儀"
+      },
+      {
+        "kanji": "儀",
+        "example": "<b>ナンギ</b>な依頼を持ち込む。",
+        "answer": "難儀"
+      },
+      {
+        "kanji": "踏",
+        "example": "前従来の伝統を<b>トウシュウ</b>する。",
+        "answer": "踏襲"
+      },
+      {
+        "kanji": "踏",
+        "example": "<b>ブトウ</b>会に招かれる。",
+        "answer": "舞踏"
+      },
+      {
+        "kanji": "網",
+        "example": "<b>モウマク</b>に炎症が見られる。",
+        "answer": "網膜"
+      },
+      {
+        "kanji": "網",
+        "example": "敵を<b>イチモウ</b>打尽にする。",
+        "answer": "一網"
+      },
+      {
+        "kanji": "網",
+        "example": "<b>テツドウモウ</b>が充実している。",
+        "answer": "鉄道網"
+      },
+      {
+        "kanji": "豪",
+        "example": "<b>ゴウカ</b>な顔ぶれが集結した。",
+        "answer": "豪華"
+      },
+      {
+        "kanji": "豪",
+        "example": "<b>ゴウカイ</b>な笑い声がする。",
+        "answer": "豪快"
+      },
+      {
+        "kanji": "豪",
+        "example": "太っ腹で<b>ゴウホウ</b>な男性。",
+        "answer": "豪放"
+      },
+      {
+        "kanji": "豪",
+        "example": "夏目漱石は明治の<b>ブンゴウ</b>だ。",
+        "answer": "文豪"
+      },
+      {
+        "kanji": "暦",
+        "example": "祖父は今年<b>カンレキ</b>を迎える。",
+        "answer": "還暦"
+      },
+      {
+        "kanji": "暦",
+        "example": "申請日を<b>セイレキ</b>で記入する。",
+        "answer": "西暦"
+      },
+      {
+        "kanji": "縁",
+        "example": "<b>エンガワ</b>で昼寝をする。",
+        "answer": "縁側"
+      },
+      {
+        "kanji": "縁",
+        "example": "都市<b>シュウエン</b>部の文化。",
+        "answer": "周縁"
+      },
+      {
+        "kanji": "縁",
+        "example": "<b>エンゴ</b>を用いて和歌を詠む。",
+        "answer": "縁語"
+      },
+      {
+        "kanji": "縁",
+        "example": "庶民には<b>ムエン</b>の出来事。",
+        "answer": "無縁"
+      },
+      {
+        "kanji": "縁",
+        "example": "今日会ったのも何かの<b>エン</b>だ。",
+        "answer": "縁"
+      },
+      {
+        "kanji": "縁",
+        "example": "二人には深い<b>インネン</b>がある。",
+        "answer": "因縁"
+      },
+      {
+        "kanji": "縁",
+        "example": "<b>エンギ</b>を担いで豆を食べる。",
+        "answer": "縁起"
+      },
+      {
+        "kanji": "範",
+        "example": "社会生活の<b>キハン</b>を示す。",
+        "answer": "規範"
+      },
+      {
+        "kanji": "範",
+        "example": "試験の出題<b>ハンイ</b>を確認する。",
+        "answer": "範囲"
+      },
+      {
+        "kanji": "範",
+        "example": "<b>コウハン</b>な分野で活躍する。",
+        "answer": "広範"
+      }
+    ]
+  },
+  {
+    "step": "第38回",
+    "items": [
+      {
+        "kanji": "歓",
+        "example": "優勝に<b>カンキ</b>の声を発する。",
+        "answer": "歓喜"
+      },
+      {
+        "kanji": "歓",
+        "example": "応援席から<b>カンセイ</b>が上がる。",
+        "answer": "歓声"
+      },
+      {
+        "kanji": "歓",
+        "example": "外国人観光客を<b>カンタイ</b>する。",
+        "answer": "歓待"
+      },
+      {
+        "kanji": "歓",
+        "example": "意中の人の<b>カンシン</b>を得る。",
+        "answer": "歓心"
+      },
+      {
+        "kanji": "歓",
+        "example": "<b>カンコ</b>の声を発して迎える。",
+        "answer": "歓呼"
+      },
+      {
+        "kanji": "影",
+        "example": "台風の<b>エイキョウ</b>で欠航する。",
+        "answer": "影響"
+      },
+      {
+        "kanji": "影",
+        "example": "<b>ツキカゲ</b>さやかな夜。",
+        "answer": "月影"
+      },
+      {
+        "kanji": "影",
+        "example": "作家の心情を<b>トウエイ</b>した絵。",
+        "answer": "投影"
+      },
+      {
+        "kanji": "影",
+        "example": "昔の<b>オモカゲ</b>は今やない。",
+        "answer": "面影"
+      },
+      {
+        "kanji": "影",
+        "example": "<b>ゲンエイ</b>におびえて生きる。",
+        "answer": "幻影"
+      },
+      {
+        "kanji": "慮",
+        "example": "高齢者に<b>ハイリョ</b>した住宅。",
+        "answer": "配慮"
+      },
+      {
+        "kanji": "慮",
+        "example": "<b>エンリョ</b>なく質問できる相手。",
+        "answer": "遠慮"
+      },
+      {
+        "kanji": "慮",
+        "example": "物価上昇を<b>コウリョ</b>に入れる。",
+        "answer": "考慮"
+      },
+      {
+        "kanji": "慮",
+        "example": "周囲の迷惑を<b>コリョ</b>しない。",
+        "answer": "顧慮"
+      },
+      {
+        "kanji": "慮",
+        "example": "発言に<b>シリョ</b>が足りない。",
+        "answer": "思慮"
+      },
+      {
+        "kanji": "趣",
+        "example": "<b>シュミ</b>のよい家具をそろえる。",
+        "answer": "趣味"
+      },
+      {
+        "kanji": "趣",
+        "example": "自然の<b>オモムキ</b>を生かした庭。",
+        "answer": "趣"
+      },
+      {
+        "kanji": "趣",
+        "example": "挿絵が<b>キョウシュ</b>を添える。",
+        "answer": "興趣"
+      },
+      {
+        "kanji": "趣",
+        "example": "<b>ジョウシュ</b>に富む古都の景色。",
+        "answer": "情趣"
+      },
+      {
+        "kanji": "趣",
+        "example": "前回とは<b>シュコウ</b>を変える。",
+        "answer": "趣向"
+      },
+      {
+        "kanji": "趣",
+        "example": "<b>イジュ</b>返しをする。",
+        "answer": "意趣"
+      },
+      {
+        "kanji": "撃",
+        "example": "皆に<b>ショウゲキ</b>が走った。",
+        "answer": "衝撃"
+      },
+      {
+        "kanji": "撃",
+        "example": "世界経済に<b>ダゲキ</b>を与える。",
+        "answer": "打撃"
+      },
+      {
+        "kanji": "撃",
+        "example": "反対派を<b>ハイゲキ</b>する。",
+        "answer": "排撃"
+      },
+      {
+        "kanji": "撃",
+        "example": "交通事故を<b>モクゲキ</b>する。",
+        "answer": "目撃"
+      },
+      {
+        "kanji": "黙",
+        "example": "<b>アンモク</b>の了解が存在する。",
+        "answer": "暗黙"
+      },
+      {
+        "kanji": "黙",
+        "example": "長い<b>チンモク</b>を破る。",
+        "answer": "沈黙"
+      },
+      {
+        "kanji": "黙",
+        "example": "沈思<b>モッコウ</b>して決める。",
+        "answer": "黙考"
+      },
+      {
+        "kanji": "監",
+        "example": "親が<b>カンシ</b>の目を光らせる。",
+        "answer": "監視"
+      },
+      {
+        "kanji": "監",
+        "example": "<b>カンゴク</b>に収容する。",
+        "answer": "監獄"
+      },
+      {
+        "kanji": "舞",
+        "example": "日本<b>ブヨウ</b>の稽古を積む。",
+        "answer": "舞踊"
+      },
+      {
+        "kanji": "舞",
+        "example": "<b>ブタイ</b>に上がって緊張する。",
+        "answer": "舞台"
+      },
+      {
+        "kanji": "舞",
+        "example": "チームの士気を<b>コプ</b>する。",
+        "answer": "鼓舞"
+      },
+      {
+        "kanji": "戯",
+        "example": "幼稚園児が<b>オユウギ</b>をする。",
+        "answer": "遊戯"
+      },
+      {
+        "kanji": "戯",
+        "example": "子供たちが犬と<b>タワムレル</b>。",
+        "answer": "戯れる"
+      },
+      {
+        "kanji": "戯",
+        "example": "政局を<b>ギガ</b>化して描く。",
+        "answer": "戯画"
+      },
+      {
+        "kanji": "戯",
+        "example": "新作の<b>ギキョク</b>を上演する。",
+        "answer": "戯曲"
+      },
+      {
+        "kanji": "稿",
+        "example": "<b>ゲンコウ</b>の締め切りを守る。",
+        "answer": "原稿"
+      },
+      {
+        "kanji": "稿",
+        "example": "雑誌に小説を<b>トウコウ</b>する。",
+        "answer": "投稿"
+      }
+    ]
+  },
+  {
+    "step": "第39回",
+    "items": [
+      {
+        "kanji": "鋭",
+        "example": "<b>エイリ</b>な刃物で切断する。",
+        "answer": "鋭利"
+      },
+      {
+        "kanji": "鋭",
+        "example": "新進<b>キエイ</b>の物理学者。",
+        "answer": "気鋭"
+      },
+      {
+        "kanji": "鋭",
+        "example": "<b>エイビン</b>な頭脳の持ち主。",
+        "answer": "鋭敏"
+      },
+      {
+        "kanji": "盤",
+        "example": "空飛ぶ<b>エンパン</b>を目撃する。",
+        "answer": "円盤"
+      },
+      {
+        "kanji": "盤",
+        "example": "生活の<b>キバン</b>を整える。",
+        "answer": "基盤"
+      },
+      {
+        "kanji": "盤",
+        "example": "<b>ガンバン</b>の上に建つ城。",
+        "answer": "岩盤"
+      },
+      {
+        "kanji": "盤",
+        "example": "<b>ジョバン</b>から優位に立つ。",
+        "answer": "序盤"
+      },
+      {
+        "kanji": "敷",
+        "example": "公共下水道を<b>フセツ</b>する。",
+        "answer": "敷設"
+      },
+      {
+        "kanji": "壊",
+        "example": "犯罪組織を<b>カイメツ</b>させる。",
+        "answer": "壊滅"
+      },
+      {
+        "kanji": "壊",
+        "example": "危険な建物をとり<b>コワス</b>。",
+        "answer": "壊す"
+      },
+      {
+        "kanji": "壊",
+        "example": "豪雨で堤防が<b>ケッカイ</b>する。",
+        "answer": "決壊"
+      },
+      {
+        "kanji": "薄",
+        "example": "都会の<b>キハク</b>な人間関係。",
+        "answer": "希薄"
+      },
+      {
+        "kanji": "薄",
+        "example": "<b>ハクヒョウ</b>を踏む思い。",
+        "answer": "薄氷"
+      },
+      {
+        "kanji": "薄",
+        "example": "<b>センバク</b>な知識しかない。",
+        "answer": "浅薄"
+      },
+      {
+        "kanji": "薄",
+        "example": "<b>ハッキュウ</b>に甘んじる。",
+        "answer": "薄給"
+      },
+      {
+        "kanji": "薄",
+        "example": "<b>ケイハク</b>な笑いを浮かべる。",
+        "answer": "軽薄"
+      },
+      {
+        "kanji": "薄",
+        "example": "<b>ハクジョウ</b>な仕打ちを受ける。",
+        "answer": "薄情"
+      },
+      {
+        "kanji": "薄",
+        "example": "首位に<b>ニクバク</b>する。",
+        "answer": "肉薄"
+      },
+      {
+        "kanji": "輩",
+        "example": "<b>コウハイ</b>に指導を行う。",
+        "answer": "後輩"
+      },
+      {
+        "kanji": "輩",
+        "example": "<b>ジャクハイ</b>者ですが……",
+        "answer": "若輩"
+      },
+      {
+        "kanji": "輩",
+        "example": "多彩な人材を<b>パイシュツ</b>する。",
+        "answer": "輩出"
+      },
+      {
+        "kanji": "噴",
+        "example": "住民の不満が<b>フンシュツ</b>する。",
+        "answer": "噴出"
+      },
+      {
+        "kanji": "噴",
+        "example": "彼の発言は<b>フンバン</b>ものだ。",
+        "answer": "噴飯"
+      },
+      {
+        "kanji": "繁",
+        "example": "<b>ハンショク</b>力の強い植物。",
+        "answer": "繁殖"
+      },
+      {
+        "kanji": "繁",
+        "example": "子孫の<b>ハンエイ</b>を祈念する。",
+        "answer": "繁栄"
+      },
+      {
+        "kanji": "繁",
+        "example": "<b>ハンカ</b>街で待ち合わせる。",
+        "answer": "繁華"
+      },
+      {
+        "kanji": "繁",
+        "example": "夏場は<b>ノウハン</b>期で忙しい。",
+        "answer": "農繁"
+      },
+      {
+        "kanji": "避",
+        "example": "危険を未然に<b>カイヒ</b>する。",
+        "answer": "回避"
+      },
+      {
+        "kanji": "避",
+        "example": "都会の人混みを<b>サケル</b>。",
+        "answer": "避ける"
+      },
+      {
+        "kanji": "避",
+        "example": "値上げは<b>フカビ</b>の状況だ。",
+        "answer": "不可避"
+      },
+      {
+        "kanji": "避",
+        "example": "<b>ヒショ</b>地で夏をすごす。",
+        "answer": "避暑"
+      },
+      {
+        "kanji": "獲",
+        "example": "高額の賞品を<b>カクトク</b>する。",
+        "answer": "獲得"
+      },
+      {
+        "kanji": "獲",
+        "example": "猟師が銃で<b>エモノ</b>を狙う。",
+        "answer": "獲物"
+      },
+      {
+        "kanji": "濃",
+        "example": "<b>ノウコウ</b>な味を堪能する。",
+        "answer": "濃厚"
+      },
+      {
+        "kanji": "濃",
+        "example": "<b>ノウミツ</b>な色彩表現で描く。",
+        "answer": "濃密"
+      },
+      {
+        "kanji": "濃",
+        "example": "<b>ノウム</b>で前が見えない。",
+        "answer": "濃霧"
+      }
+    ]
+  },
+  {
+    "step": "第40回",
+    "items": [
+      {
+        "kanji": "隣",
+        "example": "学校に<b>リンセツ</b>する食堂。",
+        "answer": "隣接"
+      },
+      {
+        "kanji": "隣",
+        "example": "<b>キンリン</b>諸国との協力関係。",
+        "answer": "近隣"
+      },
+      {
+        "kanji": "隣",
+        "example": "<b>トナリビト</b>と親しく付き合う。",
+        "answer": "隣人"
+      },
+      {
+        "kanji": "憶",
+        "example": "<b>キオク</b>に新しい出来事。",
+        "answer": "記憶"
+      },
+      {
+        "kanji": "憶",
+        "example": "若かりし日を<b>ツイオク</b>する。",
+        "answer": "追憶"
+      },
+      {
+        "kanji": "憶",
+        "example": "<b>オクソク</b>でものを言うな。",
+        "answer": "臆測"
+      },
+      {
+        "kanji": "緯",
+        "example": "各国の首都の<b>イド</b>を調べる。",
+        "answer": "緯度"
+      },
+      {
+        "kanji": "頼",
+        "example": "原稿の執筆を<b>イライ</b>する。",
+        "answer": "依頼"
+      },
+      {
+        "kanji": "頼",
+        "example": "仲間と<b>シンライ</b>関係を築く。",
+        "answer": "信頼"
+      },
+      {
+        "kanji": "隷",
+        "example": "大国に<b>レイゾク</b>する小国。",
+        "answer": "隷属"
+      },
+      {
+        "kanji": "環",
+        "example": "授業の<b>イッカン</b>で稲作を学ぶ。",
+        "answer": "一環"
+      },
+      {
+        "kanji": "環",
+        "example": "<b>カンジョウ</b>道路を整備する。",
+        "answer": "環状"
+      },
+      {
+        "kanji": "環",
+        "example": "<b>カンキョウ</b>問題に関心がある。",
+        "answer": "環境"
+      },
+      {
+        "kanji": "療",
+        "example": "けがの<b>チリョウ</b>が長引く。",
+        "answer": "治療"
+      },
+      {
+        "kanji": "療",
+        "example": "温泉地で<b>リョウヨウ</b>する。",
+        "answer": "療養"
+      },
+      {
+        "kanji": "療",
+        "example": "<b>イリョウ</b>技術の発展。",
+        "answer": "医療"
+      },
+      {
+        "kanji": "療",
+        "example": "<b>アラリョウジ</b>が必要だ。",
+        "answer": "荒療治"
+      },
+      {
+        "kanji": "燥",
+        "example": "<b>コウゾウ</b>な土地に住む。",
+        "answer": "高燥"
+      },
+      {
+        "kanji": "焦",
+        "example": "失敗し<b>ショウゾウ</b>に駆られる。",
+        "answer": "焦躁"
+      },
+      {
+        "kanji": "壁",
+        "example": "貿易の<b>ショウヘキ</b>を取り除く。",
+        "answer": "障壁"
+      },
+      {
+        "kanji": "壁",
+        "example": "断崖<b>ゼッペキ</b>に足がすくむ。",
+        "answer": "絶壁"
+      },
+      {
+        "kanji": "鮮",
+        "example": "態度を<b>センメイ</b>にする。",
+        "answer": "鮮明"
+      },
+      {
+        "kanji": "鮮",
+        "example": "<b>アザヤカ</b>な包丁さばき。",
+        "answer": "鮮やか"
+      },
+      {
+        "kanji": "鮮",
+        "example": "<b>シンセン</b>な魚介類を届ける。",
+        "answer": "新鮮"
+      },
+      {
+        "kanji": "鮮",
+        "example": "<b>セイセン</b>食料品売り場。",
+        "answer": "生鮮"
+      },
+      {
+        "kanji": "離",
+        "example": "病人を別室に<b>カクリ</b>する。",
+        "answer": "隔離"
+      },
+      {
+        "kanji": "離",
+        "example": "庶民感情から<b>ユウリ</b>した政策。",
+        "answer": "遊離"
+      },
+      {
+        "kanji": "離",
+        "example": "<b>リサン</b>した家族が再会する。",
+        "answer": "離散"
+      },
+      {
+        "kanji": "離",
+        "example": "派閥が<b>リゴウ</b>集散を繰り返す。",
+        "answer": "離合"
+      },
+      {
+        "kanji": "瞬",
+        "example": "夜空に星が<b>マタタク</b>。",
+        "answer": "瞬く"
+      },
+      {
+        "kanji": "瞬",
+        "example": "決定的な<b>シュンカン</b>を見逃す。",
+        "answer": "瞬間"
+      },
+      {
+        "kanji": "瞬",
+        "example": "善悪を<b>ジュンジ</b>に判断する。",
+        "answer": "瞬時"
+      },
+      {
+        "kanji": "繰",
+        "example": "ページを<b>クル</b>音が聞こえる。",
+        "answer": "繰る"
+      }
+    ]
+  },
+  {
+    "step": "第41回",
+    "items": [
+      {
+        "kanji": "鎖",
+        "example": "悪習の<b>レンサ</b>を断ち切りたい。",
+        "answer": "連鎖"
+      },
+      {
+        "kanji": "鎖",
+        "example": "軍隊が町を<b>フウサ</b>する。",
+        "answer": "封鎖"
+      },
+      {
+        "kanji": "鎖",
+        "example": "<b>サコク</b>政策をとった理由。",
+        "answer": "鎖国"
+      },
+      {
+        "kanji": "闘",
+        "example": "敵に囲まれ孤軍<b>フンドウ</b>する。",
+        "answer": "奮闘"
+      },
+      {
+        "kanji": "闘",
+        "example": "選手の<b>ケントウ</b>を祈る。",
+        "answer": "健闘"
+      },
+      {
+        "kanji": "闘",
+        "example": "<b>トウシ</b>を内に秘める。",
+        "answer": "闘志"
+      },
+      {
+        "kanji": "闘",
+        "example": "難問に悪戦<b>クトウ</b>する。",
+        "answer": "苦闘"
+      },
+      {
+        "kanji": "響",
+        "example": "<b>オンキョウ</b>設備のよいホール。",
+        "answer": "音響"
+      },
+      {
+        "kanji": "響",
+        "example": "番組への<b>ハンキョウ</b>が大きい。",
+        "answer": "反響"
+      },
+      {
+        "kanji": "躍",
+        "example": "話が<b>ヒヤク</b>してわからない。",
+        "answer": "飛躍"
+      },
+      {
+        "kanji": "躍",
+        "example": "汚名返上に<b>ヤッキ</b>になる。",
+        "answer": "躍起"
+      },
+      {
+        "kanji": "躍",
+        "example": "全国大会で<b>カツヤク</b>した選手。",
+        "answer": "活躍"
+      },
+      {
+        "kanji": "躍",
+        "example": "<b>ヤクドウ</b>感あふれる文章。",
+        "answer": "躍動"
+      },
+      {
+        "kanji": "躍",
+        "example": "<b>イチヤク</b>有名人になった。",
+        "answer": "一躍"
+      },
+      {
+        "kanji": "襲",
+        "example": "三人組の男が銀行を<b>オソウ</b>。",
+        "answer": "襲う"
+      },
+      {
+        "kanji": "襲",
+        "example": "背後から<b>キシュウ</b>する。",
+        "answer": "奇襲"
+      },
+      {
+        "kanji": "襲",
+        "example": "一気に<b>ギャクシュウ</b>に転じる。",
+        "answer": "逆襲"
+      },
+      {
+        "kanji": "襲",
+        "example": "<b>シュウメイ</b>披露の公演を行う。",
+        "answer": "襲名"
+      },
+      {
+        "kanji": "襲",
+        "example": "政治家の<b>セシュウ</b>問題。",
+        "answer": "世襲"
+      },
+      {
+        "kanji": "驚",
+        "example": "大自然の<b>キョウイ</b>に触れる。",
+        "answer": "驚異"
+      },
+      {
+        "kanji": "驚",
+        "example": "<b>キョウテン</b>動地の大事件。",
+        "answer": "驚天"
+      },
+      {
+        "kanji": "鑑",
+        "example": "植物<b>ズカン</b>で名前を調べる。",
+        "answer": "図鑑"
+      },
+      {
+        "kanji": "鑑",
+        "example": "美術館で絵を<b>カンショウ</b>する。",
+        "answer": "鑑賞"
+      },
+      {
+        "kanji": "鑑",
+        "example": "掛け軸の<b>カンテイ</b>を依頼する。",
+        "answer": "鑑定"
+      },
+      {
+        "kanji": "鑑",
+        "example": "前例に<b>カンガミ</b>て決定する。",
+        "answer": "鑑み"
+      },
+      {
+        "kanji": "贈",
+        "example": "両親へ花束を<b>ゾウテイ</b>する。",
+        "answer": "贈呈"
+      },
+      {
+        "kanji": "贈",
+        "example": "財産を息子に<b>ゾウヨ</b>する。",
+        "answer": "贈与"
+      },
+      {
+        "kanji": "贈",
+        "example": "母校へ蔵書を<b>キゾウ</b>する。",
+        "answer": "寄贈"
+      },
+      {
+        "kanji": "贈",
+        "example": "<b>ゾウワイ</b>の罪で逮捕された。",
+        "answer": "贈賄"
+      },
+      {
+        "kanji": "露",
+        "example": "庭には<b>アサツユ</b>が降りていた。",
+        "answer": "朝露"
+      },
+      {
+        "kanji": "露",
+        "example": "<b>ロテン</b>風呂のある旅館。",
+        "answer": "露天"
+      },
+      {
+        "kanji": "露",
+        "example": "親友に真情を<b>ハツロ</b>する。",
+        "answer": "発露"
+      },
+      {
+        "kanji": "露",
+        "example": "岩が<b>ロシュツ</b>した山道。",
+        "answer": "露出"
+      }
+    ]
+  },
+  {
+    "step": "第42回",
+    "items": [
+      {
+        "kanji": "了",
+        "example": "補修工事が<b>カンリョウ</b>する。",
+        "answer": "完了"
+      },
+      {
+        "kanji": "了",
+        "example": "文学全集を<b>ドクリョウ</b>する。",
+        "answer": "読了"
+      },
+      {
+        "kanji": "了",
+        "example": "会議で<b>リョウショウ</b>を得る。",
+        "answer": "了解"
+      },
+      {
+        "kanji": "冗",
+        "example": "いつも<b>ジョウダン</b>ばかり言う。",
+        "answer": "冗談"
+      },
+      {
+        "kanji": "冗",
+        "example": "<b>ジョウチョウ</b>な説明が続く。",
+        "answer": "冗長"
+      },
+      {
+        "kanji": "冗",
+        "example": "長くて<b>ジョウマン</b>な文章。",
+        "answer": "冗慢"
+      },
+      {
+        "kanji": "巧",
+        "example": "<b>コウミョウ</b>に仕組まれた罠。",
+        "answer": "巧妙"
+      },
+      {
+        "kanji": "巧",
+        "example": "船頭が<b>タクミ</b>に舟を操る。",
+        "answer": "巧み"
+      },
+      {
+        "kanji": "巧",
+        "example": "<b>コウゲン</b>令色を嫌う。",
+        "answer": "巧言"
+      },
+      {
+        "kanji": "如",
+        "example": "戦争の実態を<b>ニョジツ</b>に描く。",
+        "answer": "如実"
+      },
+      {
+        "kanji": "如",
+        "example": "<b>ジョサイ</b>ない振る舞い。",
+        "answer": "如才"
+      },
+      {
+        "kanji": "如",
+        "example": "常識が<b>ケツジョ</b>している。",
+        "answer": "欠如"
+      },
+      {
+        "kanji": "如",
+        "example": "彼の面目<b>ヤクジョ</b>たる演奏。",
+        "answer": "躍如"
+      },
+      {
+        "kanji": "匠",
+        "example": "映画界の<b>キョショウ</b>。",
+        "answer": "巨匠"
+      },
+      {
+        "kanji": "匠",
+        "example": "<b>イショウ</b>を凝らした逸品。",
+        "answer": "意匠"
+      },
+      {
+        "kanji": "伐",
+        "example": "不要な木を<b>バッサイ</b>する。",
+        "answer": "伐採"
+      },
+      {
+        "kanji": "伐",
+        "example": "<b>サツパツ</b>とした雰囲気が漂う。",
+        "answer": "殺伐"
+      },
+      {
+        "kanji": "伐",
+        "example": "敵を<b>セイバツ</b>する。",
+        "answer": "征伐"
+      },
+      {
+        "kanji": "幻",
+        "example": "結婚に甘い<b>ゲンソウ</b>を抱く。",
+        "answer": "幻想"
+      },
+      {
+        "kanji": "幻",
+        "example": "都会生活に<b>ゲンメツ</b>を感じる。",
+        "answer": "幻滅"
+      },
+      {
+        "kanji": "幻",
+        "example": "<b>ゲンカク</b>を見せる作用。",
+        "answer": "幻覚"
+      },
+      {
+        "kanji": "幻",
+        "example": "<b>ヘンゲン</b>自在な怪盗。",
+        "answer": "変幻"
+      },
+      {
+        "kanji": "斥",
+        "example": "外国製品を<b>ハイセキ</b>する。",
+        "answer": "排斥"
+      },
+      {
+        "kanji": "斥",
+        "example": "偵察のため<b>セッコウ</b>を放つ。",
+        "answer": "斥候"
+      },
+      {
+        "kanji": "企",
+        "example": "新規事業の<b>キカク</b>を練る。",
+        "answer": "企画"
+      },
+      {
+        "kanji": "企",
+        "example": "海外進出を<b>クワダテル</b>。",
+        "answer": "企てる"
+      },
+      {
+        "kanji": "企",
+        "example": "地域の振興を<b>キト</b>する。",
+        "answer": "企図"
+      },
+      {
+        "kanji": "伏",
+        "example": "感情の<b>キフク</b>が激しい人。",
+        "answer": "起伏"
+      },
+      {
+        "kanji": "伏",
+        "example": "犯人は地下に<b>センプク</b>中だ。",
+        "answer": "潜伏"
+      },
+      {
+        "kanji": "伏",
+        "example": "続編への<b>フクセン</b>を張る。",
+        "answer": "伏線"
+      },
+      {
+        "kanji": "伏",
+        "example": "抵抗をやめて<b>コウフク</b>する。",
+        "answer": "降伏"
+      },
+      {
+        "kanji": "克",
+        "example": "苦手科目を<b>コクフク</b>する。",
+        "answer": "克服"
+      },
+      {
+        "kanji": "克",
+        "example": "理想と現実の<b>ソウコク</b>に悩む。",
+        "answer": "相克"
+      },
+      {
+        "kanji": "克",
+        "example": "復興の様子を<b>コクメイ</b>に記す。",
+        "answer": "克明"
+      },
+      {
+        "kanji": "励",
+        "example": "日夜学業に<b>ハゲム</b>。",
+        "answer": "励む"
+      },
+      {
+        "kanji": "励",
+        "example": "早朝散歩を<b>レイコウ</b>する。",
+        "answer": "励行"
+      }
+    ]
+  },
+  {
+    "step": "第43回",
+    "items": [
+      {
+        "kanji": "伴",
+        "example": "生涯の<b>ハンリョ</b>を得る。",
+        "answer": "伴侶"
+      },
+      {
+        "kanji": "伴",
+        "example": "<b>パンソウ</b>に合わせて歌う。",
+        "answer": "伴奏"
+      },
+      {
+        "kanji": "伴",
+        "example": "この実験は危険を<b>トモナウ</b>。",
+        "answer": "伴う"
+      },
+      {
+        "kanji": "伴",
+        "example": "家族<b>ドウパン</b>で赴任する。",
+        "answer": "同伴"
+      },
+      {
+        "kanji": "伴",
+        "example": "お<b>ショウバン</b>にあずかった。",
+        "answer": "相伴"
+      },
+      {
+        "kanji": "抑",
+        "example": "言論の自由を<b>ヨクアツ</b>する。",
+        "answer": "抑圧"
+      },
+      {
+        "kanji": "抑",
+        "example": "無駄な出費を<b>オサエル</b>。",
+        "answer": "抑える"
+      },
+      {
+        "kanji": "抑",
+        "example": "法律によって<b>ヨクシ</b>する。",
+        "answer": "抑止"
+      },
+      {
+        "kanji": "没",
+        "example": "道路が<b>カンボツ</b>する。",
+        "answer": "陥没"
+      },
+      {
+        "kanji": "没",
+        "example": "名家が<b>ボツラク</b>する。",
+        "answer": "没落"
+      },
+      {
+        "kanji": "没",
+        "example": "台風で船が<b>チンボツ</b>する。",
+        "answer": "沈没"
+      },
+      {
+        "kanji": "没",
+        "example": "タヌキが<b>シュツポツ</b>する。",
+        "answer": "出没"
+      },
+      {
+        "kanji": "没",
+        "example": "趣味の陶芸に<b>ボットウ</b>する。",
+        "answer": "没頭"
+      },
+      {
+        "kanji": "没",
+        "example": "ゲーム機を<b>ボッシュウ</b>された。",
+        "answer": "没収"
+      },
+      {
+        "kanji": "没",
+        "example": "祖父は昨年<b>ビョウポツ</b>した。",
+        "answer": "病没"
+      },
+      {
+        "kanji": "岐",
+        "example": "人生の<b>キロ</b>に立つ。",
+        "answer": "岐路"
+      },
+      {
+        "kanji": "岐",
+        "example": "高速道路が<b>ブンキ</b>する地点。",
+        "answer": "分岐"
+      },
+      {
+        "kanji": "岐",
+        "example": "卒業後の進路は<b>タキ</b>にわたる。",
+        "answer": "多岐"
+      },
+      {
+        "kanji": "肝",
+        "example": "<b>カンエン</b>の治療をする。",
+        "answer": "肝炎"
+      },
+      {
+        "kanji": "肝",
+        "example": "彼とは<b>カンタン</b>相照らす仲だ。",
+        "answer": "肝胆"
+      },
+      {
+        "kanji": "肝",
+        "example": "何事も最初が<b>カンジン</b>だ。",
+        "answer": "肝心"
+      },
+      {
+        "kanji": "肝",
+        "example": "何よりも忍耐が<b>カンヨウ</b>だ。",
+        "answer": "肝要"
+      },
+      {
+        "kanji": "択",
+        "example": "職業の<b>センタク</b>に悩む。",
+        "answer": "選択"
+      },
+      {
+        "kanji": "択",
+        "example": "<b>ニオタクイツ</b>を迫られた。",
+        "answer": "二者択一"
+      },
+      {
+        "kanji": "忌",
+        "example": "面倒事を<b>キヒ</b>する。",
+        "answer": "忌避"
+      },
+      {
+        "kanji": "忌",
+        "example": "結婚式は仏滅の日を<b>イム</b>。",
+        "answer": "忌む"
+      },
+      {
+        "kanji": "忌",
+        "example": "<b>キチュウ</b>につき休業します。",
+        "answer": "忌中"
+      },
+      {
+        "kanji": "忌",
+        "example": "<b>イッシュウキ</b>の法要を行う。",
+        "answer": "一周忌"
+      },
+      {
+        "kanji": "辛",
+        "example": "<b>コウシン</b>料をきかせたカレー。",
+        "answer": "香辛料"
+      },
+      {
+        "kanji": "辛",
+        "example": "退院まで少しの<b>シンボウ</b>だ。",
+        "answer": "辛棒"
+      },
+      {
+        "kanji": "辛",
+        "example": "<b>シンラツ</b>に批評される。",
+        "answer": "辛辣"
+      },
+      {
+        "kanji": "辛",
+        "example": "一点差で<b>シンショウ</b>する。",
+        "answer": "辛勝"
+      },
+      {
+        "kanji": "妨",
+        "example": "悪質な営業<b>ボウガイ</b>に遭う。",
+        "answer": "妨害"
+      },
+      {
+        "kanji": "妨",
+        "example": "安眠を<b>サマタゲル</b>深夜の騒音。",
+        "answer": "妨げる"
+      },
+      {
+        "kanji": "寿",
+        "example": "祖母の<b>ベイジュ</b>を祝う。",
+        "answer": "米寿"
+      },
+      {
+        "kanji": "寿",
+        "example": "二十年続く<b>チョウジュ</b>番組だ。",
+        "answer": "長寿"
+      },
+      {
+        "kanji": "寿",
+        "example": "<b>ジュミョウ</b>が縮む思いをした。",
+        "answer": "寿命"
+      }
+    ]
+  },
+  {
+    "step": "第44回",
+    "items": [
+      {
+        "kanji": "免",
+        "example": "<b>ホウメン</b>となった。",
+        "answer": "放免"
+      },
+      {
+        "kanji": "免",
+        "example": "民家への延焼を<b>マヌカレル</b>。",
+        "answer": "免れる"
+      },
+      {
+        "kanji": "免",
+        "example": "中傷に<b>メンエキ</b>ができている。",
+        "answer": "免疫"
+      },
+      {
+        "kanji": "免",
+        "example": "<b>メンショク</b>の処分が下る。",
+        "answer": "免職"
+      },
+      {
+        "kanji": "昇",
+        "example": "気温が<b>ジョウショウ</b>する。",
+        "answer": "上昇"
+      },
+      {
+        "kanji": "昇",
+        "example": "異例の速さで<b>ジョウシン</b>する。",
+        "answer": "昇進"
+      },
+      {
+        "kanji": "昇",
+        "example": "<b>ショウカク</b>試験に合格する。",
+        "answer": "昇格"
+      },
+      {
+        "kanji": "卓",
+        "example": "家族全員で<b>ショクタク</b>を囲む。",
+        "answer": "食卓"
+      },
+      {
+        "kanji": "卓",
+        "example": "<b>タクエツ</b>した技量の持ち主。",
+        "answer": "卓越"
+      },
+      {
+        "kanji": "拘",
+        "example": "敵の身柄を<b>コウソク</b>する。",
+        "answer": "拘束"
+      },
+      {
+        "kanji": "拘",
+        "example": "試合の勝敗に<b>コウデイ</b>する。",
+        "answer": "拘泥"
+      },
+      {
+        "kanji": "抽",
+        "example": "無作為に<b>チュウシュツ</b>する。",
+        "answer": "抽出"
+      },
+      {
+        "kanji": "抽",
+        "example": "<b>チュウショウ</b>的な表現を嫌う。",
+        "answer": "抽象"
+      },
+      {
+        "kanji": "抽",
+        "example": "<b>チュウセン</b>で賞品が当たる。",
+        "answer": "抽選"
+      },
+      {
+        "kanji": "邪",
+        "example": "子供の<b>ムジャキ</b>ないたずら。",
+        "answer": "無邪気"
+      },
+      {
+        "kanji": "邪",
+        "example": "二人の仲を<b>ジャスイ</b>する。",
+        "answer": "邪推"
+      },
+      {
+        "kanji": "邪",
+        "example": "<b>ジャアク</b>な考えは捨てる。",
+        "answer": "邪悪"
+      },
+      {
+        "kanji": "邪",
+        "example": "弟に勉強の<b>ジャマ</b>をされる。",
+        "answer": "邪魔"
+      },
+      {
+        "kanji": "阻",
+        "example": "<b>ケンゾ</b>な山道を越える。",
+        "answer": "険阻"
+      },
+      {
+        "kanji": "阻",
+        "example": "個人情報の流出を<b>ゾシ</b>する。",
+        "answer": "阻止"
+      },
+      {
+        "kanji": "阻",
+        "example": "睡眠不足は健康を<b>ソガイ</b>する。",
+        "answer": "阻害"
+      },
+      {
+        "kanji": "阻",
+        "example": "増水した川が行く手を<b>ハバム</b>。",
+        "answer": "阻む"
+      },
+      {
+        "kanji": "奉",
+        "example": "<b>ホウノウ</b>相撲大会が開かれる。",
+        "answer": "奉納"
+      },
+      {
+        "kanji": "奉",
+        "example": "神前に供物を<b>タテマツル</b>。",
+        "answer": "奉る"
+      },
+      {
+        "kanji": "奉",
+        "example": "新年を<b>ホウガ</b>する。",
+        "answer": "奉賀"
+      },
+      {
+        "kanji": "奉",
+        "example": "社会<b>ホウシ</b>活動をする。",
+        "answer": "奉仕"
+      },
+      {
+        "kanji": "奉",
+        "example": "恩師の学説を<b>シンボウ</b>する。",
+        "answer": "信奉"
+      },
+      {
+        "kanji": "怪",
+        "example": "複雑<b>カイキ</b>な事件が起こる。",
+        "answer": "怪奇"
+      },
+      {
+        "kanji": "怪",
+        "example": "<b>カイブツ</b>を退治する。",
+        "answer": "怪物"
+      },
+      {
+        "kanji": "怪",
+        "example": "<b>ヨウカイ</b>が登場する映画。",
+        "answer": "妖怪"
+      },
+      {
+        "kanji": "怪",
+        "example": "彼は<b>カイリキ</b>の持ち主だ。",
+        "answer": "怪力"
+      },
+      {
+        "kanji": "佳",
+        "example": "<b>カジン</b>薄命と言われている。",
+        "answer": "佳人"
+      },
+      {
+        "kanji": "佳",
+        "example": "物語が<b>カキョウ</b>に入ってきた。",
+        "answer": "佳境"
+      },
+      {
+        "kanji": "佳",
+        "example": "彼の小説は<b>ガサク</b>ぞろいだ。",
+        "answer": "佳作"
+      },
+      {
+        "kanji": "祉",
+        "example": "公共の<b>フクシ</b>に役立てる。",
+        "answer": "福祉"
+      }
+    ]
+  },
+  {
+    "step": "第45回",
+    "items": [
+      {
+        "kanji": "施",
+        "example": "校内で模擬試験を<b>ジッシ</b>する。",
+        "answer": "実施"
+      },
+      {
+        "kanji": "施",
+        "example": "県の<b>シサク</b>を評価する。",
+        "answer": "施策"
+      },
+      {
+        "kanji": "施",
+        "example": "新法を<b>シコウ</b>する。",
+        "answer": "施行"
+      },
+      {
+        "kanji": "施",
+        "example": "車の<b>セジョウ</b>を確認する。",
+        "answer": "施錠"
+      },
+      {
+        "kanji": "施",
+        "example": "貧しい人に情けを<b>ホドコス</b>。",
+        "answer": "施す"
+      },
+      {
+        "kanji": "施",
+        "example": "修行僧にお<b>フセ</b>を渡す。",
+        "answer": "布施"
+      },
+      {
+        "kanji": "卑",
+        "example": "<b>ピレツ</b>な行為を許さない。",
+        "answer": "卑劣"
+      },
+      {
+        "kanji": "卑",
+        "example": "言葉遣いが<b>イヤシイ</b>。",
+        "answer": "卑しい"
+      },
+      {
+        "kanji": "卑",
+        "example": "ひたすら<b>ヒクツ</b>な態度をとる。",
+        "answer": "卑屈"
+      },
+      {
+        "kanji": "卑",
+        "example": "自分をあまり<b>ヒゲ</b>するな。",
+        "answer": "卑下"
+      },
+      {
+        "kanji": "卑",
+        "example": "<b>ヒキン</b>な例を挙げて説明する。",
+        "answer": "卑近"
+      },
+      {
+        "kanji": "促",
+        "example": "若者の雇用を<b>ソクシン</b>する。",
+        "answer": "促進"
+      },
+      {
+        "kanji": "促",
+        "example": "早く帰宅するよう<b>ウナガス</b>。",
+        "answer": "促す"
+      },
+      {
+        "kanji": "促",
+        "example": "野菜の<b>ゾクセイ</b>栽培が盛んだ。",
+        "answer": "促成"
+      },
+      {
+        "kanji": "促",
+        "example": "拗音と<b>ソクオン</b>は小さく書く。",
+        "answer": "促音"
+      },
+      {
+        "kanji": "怠",
+        "example": "<b>タイダ</b>な生活を悔い改める。",
+        "answer": "怠惰"
+      },
+      {
+        "kanji": "怠",
+        "example": "後方への注意を<b>オコタル</b>。",
+        "answer": "怠る"
+      },
+      {
+        "kanji": "胆",
+        "example": "<b>タンセキ</b>の痛みで苦しむ。",
+        "answer": "胆石"
+      },
+      {
+        "kanji": "胆",
+        "example": "突然<b>ダイタン</b>な行動に出る。",
+        "answer": "大胆"
+      },
+      {
+        "kanji": "胆",
+        "example": "実験が失敗し<b>ラクタン</b>する。",
+        "answer": "落胆"
+      },
+      {
+        "kanji": "哀",
+        "example": "生活費の援助を<b>アイガン</b>する。",
+        "answer": "哀願"
+      },
+      {
+        "kanji": "哀",
+        "example": "喜怒<b>アイラク</b>を表に出す。",
+        "answer": "哀楽"
+      },
+      {
+        "kanji": "哀",
+        "example": "労働者の<b>ヒアイ</b>を描いた小説。",
+        "answer": "悲哀"
+      },
+      {
+        "kanji": "哀",
+        "example": "人生の<b>アイカン</b>を共にする。",
+        "answer": "哀歓"
+      },
+      {
+        "kanji": "削",
+        "example": "小論文を<b>テンサク</b>してもらう。",
+        "answer": "添削"
+      },
+      {
+        "kanji": "削",
+        "example": "後半部分を<b>サクジョ</b>する。",
+        "answer": "削除"
+      },
+      {
+        "kanji": "悔",
+        "example": "今さら<b>コウカイ</b>しても遅い。",
+        "answer": "後悔"
+      },
+      {
+        "kanji": "悔",
+        "example": "若いころの不勉強を<b>クヤム</b>。",
+        "answer": "悔やむ"
+      },
+      {
+        "kanji": "悔",
+        "example": "決勝戦で敗れて<b>クヤシイ</b>。",
+        "answer": "悔しい"
+      },
+      {
+        "kanji": "軌",
+        "example": "店の経営が<b>キドウ</b>に乗る。",
+        "answer": "軌道"
+      },
+      {
+        "kanji": "軌",
+        "example": "人気作家の<b>キセキ</b>をたどる。",
+        "answer": "軌跡"
+      },
+      {
+        "kanji": "軌",
+        "example": "<b>ジョウキ</b>を逸した振る舞い。",
+        "answer": "常軌"
+      },
+      {
+        "kanji": "孤",
+        "example": "戦争で<b>コジ</b>になった。",
+        "answer": "孤児"
+      },
+      {
+        "kanji": "孤",
+        "example": "国際社会での<b>コリツ</b>を避ける。",
+        "answer": "孤立"
+      },
+      {
+        "kanji": "孤",
+        "example": "<b>ココウ</b>の存在。",
+        "answer": "孤高"
+      },
+      {
+        "kanji": "恨",
+        "example": "<b>カイコン</b>の念にさいなまれる。",
+        "answer": "悔恨"
+      },
+      {
+        "kanji": "恨",
+        "example": "<b>ツウコン</b>のミスが出る。",
+        "answer": "痛恨"
+      },
+      {
+        "kanji": "恨",
+        "example": "長年の<b>イコン</b>を晴らす。",
+        "answer": "遺恨"
+      }
+    ]
+  }
+]

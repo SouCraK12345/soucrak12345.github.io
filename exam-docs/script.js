@@ -190,7 +190,7 @@ async function generateSokutanData(start, end) {
 // Crown 本文テスト
 let crown_main_test_data;
 const crown_main_test_select = document.querySelector('select[name="crown-main-test"]');
-crown_main_test_select.addEventListener("click", async () => {
+crown_main_test_select?.addEventListener("click", async () => {
     if (crown_main_test_data) return;
     const data = await fetchJsonWithLoading("crown-main.json");
     crown_main_test_data = data;
@@ -270,9 +270,86 @@ function buildChemicalFormulaPrint(data) {
         </section>`;
 }
 
+// 漢字書き取り: 同時操作でも読み込みと選択肢を重複させない
+let kanjiWritingData;
+let kanjiWritingLoading;
+const kanjiWritingSelect = document.querySelector('select[name="kanji-writing"]');
+const kanjiWritingStatus = document.getElementById('kanji-writing-status');
+
+async function loadKanjiWritingData() {
+    if (kanjiWritingData) return kanjiWritingData;
+    if (kanjiWritingLoading) return kanjiWritingLoading;
+    kanjiWritingStatus.textContent = 'データを読み込んでいます…';
+    kanjiWritingLoading = (async () => {
+        showLoadingMessage();
+        try {
+            const response = await fetch('kanji-writing.json');
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            const data = await response.json();
+            if (!Array.isArray(data) || !data.length || data.some(group =>
+                typeof group.step !== 'string' || !Array.isArray(group.items) || !group.items.length ||
+                group.items.some(item => typeof item.example !== 'string' || typeof item.answer !== 'string')
+            )) throw new Error('Invalid kanji data');
+            kanjiWritingSelect.replaceChildren();
+            data.forEach((group, index) => {
+                const option = document.createElement('option');
+                option.value = String(index);
+                option.textContent = group.step;
+                kanjiWritingSelect.appendChild(option);
+            });
+            kanjiWritingData = data;
+            kanjiWritingStatus.textContent = '';
+            return data;
+        } catch (error) {
+            kanjiWritingStatus.textContent = '読み込めませんでした。回の選択欄か作成ボタンを押して再試行してください。';
+            throw error;
+        } finally {
+            hideLoadingMessage();
+        }
+    })();
+    try {
+        return await kanjiWritingLoading;
+    } finally {
+        kanjiWritingLoading = null;
+    }
+}
+
+for (const event of ['focus', 'click']) {
+    kanjiWritingSelect.addEventListener(event, () => loadKanjiWritingData().catch(() => {}));
+}
+
+function buildKanjiWritingPrint(group, withAnswers) {
+    const title = group.step + ' 漢字書き取り' + (withAnswers ? ' 解答' : ' 問題');
+    const questions = group.items.map((item, index) => {
+        const example = escapeHtml(item.example)
+            .replace(/&lt;b&gt;/g, '<b>').replace(/&lt;\/b&gt;/g, '</b>');
+        return `<div class="kanji-question">
+            <span class="kanji-number">${index + 1}.</span>
+            <span class="kanji-example">${example}</span>
+            <span class="kanji-answer">${withAnswers ? escapeHtml(item.answer) : ''}</span>
+        </div>`;
+    }).join('');
+    return `<section class="kanji-print-sheet">
+        <h1>${escapeHtml(title)}</h1>
+        <p>${withAnswers ? '解答' : '太字のカタカナを漢字に直しなさい（送り仮名も書くこと）。'}　名前：________________</p>
+        ${questions}
+    </section>`;
+}
+
 async function create(name) {
     let print_title, html;
-    if (name === "en-sample-test") {
+    if (name === "kanji-writing" || name === "kanji-writing-answer") {
+        let data;
+        try {
+            data = await loadKanjiWritingData();
+        } catch {
+            return;
+        }
+        const group = data[Number(kanjiWritingSelect.value)];
+        const withAnswers = name === 'kanji-writing-answer';
+        print_title = group.step + ' 漢字書き取り' + (withAnswers ? ' 解答' : ' 問題');
+        html = buildKanjiWritingPrint(group, withAnswers);
+    } else if (name === "en-sample-test") {
         if (!en_sample_test_data) {
             await loadEnSampleTestData();
         }
@@ -415,7 +492,8 @@ async function create(name) {
         window.print();
     } else {
         workspace.style.display = "block"; // workspaceを表示
-        html2pdf().set({
+        try {
+            await html2pdf().set({
             pagebreak: { mode: name === "chemical-formula" ? ['css', 'legacy'] : ['avoid-all', 'css', 'legacy'] },
             margin: name === "chemical-formula" ? 5 : 10, // mm単位（上下左右すべて）
             filename: `${print_title}.pdf`,
@@ -423,9 +501,11 @@ async function create(name) {
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
         }).from(workspace).save();
-        requestAnimationFrame(() => {
-            workspace.style.display = "none"; // PDF化が完了したらworkspaceを非表示にする
-        });
+        } catch (error) {
+            alert('PDFを作成できませんでした。もう一度作成してください。');
+        } finally {
+            workspace.style.display = "none";
+        }
     }
 }
 

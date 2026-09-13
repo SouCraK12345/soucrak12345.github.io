@@ -441,3 +441,51 @@ p.cr_quote {
     padding: 5px 20px;
     border-left: 2px solid black;
 }
+/* 漢字書き取りプリント */
+.kanji-create {
+    border: 0;
+    font: inherit;
+}
+.kanji-print-sheet {
+    color: #111;
+    font-size: 12pt;
+    line-height: 1.6;
+}
+.kanji-print-sheet h1 {
+    color: #111;
+    font-size: 18pt;
+    margin: 0 0 3mm;
+}
+.kanji-print-sheet > p {
+    margin: 0 0 4mm;
+}
+.kanji-question {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    min-height: 13mm;
+    padding: 1mm 0;
+    box-sizing: border-box;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+.kanji-number {
+    flex: 0 0 8mm;
+    text-align: right;
+}
+.kanji-example {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.kanji-example b {
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.kanji-answer {
+    flex: 0 0 42mm;
+    min-height: 9mm;
+    border-bottom: 1px solid #111;
+    overflow-wrap: anywhere;
+}
