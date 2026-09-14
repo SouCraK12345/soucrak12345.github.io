@@ -318,27 +318,36 @@ for (const event of ['focus', 'click']) {
     kanjiWritingSelect.addEventListener(event, () => loadKanjiWritingData().catch(() => {}));
 }
 
-function buildKanjiWritingPrint(group, withAnswers) {
-    const title = group.step + ' 漢字書き取り' + (withAnswers ? ' 解答' : ' 問題');
-    const questions = group.items.map((item, index) => {
+function shuffleKanjiWritingItems(items) {
+    const shuffledItems = [...items];
+    for (let index = shuffledItems.length - 1; index > 0; index--) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [shuffledItems[index], shuffledItems[randomIndex]] = [shuffledItems[randomIndex], shuffledItems[index]];
+    }
+    return shuffledItems;
+}
+
+function buildKanjiWritingPrint(group) {
+    const title = group.step + ' 漢字書き取り 解答';
+    const questions = shuffleKanjiWritingItems(group.items).map((item, index) => {
         const example = escapeHtml(item.example)
             .replace(/&lt;b&gt;/g, '<b>').replace(/&lt;\/b&gt;/g, '</b>');
         return `<div class="kanji-question">
             <span class="kanji-number">${index + 1}.</span>
             <span class="kanji-example">${example}</span>
-            <span class="kanji-answer">${withAnswers ? escapeHtml(item.answer) : ''}</span>
+            <span class="kanji-answer">${escapeHtml(item.answer)}</span>
         </div>`;
     }).join('');
     return `<section class="kanji-print-sheet">
         <h1>${escapeHtml(title)}</h1>
-        <p>${withAnswers ? '解答' : '太字のカタカナを漢字に直しなさい（送り仮名も書くこと）。'}　名前：________________</p>
+        <p>解答　名前：________________</p>
         ${questions}
     </section>`;
 }
 
 async function create(name) {
     let print_title, html;
-    if (name === "kanji-writing" || name === "kanji-writing-answer") {
+    if (name === "kanji-writing-answer") {
         let data;
         try {
             data = await loadKanjiWritingData();
@@ -346,9 +355,8 @@ async function create(name) {
             return;
         }
         const group = data[Number(kanjiWritingSelect.value)];
-        const withAnswers = name === 'kanji-writing-answer';
-        print_title = group.step + ' 漢字書き取り' + (withAnswers ? ' 解答' : ' 問題');
-        html = buildKanjiWritingPrint(group, withAnswers);
+        print_title = group.step + ' 漢字書き取り 解答';
+        html = buildKanjiWritingPrint(group);
     } else if (name === "en-sample-test") {
         if (!en_sample_test_data) {
             await loadEnSampleTestData();
