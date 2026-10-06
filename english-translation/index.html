@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>例文英訳トレーニング | なんざんホーム</title>
+  <meta name="description" content="Lesson 13〜21の例文を日本語から英訳して練習するWebアプリです。">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="home-link">なんざんホーム</a>
+    <a href="../exam-docs/" class="back-link">テスト対策プリント</a>
+  </header>
+
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">ENGLISH TRANSLATION TRAINING</p>
+      <h1>Lesson 13〜21 例文英訳</h1>
+      <p>日本語訳を見て、元の例文を英語で入力してください。</p>
+      <div class="rules">
+        <span>1ラウンド最大8問</span>
+        <span>正解した例文は次回から除外</span>
+        <span>副詞の位置変更・短縮形は別解として許可</span>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="設定">
+      <div>
+        <strong id="progress">読み込み中…</strong>
+        <span id="round-label"></span>
+      </div>
+      <button id="reset-button" class="secondary-button" type="button">進捗をリセット</button>
+    </section>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <form id="quiz-form" novalidate></form>
+
+    <section id="finish" class="finish hidden" aria-live="polite">
+      <div class="finish-mark">✓</div>
+      <h2>すべての例文を出し終わりました</h2>
+      <p>Lesson 13〜21の対象例文をすべて正解しました。</p>
+      <button id="finish-reset" class="primary-button" type="button">最初からやり直す</button>
+    </section>
+  </main>
+
+  <template id="question-template">
+    <article class="question-card">
+      <div class="question-number"></div>
+      <div class="lesson"></div>
+      <p class="japanese"></p>
+      <label class="answer-label">
+        英訳
+        <textarea class="answer" rows="2" autocomplete="off" spellcheck="false" placeholder="英語で入力してください"></textarea>
+      </label>
+      <div class="feedback" aria-live="polite"></div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
