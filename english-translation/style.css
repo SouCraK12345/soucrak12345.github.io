@@ -1,0 +1,94 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --surface: #fff;
+  --text: #18212f;
+  --muted: #667085;
+  --line: #dfe4ec;
+  --accent: #315efb;
+  --accent-dark: #2147d6;
+  --success: #16794c;
+  --success-bg: #eaf8f1;
+  --error: #b42318;
+  --error-bg: #fff0ef;
+  --shadow: 0 10px 30px rgba(20, 30, 55, .08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+  line-height: 1.65;
+}
+button, textarea { font: inherit; }
+.site-header {
+  min-height: 58px;
+  padding: 12px max(20px, calc((100vw - 980px) / 2));
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.site-header a { color: var(--text); text-decoration: none; font-weight: 700; }
+.back-link { color: var(--muted) !important; font-weight: 600 !important; }
+.app { width: min(980px, calc(100% - 28px)); margin: 0 auto; padding: 38px 0 72px; }
+.hero { margin-bottom: 22px; }
+.eyebrow { margin: 0 0 5px; color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .12em; }
+h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; }
+.hero > p:not(.eyebrow) { margin: 0; color: var(--muted); }
+.rules { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.rules span { background: #eaf0ff; color: #2748ad; border-radius: 999px; padding: 5px 10px; font-size: .82rem; }
+.toolbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  margin: 20px 0 14px; padding: 13px 15px; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 12px;
+}
+#progress { display: block; }
+#round-label { color: var(--muted); font-size: .85rem; }
+button { cursor: pointer; border: 0; border-radius: 9px; padding: 10px 15px; font-weight: 700; }
+.primary-button { color: #fff; background: var(--accent); }
+.primary-button:hover { background: var(--accent-dark); }
+.secondary-button { background: #eef1f6; color: #344054; }
+.status { min-height: 0; margin-bottom: 12px; }
+.status.error { padding: 10px 12px; color: var(--error); background: var(--error-bg); border-radius: 9px; }
+#quiz-form { display: grid; gap: 14px; }
+.question-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 18px; box-shadow: var(--shadow);
+}
+.question-number { color: var(--accent); font-size: .82rem; font-weight: 800; }
+.lesson { color: var(--muted); font-size: .82rem; margin-top: 2px; }
+.japanese { margin: 8px 0 15px; font-size: 1.1rem; font-weight: 700; }
+.answer-label { display: grid; gap: 7px; font-weight: 700; }
+.answer {
+  width: 100%; resize: vertical; min-height: 58px; padding: 11px 12px;
+  border: 1px solid #cbd2dd; border-radius: 9px; background: #fff; color: var(--text);
+}
+.answer:focus { outline: 3px solid rgba(49, 94, 251, .16); border-color: var(--accent); }
+.question-card.correct { border-color: #91d5b3; background: #fbfffd; }
+.question-card.wrong { border-color: #f0a7a1; }
+.feedback { margin-top: 10px; font-size: .9rem; }
+.feedback.correct { color: var(--success); }
+.feedback.wrong { color: var(--error); background: var(--error-bg); border-radius: 9px; padding: 10px 12px; }
+.diff { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.diff-token { padding: 2px 7px; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.diff-token.expected { background: #e7f7ee; color: #17643f; }
+.diff-token.actual { background: #ffe1df; color: #9e2018; }
+.diff-token.missing { background: #fff2cc; color: #7a5b00; }
+.actions { display: flex; justify-content: center; margin-top: 20px; }
+.actions button { min-width: 180px; font-size: 1rem; }
+.finish { text-align: center; padding: 48px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.finish-mark { width: 54px; height: 54px; margin: 0 auto 12px; display: grid; place-items: center; border-radius: 50%; background: var(--success-bg); color: var(--success); font-size: 1.7rem; font-weight: 900; }
+.finish h2 { margin: 0 0 7px; }
+.finish p { color: var(--muted); }
+.hidden { display: none !important; }
+@media (max-width: 600px) {
+  .site-header { padding: 11px 14px; }
+  .app { width: min(100% - 20px, 980px); padding-top: 25px; }
+  .toolbar { align-items: flex-start; flex-direction: column; }
+  .secondary-button { width: 100%; }
+  .question-card { padding: 15px; }
+}
