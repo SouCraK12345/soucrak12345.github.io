@@ -311,6 +311,16 @@ function renderRound() {
   const roundNumber = Math.ceil((allQuestions.length - remainingIds.length + 1) / ROUND_SIZE);
   roundLabel.textContent = `今回 ${roundQuestions.length}問`;
   progress.textContent = `${remainingIds.length}問残り`;
+
+  const actions = document.createElement("div");
+  actions.className = "actions";
+  const button = document.createElement("button");
+  button.type = "submit";
+  button.className = "primary-button";
+  button.textContent = "答え合わせ";
+  actions.appendChild(button);
+  form.appendChild(actions);
+
   const first = form.querySelector("textarea");
   if (first) first.focus();
 }
