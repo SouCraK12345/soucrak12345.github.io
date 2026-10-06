@@ -56,8 +56,75 @@ function expandBracketAlternatives(text) {
   });
 }
 
+function expandContractionVariants(text) {
+  const patterns = [
+    ["\\bI'm\\b", ["I am"]],
+    ["\\bI've\\b", ["I have"]],
+    ["\\bI'll\\b", ["I will"]],
+    ["\\bI'd\\b", ["I would"]],
+    ["\\byou're\\b", ["you are"]],
+    ["\\byou've\\b", ["you have"]],
+    ["\\byou'll\\b", ["you will"]],
+    ["\\byou'd\\b", ["you would"]],
+    ["\\bhe's\\b", ["he is", "he has"]],
+    ["\\bhe'll\\b", ["he will"]],
+    ["\\bhe'd\\b", ["he would"]],
+    ["\\bshe's\\b", ["she is", "she has"]],
+    ["\\bshe'll\\b", ["she will"]],
+    ["\\bshe'd\\b", ["she would"]],
+    ["\\bit's\\b", ["it is", "it has"]],
+    ["\\bit'll\\b", ["it will"]],
+    ["\\bwe're\\b", ["we are"]],
+    ["\\bwe've\\b", ["we have"]],
+    ["\\bwe'll\\b", ["we will"]],
+    ["\\bwe'd\\b", ["we would"]],
+    ["\\bthey're\\b", ["they are"]],
+    ["\\bthey've\\b", ["they have"]],
+    ["\\bthey'll\\b", ["they will"]],
+    ["\\bthey'd\\b", ["they would"]],
+    ["\\bcan't\\b", ["cannot", "can not"]],
+    ["\\bcouldn't\\b", ["could not"]],
+    ["\\bwon't\\b", ["will not"]],
+    ["\\bwouldn't\\b", ["would not"]],
+    ["\\bshouldn't\\b", ["should not"]],
+    ["\\bmustn't\\b", ["must not"]],
+    ["\\bdon't\\b", ["do not"]],
+    ["\\bdoesn't\\b", ["does not"]],
+    ["\\bdidn't\\b", ["did not"]],
+    ["\\bisn't\\b", ["is not"]],
+    ["\\baren't\\b", ["are not"]],
+    ["\\bwasn't\\b", ["was not"]],
+    ["\\bweren't\\b", ["were not"]],
+    ["\\bhaven't\\b", ["have not"]],
+    ["\\bhasn't\\b", ["has not"]],
+    ["\\bhadn't\\b", ["had not"]]
+  ];
+  const results = [text];
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const [pattern, replacements] of patterns) {
+      const current = [...results];
+      for (const value of current) {
+        const regex = new RegExp(pattern, "i");
+        if (!regex.test(value)) continue;
+        for (const replacement of replacements) {
+          const next = value.replace(regex, replacement);
+          if (!results.includes(next)) {
+            results.push(next);
+            changed = true;
+          }
+        }
+      }
+    }
+  }
+  return results;
+}
+
 function buildVariants(source) {
-  return splitAlternatives(source).flatMap(expandBracketAlternatives);
+  return splitAlternatives(source)
+    .flatMap(expandBracketAlternatives)
+    .flatMap(expandContractionVariants);
 }
 
 function normalizeToken(token) {
